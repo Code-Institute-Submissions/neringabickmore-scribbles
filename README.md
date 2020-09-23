@@ -1,6 +1,6 @@
-# Money Pot #
+# Cribble #
 
-*[Scribble]() *desctibe what that is*
+*[Scribble]() *describe what that is*
 
 ![Site display on different screens](/wireframes/)
 
@@ -10,9 +10,9 @@ Write up
 
 ## Contents ##
 
-- [Money Pot](#money-pot)
+- [Cribble](#cribble)
   - [Contents](#contents)
-  - [UX (User Experience)](#ux-user-experience)
+  - [UX](#ux)
     - [Project Goals](#project-goals)
     - [User Goals](#user-goals)
     - [User Stories](#user-stories)
@@ -39,7 +39,7 @@ Write up
 
 ---
 
-## UX (User Experience) ##
+## UX ##
 
 ### Project Goals ###
 
@@ -71,7 +71,6 @@ The **goal** of this project is
 Description
 
 #### Fonts ####
-
 
 #### Colours ####
 
