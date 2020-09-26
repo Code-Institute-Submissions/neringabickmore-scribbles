@@ -75,7 +75,7 @@ Description
 #### Colours ####
 
 I chose the colours that I felt are quite delicate and not overpowering the main content of the app. 
-![Colour palette](/wireframes/colour_palette/color_palette.jpgcolour_palette\color_palette.jpg)
+![Colour palette](\wireframes\colour_palette\color_palette.jpg)
 
   
 #### Wireframes ####
