@@ -1,4 +1,4 @@
-# Cribble #
+# Scribble #
 
 *[Scribble]() *describe what that is*
 
@@ -10,7 +10,7 @@ Write up
 
 ## Contents ##
 
-- [Cribble](#cribble)
+- [Scribble](#scribble)
   - [Contents](#contents)
   - [UX](#ux)
     - [Project Goals](#project-goals)
@@ -74,14 +74,9 @@ Description
 
 #### Colours ####
 
-I chose the colours that I felt are quite delicate and not overpowering the main content of the site.
-![Colour palette](/wireframes/colour-palette.png)
+I chose the colours that I felt are quite delicate and not overpowering the main content of the app. 
+![Colour palette](/wireframes/colour_palette/color_palette.jpgcolour_palette\color_palette.jpg)
 
-- *Gold Metalic* (#D5AE41) used for the **Logo**, to highlight **stars**, **price tag** and **footer**
-- For the **nav buttons** used *Madder Lake* (#BD3D3A) , which on hover changes to *Cordovan* (#994044)
-- For the **coin background** used *Madder Lake* (#BD3D3A)
-- *Ghost White* (#F3F6FB) mainly used for **non-highlighted stars**, **text** and **background colour**
-- *Queeen Blue* (#3F69AA) used for **console dashboard**, **sum display**, **information** and **contact form**
   
 #### Wireframes ####
 
