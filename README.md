@@ -90,7 +90,7 @@ Firstly, I have created a site [map](/wireframes/flowcharts/sitemap.png) to iden
 I designed my site moc-ups using [balsamiq wireframes](https://balsamiq.com/). I was focusing on defining the basic layout structure of the app and identifying how displays would change on different screen sizes such as [mobile and larger screens](/wireframes/site_wireframes/about.visitor.png).
 
 
-To make user account creation logic easier to understand and simplify the management of it, I have created [workflow-chart](/wireframes/flowcharts/account_creation.png).
+To make user account creation logic easier to understand and simplify the management of it, I have created [workflow-chart](/wireframes/flowcharts/account_creation.jpg).
 
 
 [Back to content](#contents)
