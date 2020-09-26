@@ -1,0 +1,7 @@
+[{
+    "_id" : "ObjectID()",
+    "username" : "string",
+    "password" : "string",
+    "email": "string",
+    "favourites" : ["ObjectID()"]
+}]
