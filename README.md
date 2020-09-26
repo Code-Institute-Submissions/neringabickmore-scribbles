@@ -85,13 +85,13 @@ I chose the colours that I felt are quite delicate and not overpowering the main
   
 #### Wireframes ####
 
-I designed my site moc-ups using [balsamiq wireframes](https://balsamiq.com/). I was focusing on defining the basic layout structure of the game console and identifying how displays would change on different screen sizes such as [mobile](/wireframes/wireframe.mobile.jpg), [tablet](/wireframes/wireframe.tablet.jpg) and [desktop](/wireframes/wireframe.desktop.jpg).
+Firstly, I have created a site [map](/wireframes/flowcharts/sitemap.png) to identify clear features the site will have when viewed by the visitor, user and admin. 
 
-I have also included additional wireframes for the [contact form](/wireframes/wireframe.contact.jpg) page, [information](/wireframes/wireframe.info.jpg), [winner](/wireframes/wireframe.winner.jpg), [error](/wireframes/wireframe.error.jpg) and [congrats](/wireframes/wireframe.congrats.jpg) modal displays. Please note that all of these display layouts will remain the same on all screen sizes.
+I designed my site moc-ups using [balsamiq wireframes](https://balsamiq.com/). I was focusing on defining the basic layout structure of the app and identifying how displays would change on different screen sizes such as [mobile and larger screens](/wireframes/site_wireframes/about.visitor.png).
 
-To make game development easier, I have created [workflow-chart](/wireframes/js-workflow.png).
 
-In the **form page** the **envelope** icon in the footer is replaced with **games console** icon, which on-click brings the user back to the **games page**. On submission of the form, the user is also brought back to the games page.
+To make user account creation logic easier to understand and simplify the management of it, I have created [workflow-chart](/wireframes/flowcharts/account_creation.png).
+
 
 [Back to content](#contents)
 
