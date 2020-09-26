@@ -1,0 +1,23 @@
+[
+    {
+        "_id": "ObjectId()",
+        "title": "",
+        "author": "",
+        "genre": {
+            "type": "",
+            "books": "ObjectId()"
+        },
+        "length": "",
+        "ease_of_reading": "",
+        "plot_summary": "",
+        "favourite_quote": "",
+        "emoji": [
+            "",
+            "",
+            ""
+        ],
+        "rating": "",
+        "link_to_image": "",
+        "link_to_buy": ""
+    }
+]
