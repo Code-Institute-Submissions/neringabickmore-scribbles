@@ -147,12 +147,35 @@ To make user account creation logic easier to understand and simplify the manage
 
 Utilising the NoSQL features that MongoDB provides, I was able to map out the following collections:
 
-- [Review Collection](/wireframes/data_schemas/review_collection.json)
-- [User Collection](/wireframes/data_schemas/user_collections.json)
+[Review Collection](/wireframes/data_schemas/review_collection.json)
+  
+**Title**|**Key in Collection**|**Data Type**
+:-----:|:-----:|:-----:
+Book Id|_id|ObjectId()
+Title|title|string
+Author|author|string
+Genre|genre|array
+Length|length|string
+Ease of Reading|ease_of_reading|string
+Plot Summary|plot_summary|string
+Favorite Quote|favorite_quote|string
+Emoji|emoji|array
+Book rating|rating|string
+Image|link_to_image|string
+Buy a Book|link_to_buy|string
+
+[User Collection](/wireframes/data_schemas/user_collections.json)
+
+**Title**|**Key in Collection**|**Data Type**
+:-----:|:-----:|:-----:
+User ID|_id|ObjectID()
+Username|username|string
+Email Address|email|string
+Favorite Books|favorites|ObjectId()
 
 #### **Data Storage Types** ####
 
-The types of data that are store in the MongoDB database: 
+The types of data that are store in the MongoDB database:
 
 - ObjectID
 - String
@@ -160,8 +183,6 @@ The types of data that are store in the MongoDB database:
 - Object
 - Array
 - Binary
-
-
 
 [Back to content](#contents)
 
