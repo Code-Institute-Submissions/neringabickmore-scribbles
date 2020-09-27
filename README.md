@@ -112,7 +112,7 @@ The **goals** of this project are:
 
 ### Design Choices ###
 
-Description
+The aim of the site design is to ensure the focus is on the book reviews. I have chosen neutral color palette and will adopt minimalistic site features throughout. Icons used on the site are easy to understand and read and therefore text use is avoided where possible.
 
 #### Fonts ####
 
