@@ -3,5 +3,5 @@
     "username" : "string",
     "password" : "string",
     "email": "string",
-    "favourites" : ["ObjectID()"]
+    "favorites" : ["ObjectID()"]
 }]
