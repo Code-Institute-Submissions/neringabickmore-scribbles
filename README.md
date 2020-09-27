@@ -57,6 +57,13 @@ The **goals** of this project are:
 
 #### Site Visitor ####
 
+- As a **site visitor** I want to be able to find out the information about the app.
+- As a **site visitor** I want ot be able to find some book review samples.
+- As a **site visitor** I want to be able to login to my account.
+- As a **site visitor** I want to register if I don't have an account.
+- As a **site visitor** I want to find contact details for the site admin.
+- As a **site visitor** I want to find social media accounts connected to the site.
+
 #### Site Admin ####
 
 #### Site User ####
