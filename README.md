@@ -14,12 +14,11 @@ About three years ago I have made a conscious decision to read more books. I hav
   - [Contents](#contents)
   - [UX](#ux)
     - [Project Goals](#project-goals)
-    - [User Goals](#user-goals)
+    - [User Stories](#user-stories)
       - [Site Visitor](#site-visitor)
       - [Site Admin](#site-admin)
       - [Site User](#site-user)
-    - [User Stories](#user-stories)
-    - [Site Owner Goals](#site-owner-goals)
+      - [Site Owner](#site-owner)
     - [User Requirements and Expectations](#user-requirements-and-expectations)
     - [Design Choices](#design-choices)
       - [Fonts](#fonts)
@@ -53,7 +52,7 @@ The **goals** of this project are:
 - The app that has different content functionalities for **site visitors**, **users** and **admin**
 - The app should also be able to store required data, which is available for access when required
 
-### User Goals ###
+### User Stories ###
 
 #### Site Visitor ####
 
@@ -86,13 +85,12 @@ The **goals** of this project are:
 - As a **site user** I want to be able to **edit existing** book reviews.
 - As a **site user** I want to be able to **delete** my book reviews.
 
-### User Stories ###
+#### Site Owner ####
 
-- As a  **user**, I want to 
-
-### Site Owner Goals ###
-
-- As a **site owner**, I want to 
+- As a **site owner**, I want to be able to provide a platform for the users to share their personal views about the books they have read.
+- As a **site owner**, I want to be able to encourage users to share their recommendations where they should buy the book they have reviewed, ideally independent online book shops.
+- As a **site owner**, I want to be able to build a community of book readers.
+- As a **site owner** , I want to be able to monetise the platform through donations to cover platform maintenance costs.
 
 ### User Requirements and Expectations ###
 
