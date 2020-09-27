@@ -1,10 +1,10 @@
 # Scribble #
 
-*[Scribble]() *describe what that is*
+[Scribble]() is an interactive book review app where site users create, read, update and delete their own content.
+
+About three years ago I have made a conscious decision to read more books. I have read quite a lot of them since but could never keep the track of them. I am also always interested in recommendations from other like-minded readers. When it come to creating my third milestone project at [Code Institute](https://codeinstitute.net/), it had to be a book review app where I can share my reviews with site visitors and other users.
 
 ![Site display on different screens](/wireframes/)
-
-Write up
 
 ---
 
@@ -15,6 +15,9 @@ Write up
   - [UX](#ux)
     - [Project Goals](#project-goals)
     - [User Goals](#user-goals)
+      - [Site Visitor](#site-visitor)
+      - [Site Admin](#site-admin)
+      - [Site User](#site-user)
     - [User Stories](#user-stories)
     - [Site Owner Goals](#site-owner-goals)
     - [User Requirements and Expectations](#user-requirements-and-expectations)
@@ -43,15 +46,21 @@ Write up
 
 ### Project Goals ###
 
-The **goal** of this project is 
+The **goals** of this project are:
+
+- Create an **interactive app** where site visitors can **create a user account**
+- The app allows the users to manage their content, such as **creating** it, **reading** it **editing** it later or **delete** it completely.
+- The app that has different content functionalities for **site visitors**, **users** and **admin**
+- The app should also be able to store required data, which is available for access when required
 
 ### User Goals ###
 
-- **xxx** yyy.
-- **xxx** yyy.
-- **xxx** yyy.
-- **xxx** yyy.
-- **xxx** yyy.
+#### Site Visitor ####
+
+#### Site Admin ####
+
+#### Site User ####
+
 
 ### User Stories ###
 
