@@ -25,7 +25,11 @@ About three years ago I have made a conscious decision to read more books. I hav
     - [Design Choices](#design-choices)
       - [**Fonts**](#fonts)
       - [**Colours**](#colours)
-      - [**Wireframes**](#wireframes)
+    - [Wireframes](#wireframes)
+      - [**Site Map**](#site-map)
+      - [**Site Layout**](#site-layout)
+      - [**User Account Creation**](#user-account-creation)
+      - [**Database design**](#database-design)
   - [Technologies](#technologies)
     - [Languages](#languages)
     - [Libraries & Tools](#libraries--tools)
@@ -122,14 +126,29 @@ I chose the colours that I felt are quite delicate and not overpowering the main
 
 ![Colour palette](/wireframes/colour_palette/color_palette.jpg)
 
-#### **Wireframes** ####
+### Wireframes ###
 
-Firstly, I have created a site [map](/wireframes/flowcharts/sitemap.png) to identify clear features the site will have when viewed by the visitor, user and admin. 
+#### **Site Map** ####
+
+Firstly, I have created a site [map](/wireframes/flowcharts/sitemap.png) to identify clear features the site will have when viewed by the visitor, registered user, and admin.
+
+#### **Site Layout** ####
 
 I designed my site moc-ups using [balsamiq wireframes](https://balsamiq.com/). I was focusing on defining the basic layout structure of the app and identifying how displays would change on different screen sizes such as [mobile and larger screens](/wireframes/site_wireframes/about.visitor.png).
 
+You can view all wireframes created for this project [here](/wireframes/site_wireframes).
+
+#### **User Account Creation** ####
 
 To make user account creation logic easier to understand and simplify the management of it, I have created [workflow-chart](/wireframes/flowcharts/account_creation.jpg).
+
+#### **Database design** ####
+
+Utilising the NoSQL features that MongoDB provides, I was able to map out the following collections:
+
+- [Review Collection](/wireframes/data_schemas/review_collection.json)
+- [User Collection](/wireframes/data_schemas/user_collections.json)
+
 
 
 [Back to content](#contents)
