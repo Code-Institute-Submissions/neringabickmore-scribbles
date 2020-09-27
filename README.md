@@ -30,6 +30,7 @@ About three years ago I have made a conscious decision to read more books. I hav
       - [**Site Layout**](#site-layout)
       - [**User Account Creation**](#user-account-creation)
       - [**Database design**](#database-design)
+      - [**Data Storage Types**](#data-storage-types)
   - [Technologies](#technologies)
     - [Languages](#languages)
     - [Libraries & Tools](#libraries--tools)
@@ -148,6 +149,17 @@ Utilising the NoSQL features that MongoDB provides, I was able to map out the fo
 
 - [Review Collection](/wireframes/data_schemas/review_collection.json)
 - [User Collection](/wireframes/data_schemas/user_collections.json)
+
+#### **Data Storage Types** ####
+
+The types of data that are store in the MongoDB database: 
+
+- ObjectID
+- String
+- Boolean
+- Object
+- Array
+- Binary
 
 
 
