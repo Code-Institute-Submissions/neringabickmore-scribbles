@@ -20,6 +20,8 @@ About three years ago I have made a conscious decision to read more books. I hav
       - [Site Admin](#site-admin)
       - [Registered Site User](#registered-site-user)
     - [User Requirements and Expectations](#user-requirements-and-expectations)
+      - [Requirements](#requirements)
+      - [Expectations](#expectations)
     - [Design Choices](#design-choices)
       - [Fonts](#fonts)
       - [Colours](#colours)
@@ -94,8 +96,19 @@ The **goals** of this project are:
 
 ### User Requirements and Expectations ###
 
-1. The site should have:
+#### Requirements ####
 
+- Visually pleasant app design
+- Easy site navigation
+- Information of the content layed out in a simple and clear way on both mobile and larger screens
+- Self-explanatory icons where text is absent
+
+#### Expectations ####
+
+- User information is protected by the site
+- User is able to manipulate elements of the particular page
+- Quick app load time
+- Users are able to find and contact admin when required (i.e. account deletion)
 
 ### Design Choices ###
 
