@@ -1,3 +1,4 @@
 .theia
 .gitpod.dockerfile
 .gitpod.yml
+.vscode
