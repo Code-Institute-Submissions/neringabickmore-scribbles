@@ -57,15 +57,21 @@ The **goals** of this project are:
 
 #### Site Visitor ####
 
-- As a **site visitor** I want to be able to find out the information about the app.
-- As a **site visitor** I want ot be able to find some book review samples.
-- As a **site visitor** I want to be able to login to my account.
-- As a **site visitor** I want to register if I don't have an account.
-- As a **site visitor** I want to find contact details for the site admin.
-- As a **site visitor** I want to find social media accounts connected to the site.
+- As a **site visitor** I want to be able to find out the information **about** the app.
+- As a **site visitor** I want ot be able to **discover** some book review samples.
+- As a **site visitor** I want to be able to **login** to my account.
+- As a **site visitor** I want to **register** if I don't have an account.
+- As a **site visitor** I want to find **contact details** for the site admin.
+- As a **site visitor** I want to find **social media** accounts connected to the site.
 
 #### Site Admin ####
 
+- As a **site admin** I want to be able to **access** needed **information** about **registered** site **users**.
+- As a **site admin** I want to be able to **delete** registered users.
+- As a **site admin** I want to be able to **discover and access** all of the book reviews on the site.
+- As a **site admin** I want to be able to **delete** book reviews.
+- As a **site admin** I want to be able to **edit** book review template.
+  
 #### Site User ####
 
 
