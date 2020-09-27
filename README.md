@@ -16,16 +16,16 @@ About three years ago I have made a conscious decision to read more books. I hav
     - [Project Goals](#project-goals)
     - [Site Owner Goals](#site-owner-goals)
     - [User Stories](#user-stories)
-      - [Site Visitor](#site-visitor)
-      - [Site Admin](#site-admin)
-      - [Registered Site User](#registered-site-user)
+      - [**Site Visitor**](#site-visitor)
+      - [**Site Admin**](#site-admin)
+      - [**Registered Site User**](#registered-site-user)
     - [User Requirements and Expectations](#user-requirements-and-expectations)
-      - [Requirements](#requirements)
-      - [Expectations](#expectations)
+      - [**Requirements**](#requirements)
+      - [**Expectations**](#expectations)
     - [Design Choices](#design-choices)
-      - [Fonts](#fonts)
-      - [Colours](#colours)
-      - [Wireframes](#wireframes)
+      - [**Fonts**](#fonts)
+      - [**Colours**](#colours)
+      - [**Wireframes**](#wireframes)
   - [Technologies](#technologies)
     - [Languages](#languages)
     - [Libraries & Tools](#libraries--tools)
@@ -63,7 +63,7 @@ The **goals** of this project are:
 
 ### User Stories ###
 
-#### Site Visitor ####
+#### **Site Visitor** ####
 
 - As a **site visitor** I want to be able to find out the information **about** the app.
 - As a **site visitor** I want ot be able to **discover** some book review samples.
@@ -72,7 +72,7 @@ The **goals** of this project are:
 - As a **site visitor** I want to find **contact details** for the site admin.
 - As a **site visitor** I want to find **social media** accounts connected to the site.
 
-#### Site Admin ####
+#### **Site Admin** ####
 
 - As a **site admin** I want to be able to **access** needed **information** about **registered** site **users**.
 - As a **site admin** I want to be able to **delete** registered users.
@@ -80,7 +80,7 @@ The **goals** of this project are:
 - As a **site admin** I want to be able to **delete** book reviews.
 - As a **site admin** I want to be able to **edit** book review template.
   
-#### Registered Site User ####
+#### **Registered Site User** ####
 
 - As a **site user** I want to be able to **Login** to my account.
 - As a **site user** I want to be able to  **Logout** of my account.
@@ -96,14 +96,14 @@ The **goals** of this project are:
 
 ### User Requirements and Expectations ###
 
-#### Requirements ####
+#### **Requirements** ####
 
 - Visually pleasant app design
 - Easy site navigation
 - Information of the content layed out in a simple and clear way on both mobile and larger screens
 - Self-explanatory icons where text is absent
 
-#### Expectations ####
+#### **Expectations** ####
 
 - User information is protected by the site
 - User is able to manipulate elements of the particular page
@@ -114,15 +114,15 @@ The **goals** of this project are:
 
 The aim of the site design is to ensure the focus is on the book reviews. I have chosen neutral color palette and will adopt minimalistic site features throughout. Icons used on the site are easy to understand and read and therefore text use is avoided where possible.
 
-#### Fonts ####
+#### **Fonts** ####
 
-#### Colours ####
+#### **Colours** ####
 
-I chose the colours that I felt are quite delicate and not overpowering the main content of the app. 
+I chose the colours that I felt are quite delicate and not overpowering the main content of the app.
+
 ![Colour palette](/wireframes/colour_palette/color_palette.jpg)
 
-  
-#### Wireframes ####
+#### **Wireframes** ####
 
 Firstly, I have created a site [map](/wireframes/flowcharts/sitemap.png) to identify clear features the site will have when viewed by the visitor, user and admin. 
 
