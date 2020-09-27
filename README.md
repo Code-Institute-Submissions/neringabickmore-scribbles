@@ -74,6 +74,17 @@ The **goals** of this project are:
   
 #### Site User ####
 
+- As a **site user** I want to be able to **Login** to my account.
+- As a **site user** I want to be able to  **Logout** of my account.
+- As a **site user** I want to be able to **edit my account** information.
+- As a **site user** I want to be able to **view other users' book reviews**.
+- As a **site user** I want to be able to ***heart* other users' book reviews**.
+- As a **site user** I want to be able to **access** all of the **other users' book reviews** I have *hearted* on a **separate page** such as **favorites**.
+- As a **site user** I want to be able to **remove other user's book reviews from my *favorites***.
+- As a **site user** I want to be able to **access my book reviews** I have created before.
+- As a **site user** I want to be able to **create new** book reviews.
+- As a **site user** I want to be able to **edit existing** book reviews.
+- As a **site user** I want to be able to **delete** my book reviews.
 
 ### User Stories ###
 
