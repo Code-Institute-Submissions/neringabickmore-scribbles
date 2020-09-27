@@ -14,11 +14,11 @@ About three years ago I have made a conscious decision to read more books. I hav
   - [Contents](#contents)
   - [UX](#ux)
     - [Project Goals](#project-goals)
+    - [Site Owner Goals](#site-owner-goals)
     - [User Stories](#user-stories)
       - [Site Visitor](#site-visitor)
       - [Site Admin](#site-admin)
-      - [Site User](#site-user)
-      - [Site Owner](#site-owner)
+      - [Registered Site User](#registered-site-user)
     - [User Requirements and Expectations](#user-requirements-and-expectations)
     - [Design Choices](#design-choices)
       - [Fonts](#fonts)
@@ -52,6 +52,13 @@ The **goals** of this project are:
 - The app that has different content functionalities for **site visitors**, **users** and **admin**
 - The app should also be able to store required data, which is available for access when required
 
+### Site Owner Goals ###
+
+- To provide a platform for the users to share their personal views about the books they have read.
+- Encourage users to share their recommendations where they should buy the book they have reviewed, ideally independent online book shops.
+- Build a community of book readers.
+- Monetise the platform through donations to cover platform maintenance costs.
+
 ### User Stories ###
 
 #### Site Visitor ####
@@ -71,7 +78,7 @@ The **goals** of this project are:
 - As a **site admin** I want to be able to **delete** book reviews.
 - As a **site admin** I want to be able to **edit** book review template.
   
-#### Site User ####
+#### Registered Site User ####
 
 - As a **site user** I want to be able to **Login** to my account.
 - As a **site user** I want to be able to  **Logout** of my account.
@@ -84,13 +91,6 @@ The **goals** of this project are:
 - As a **site user** I want to be able to **create new** book reviews.
 - As a **site user** I want to be able to **edit existing** book reviews.
 - As a **site user** I want to be able to **delete** my book reviews.
-
-#### Site Owner ####
-
-- As a **site owner**, I want to be able to provide a platform for the users to share their personal views about the books they have read.
-- As a **site owner**, I want to be able to encourage users to share their recommendations where they should buy the book they have reviewed, ideally independent online book shops.
-- As a **site owner**, I want to be able to build a community of book readers.
-- As a **site owner** , I want to be able to monetise the platform through donations to cover platform maintenance costs.
 
 ### User Requirements and Expectations ###
 
