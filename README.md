@@ -39,10 +39,10 @@ About three years ago I have made a conscious decision to read more books. I hav
     - [Future Features](#future-features)
   - [Testing](#testing)
   - [Deployment](#deployment)
+    - [Cloning *Scribbles* from GitHub](#cloning-scribbles-from-github)
+    - [Deploying Scribbles to Heroku](#deploying-scribbles-to-heroku)
   - [Credits](#credits)
-    - [Audio](#audio)
     - [Images](#images)
-    - [Colour](#colour)
     - [Image editing](#image-editing)
     - [Code ideas](#code-ideas)
   - [Acknowledgements](#acknowledgements)
@@ -295,7 +295,7 @@ Testing information can be found in a separate [Testing.md](Testing.md) file.
 
 *Scribbles* was developed using Visual Studio Code, using Git and GitHub to host the repository.
 
-Cloning *Scribbles* from GitHub:
+### Cloning *Scribbles* from GitHub ###
 
 **Ensure** you have the following installed:
 
@@ -365,23 +365,42 @@ or
 Python3 app.py
 ```
 
+### Deploying Scribbles to Heroku ###
+
+1: **Create** a requirements.txt file using the following command.
+
+```bash
+pip3 freeze > requirements.txt
+```
+
+2: **Create** a Procfile with the following command.
+
+```bash
+echo web: python3 app.py > Procfile
+```
+
+3: **Push** these newly created files to your repository.
+4: **Create** a new app for this project on the Heroku Dashboard.
+5: **Select** your **deployment** method by clicking on the **deployment** method button and select GitHub.
+6: On the dashboard, **set** the following config variables:
+
+**Key**|**Value**
+:-----:|:-----:
+IP|0.0.0.0
+PORT|5000
+MONGO\_URI|mongodb+srv://<username>:<password>@<cluster\_name>-qtxun.mongodb.net/<database\_name>?retryWrites=true&w=majority
+SECRET\_KEY|"your\_secret\_key"
+
+7: Click the deploy button on the Heroku dashboard.
+8: The site has been deployed the Heroku.
+
 [Back to content](#contents)
 
 ---
 
 ## Credits ##
 
-### Audio ###
-
 ### Images ###
-
-You can find the images of the coins used for the site [here](/assets/images). I have sourced them through various websites, which are free to use:
-
-- []()
-
-### Colour ###
-
-I have identified the colour palette on []()
 
 ### Image editing ###
 
