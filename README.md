@@ -1,6 +1,6 @@
-# Scribble #
+# Scribbles #
 
-[Scribble]() is an interactive book review app where site users create, read, update and delete their own content.
+[Scribbles]() is an interactive book review app where site users create, read, update and delete their own content.
 
 About three years ago I have made a conscious decision to read more books. I have read quite a lot of them since but could never keep the track of them. I am also always interested in recommendations from other like-minded readers. When it come to creating my third milestone project at [Code Institute](https://codeinstitute.net/), it had to be a book review app where I can share my reviews with site visitors and other users.
 
@@ -10,7 +10,7 @@ About three years ago I have made a conscious decision to read more books. I hav
 
 ## Contents ##
 
-- [Scribble](#scribble)
+- [Scribbles](#scribbles)
   - [Contents](#contents)
   - [UX](#ux)
     - [Project Goals](#project-goals)
@@ -99,6 +99,8 @@ The **goals** of this project are:
 - As a **site user** I want to be able to **edit existing** book reviews.
 - As a **site user** I want to be able to **delete** my book reviews.
 
+[Back to content](#contents)
+
 ### User Requirements and Expectations ###
 
 #### **Requirements** ####
@@ -114,6 +116,8 @@ The **goals** of this project are:
 - User is able to manipulate elements of the particular page
 - Quick app load time
 - Users are able to find and contact admin when required (i.e. account deletion)
+
+[Back to content](#contents)
 
 ### Design Choices ###
 
@@ -136,6 +140,8 @@ I chose easy to read and light fonts for this app. I am keeping it simple and wi
 I chose the colours that I felt are quite delicate and not overpowering the main content of the app.
 
 ![Colour palette](/wireframes/colour_palette/color_palette.jpg)
+
+[Back to content](#contents)
 
 ### Wireframes ###
 
@@ -240,17 +246,19 @@ The game has different layout options, focused on *mobile-first* design in mind 
 
 ![site views on different displays](/wireframes/responsive-design.jpg)
 
+[Back to content](#contents)
+
 ---
 
 ## Testing ##
 
 Testing information can be found in a separate [testing.md](testing.md) file.
 
+[Back to content](#contents)
+
 ---
 
 ## Deployment ##
-
-
 
 [Back to content](#contents)
 
