@@ -121,6 +121,16 @@ The aim of the site design is to ensure the focus is on the book reviews. I have
 
 #### **Fonts** ####
 
+I chose easy to read and light fonts for this app. I am keeping it simple and will only use two of the fonts:
+
+- *Headers, titles*
+
+  ```font-family: 'Rubik', sans-serif;```
+
+- *Paragraphs, descriptions*
+
+  ```font-family: 'Lato', sans-serif;```
+
 #### **Colours** ####
 
 I chose the colours that I felt are quite delicate and not overpowering the main content of the app.
