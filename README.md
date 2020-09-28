@@ -265,7 +265,7 @@ The user is able to search books by *title*, *author*, and *genre*.
 
 - **Site admin** edit
 
-Site admin feature allows deletion of inappropriate reviews, change of book review form items, as well as deletion of the registered user accounts. 
+Site admin feature allows deletion of inappropriate reviews, change of book review form items, as well as deletion of the registered user accounts.
 
 ### Future Features ###
 
@@ -285,13 +285,85 @@ The user gets a notification before *delete* action is activated in app commands
 
 ## Testing ##
 
-Testing information can be found in a separate [testing.md](testing.md) file.
+Testing information can be found in a separate [Testing.md](Testing.md) file.
 
 [Back to content](#contents)
 
 ---
 
 ## Deployment ##
+
+*Scribbles* was developed using Visual Studio Code, using Git and GitHub to host the repository.
+
+Cloning *Scribbles* from GitHub:
+
+**Ensure** you have the following installed:
+
+- PIP
+- Python 3
+- Git
+
+**Make sure you have an account at [MongoDB](https://www.mongodb.com/) in order to construct the database.**
+
+*WARNING: You may need to follow a different guide based on the OS you are using. For more information, read up [here](https://python.readthedocs.io/en/latest/library/venv.html)*
+
+1: **Clone** the *Scribbles* repository by either downloading from [source](https://github.com/neringabickmore/scribbles), or if you have Git installed typing the following command into your terminal.
+
+```bash
+git clone https://github.com/geomint/beertime
+```
+
+2: **Navigate** to this folder in your terminal.
+3: **Enter** the following command into your terminal.
+
+```bash
+python3 -m .venv venv
+```
+
+4: **Initilaize** the environment by using the following command.
+
+```bash
+.venv\bin\activate
+```
+
+5: **Install** the relevant requirements & dependancies from the requirements.txt file.
+
+```bash
+pip3 -r requirements.txt
+```
+
+6: In your IDE now **create** a file where you can store your SECRET_KEY and your MONGO_URI, follow the schema structure located in data/schemas to properly setup the Mongo Collections.
+
+*NOTE: I developed this website on Visual Studio Code and used the following settings.json file, delete and replace with your values.*
+
+```json
+{
+    "python.pythonPath": "env/bin/python",
+    "python.terminal.activateEnvironment": true,
+    "python.linting.enabled": true,
+    "python.linting.pylintArgs": ["--load-plugins=pylint_flask"],
+    "files.autoSave": "onFocusChange",
+    "files.useExperimentalFileWatcher": true,
+    "terminal.integrated.env.osx": {
+      "SECRET_KEY": "<your_secret_key>",
+      "DEV": "1",
+      "FLASK_DEBUG": "1",
+      "MONGO_URI": "<your_mongo_uri>"
+    }
+}
+```
+
+7: Run the application using
+
+```bash
+flask run
+```
+
+or
+
+```bash
+Python3 app.py
+```
 
 [Back to content](#contents)
 
