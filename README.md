@@ -410,6 +410,9 @@ SECRET\_KEY|"your\_secret\_key"
 
 ### Code ideas ###
 
+- To enable better understanding on how to plan database design, I have [referred to](https://github.com/Geomint/beer-time) the fellow student project.
+
+
 [Back to content](#contents)
 
 ---
