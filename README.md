@@ -35,7 +35,8 @@ About three years ago I have made a conscious decision to read more books. I hav
     - [Languages](#languages)
     - [Libraries & Tools](#libraries--tools)
   - [Features](#features)
-    - [Features Implemented](#features-implemented)
+    - [Implemented Features](#implemented-features)
+    - [Future Features](#future-features)
   - [Testing](#testing)
   - [Deployment](#deployment)
   - [Credits](#credits)
@@ -238,13 +239,45 @@ The types of data that are store in the MongoDB database:
 
 ## Features ##
 
-### Features Implemented ###
+### Implemented Features ###
 
 - **Responsive design**
 
-The game has different layout options, focused on *mobile-first* design in mind as more users are expected to use mobile or tablet devices than desktop.
+The app has a different layout options, focused on *mobile-first* design in mind as more users are expected to use mobile rather than larger devices, such as a tablet or a laptop/desktop.
 
-![site views on different displays](/wireframes/responsive-design.jpg)
+![site views on different displays]()
+
+- **Sliding banner** on a home/about page
+  
+- **Register** account form
+
+- **Sign in/out** functionality
+
+- **Favorites** functionality
+
+- **Easy navigation** to external sites
+
+The user is redirected to a website when clicks on *purchase* a book button.
+
+- **Search function**
+
+The user is able to search books by *title*, *author*, and *genre*.
+
+- **Site admin** edit
+
+Site admin feature allows deletion of inappropriate reviews, change of book review form items, as well as deletion of the registered user accounts. 
+
+### Future Features ###
+
+- **Language Selector**
+  
+The user is able to choose English or Lithuanian language to view the site.
+  
+- **Defence mechanism**
+  
+The user gets a notification before *delete* action is activated in app commands.
+
+- **Password re-set**
 
 [Back to content](#contents)
 
