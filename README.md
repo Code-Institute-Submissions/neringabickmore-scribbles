@@ -71,34 +71,34 @@ The **goals** of this project are:
 
 #### **Site Visitor** ####
 
-- As a **site visitor** I want to be able to find out the information **about** the app.
-- As a **site visitor** I want ot be able to **discover** some book review samples.
-- As a **site visitor** I want to be able to **login** to my account.
-- As a **site visitor** I want to **register** if I don't have an account.
-- As a **site visitor** I want to find **contact details** for the site admin.
-- As a **site visitor** I want to find **social media** accounts connected to the site.
+- As a **user** I want to be able to find out the information **about** the app.
+- As a **user** I want ot be able to **discover** some book review samples.
+- As a **user** I want to be able to **login** to my account.
+- As a **user** I want to **register** if I don't have an account.
+- As a **user** I want to find **contact details** for the site admin.
+- As a **user** I want to find **social media** accounts connected to the site.v                    bvZ
 
 #### **Site Admin** ####
 
-- As a **site admin** I want to be able to **access** needed **information** about **registered** site **users**.
-- As a **site admin** I want to be able to **delete** registered users.
-- As a **site admin** I want to be able to **discover and access** all of the book reviews on the site.
-- As a **site admin** I want to be able to **delete** book reviews.
-- As a **site admin** I want to be able to **edit** book review template.
+- As a **user** I want to be able to **access** needed **information** about **registered** site **users**.
+- As a **user** I want to be able to **delete** registered users.
+- As a **user** I want to be able to **discover and access** all of the book reviews on the site.
+- As a **user** I want to be able to **delete** book reviews.
+- As a **user** I want to be able to **edit** book review template.
   
 #### **Registered Site User** ####
 
-- As a **site user** I want to be able to **Login** to my account.
-- As a **site user** I want to be able to  **Logout** of my account.
-- As a **site user** I want to be able to **edit my account** information.
-- As a **site user** I want to be able to **view other users' book reviews**.
-- As a **site user** I want to be able to ***heart* other users' book reviews**.
-- As a **site user** I want to be able to **access** all of the **other users' book reviews** I have *hearted* on a **separate page** such as **favorites**.
-- As a **site user** I want to be able to **remove other user's book reviews from my *favorites***.
-- As a **site user** I want to be able to **access my book reviews** I have created before.
-- As a **site user** I want to be able to **create new** book reviews.
-- As a **site user** I want to be able to **edit existing** book reviews.
-- As a **site user** I want to be able to **delete** my book reviews.
+- As a **user** I want to be able to **Login** to my account.
+- As a **user** I want to be able to  **Logout** of my account.
+- As a **user** I want to be able to **edit my account** information.
+- As a **user** I want to be able to **view** other users' book reviews.
+- As a **user** I want to be able to *heart* other users' book **reviews**.
+- As a **user** I want to be able to **access** *hearted* books on a **favorites** page.
+- As a **user** I want to be able to **remove other user's book reviews from my *favorites***.
+- As a **user** I want to be able to **access my book reviews** I have created before.
+- As a **user** I want to be able to **create new** book reviews.
+- As a **user** I want to be able to **edit existing** book reviews.
+- As a **user** I want to be able to **delete** my book reviews.
 
 [Back to content](#contents)
 
