@@ -140,7 +140,7 @@ I chose easy to read and light fonts for this app. I am keeping it simple and wi
 
 I chose the colours that I felt are quite delicate and not overpowering the main content of the app.
 
-![Colour palette](/wireframes/colour_palette/color_palette.jpg)
+![Colour palette](/wireframes/colour-palette/color-palette.jpg)
 
 [Back to content](#contents)
 
@@ -152,19 +152,19 @@ Firstly, I have created a site [map](/wireframes/flowcharts/sitemap.png) to iden
 
 #### **Site Layout** ####
 
-I designed my site moc-ups using [balsamiq wireframes](https://balsamiq.com/). I was focusing on defining the basic layout structure of the app and identifying how displays would change on different screen sizes such as [mobile and larger screens](/wireframes/site_wireframes/about.visitor.png).
+I designed my site moc-ups using [balsamiq wireframes](https://balsamiq.com/). I was focusing on defining the basic layout structure of the app and identifying how displays would change on different screen sizes such as [mobile and larger screens](/wireframes/site-wireframes/about.visitor.png).
 
-You can view all wireframes created for this project [here](/wireframes/site_wireframes).
+You can view all wireframes created for this project [here](/wireframes/site-wireframes).
 
 #### **User Account Creation** ####
 
-To make user account creation logic easier to understand and simplify the management of it, I have created [workflow-chart](/wireframes/flowcharts/account_creation.jpg).
+To make user account creation logic easier to understand and simplify the management of it, I have created [workflow-chart](/wireframes/flowcharts/account-creation.jpg).
 
 #### **Database design** ####
 
 Utilising the NoSQL features that MongoDB provides, I was able to map out the following collections:
 
-[Review Collection](/wireframes/data_schemas/review_collection.json)
+[Review Collection](/wireframes/data-schemas/review-collection.json)
   
 **Title**|**Key in Collection**|**Data Type**
 :-----:|:-----:|:-----:
@@ -181,7 +181,7 @@ Book rating|rating|string
 Image|link_to_image|string
 Buy a Book|link_to_buy|string
 
-[User Collection](/wireframes/data_schemas/user_collections.json)
+[User Collection](/wireframes/data-schemas/user-collections.json)
 
 **Title**|**Key in Collection**|**Data Type**
 :-----:|:-----:|:-----:
