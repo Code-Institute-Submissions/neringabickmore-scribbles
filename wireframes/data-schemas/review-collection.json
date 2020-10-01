@@ -1,23 +1,16 @@
 [
     {
         "_id": "ObjectId()",
-        "title": "",
-        "author": "",
-        "genre": {
-            "type": "",
-            "books": "ObjectId()"
-        },
-        "length": "",
-        "ease_of_reading": "",
-        "plot_summary": "",
-        "favourite_quote": "",
-        "emoji": [
-            "",
-            "",
-            ""
-        ],
-        "rating": "",
-        "link_to_image": "",
-        "link_to_buy": ""
+        "title": "string",
+        "author": "string",
+        "genre": "ObjectID()",
+        "length": "string",
+        "ease_of_reading": "string",
+        "plot_summary": "string",
+        "favorite_quote": "string",
+        "emoji": ["ObjectId()"],
+        "rating": "string",
+        "link_to_image": "string",
+        "link_to_buy": "string"
     }
 ]
