@@ -313,71 +313,77 @@ Testing information can be found in a separate [Testing.md](Testing.md) file.
 
 **Ensure** you have the following installed:
 
-- PIP
-- Python 3
-- Git
+- [PIP](https://pypi.org/project/pip/)
+- [Python 3](https://www.python.org/)
+- [Git](https://git-scm.com/)
+- [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli)
 
 **Make sure you have an account at [MongoDB](https://www.mongodb.com/) in order to construct the database.**
 
 *WARNING: You may need to follow a different guide based on the OS you are using. For more information, read up [here](https://python.readthedocs.io/en/latest/library/venv.html)*
 
-1: **Clone** the *Scribbles* repository by either downloading from [source](https://github.com/neringabickmore/scribbles), or if you have Git installed typing the following command into your terminal.
+1: **Clone** the *Scribbles* repository by either downloading from [source](https://github.com/neringabickmore/scribbles), or if you have Git installed typing the following command into your terminal:
 
 ```bash
 git clone https://github.com/neringabickmore/scribbles
 ```
 
-2: **Navigate** to this folder in your terminal.
-3: **Enter** the following command into your terminal.
+2: **Navigate** to this folder in your terminal window and **install** required modules to run the application using the following command:
 
 ```bash
-python3 -m .venv venv
+python -m pip -r requirements.txt
 ```
 
-4: **Initilaize** the environment by using the following command.
+3: **Initilaize** virtual environment by typing the following command into the terminal:
 
 ```bash
-.venv\bin\activate
+py -m venv virtual
 ```
 
-5: **Install** the relevant requirements & dependancies from the requirements.txt file.
+4: If the command doesn't run, you may also need to set user policy to *un-restricted* by typing the following command in your terminal:
 
 ```bash
-pip3 -r requirements.txt
+Set-ExecutionPolicy -Scope CurrentUser
 ```
 
-6: In your IDE now **create** a file where you can store your SECRET_KEY and your MONGO_URI, follow the schema structure located in data/schemas to properly setup the Mongo Collections.
-
-*NOTE: I developed this website on Visual Studio Code and used the following settings.json file, delete and replace with your values.*
-
-```json
-{
-    "python.pythonPath": "env/bin/python",
-    "python.terminal.activateEnvironment": true,
-    "python.linting.enabled": true,
-    "python.linting.pylintArgs": ["--load-plugins=pylint_flask"],
-    "files.autoSave": "onFocusChange",
-    "files.useExperimentalFileWatcher": true,
-    "terminal.integrated.env.osx": {
-      "SECRET_KEY": "<your_secret_key>",
-      "DEV": "1",
-      "FLASK_DEBUG": "1",
-      "MONGO_URI": "<your_mongo_uri>"
-    }
-}
-```
-
-7: Run the application using
+then:
 
 ```bash
-flask run
+unrestricted
 ```
 
-or
+5: In MongoDB, create a new database called *scribbles* with four collections: *users*, *reviews*, *genre*, and *emoji*.
+
+6: Back in your VS Code, create a file to hold your environment variables and call it *env.py*. Make sure you add file to your *.gitignore* file before committing.
+
+If you do end up committing by mistake, you can correct this by typing the following command:
 
 ```bash
-Python3 run.py
+git rm -r --cached env.py
+echo env.py >> .gitignore
 ```
+
+5: Your env.py file should contain the following:
+
+```bash
+import os
+
+os.environ.setdefault("IP", "0.0.0.0")
+os.environ.setdefault("PORT", "5000")
+os.environ.setdefault("SECRET_KEY", "YOUR_SECRET_KEY")
+os.environ.setdefault("MONGO_URI", "mongodb+srv://Rosie:<password>@myfirstcluster.tmruz.mongodb.net/<database_name>?retryWrites=true&w=majority")
+os.environ.setdefault("MONGO_DBNAME", "YOUR_DATABASE_NAME")
+```
+
+*Please make sure you update your **SECRET_KEY**, **password**, **database_name**, and **DATABASE_NAME***
+
+7: You can now run your application locally by typing the following command in your terminal:
+
+```bash
+python run.py
+```
+
+*You may need to change local host in browser to 127.0.0.1:5000*
 
 ### Deploying Scribbles to Heroku ###
 
