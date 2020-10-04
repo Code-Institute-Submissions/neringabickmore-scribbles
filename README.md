@@ -387,29 +387,43 @@ python run.py
 
 ### Deploying Scribbles to Heroku ###
 
-1: **Create** a requirements.txt file using the following command.
+1: **Login** to Heroku and create a new app.
+
+1: **Create** a requirements.txt file using the following command:
 
 ```bash
-pip3 freeze > requirements.txt
+pip3 freeze --local > requirements.txt
 ```
 
-2: **Create** a Procfile with the following command.
+2: **Create** a Procfile with the following command:
 
 ```bash
-echo web: python3 app.py > Procfile
+echo web: python app.py > Procfile
 ```
 
-3: **Push** these newly created files to your repository.
-4: **Create** a new app for this project on the Heroku Dashboard.
-5: **Select** your **deployment** method by clicking on the **deployment** method button and select GitHub.
-6: On the dashboard, **set** the following config variables:
+3: **Push** these newly created files to your repository master.
+4: **Add heroku remote** to your git repository by getting the heroku git URL from the heroku account settings. Then type the following: 
+
+```bash
+git remote add heroku https://git.heroku.com/your-heroku-repo
+```
+
+5: Push *scribbles* to your heroku:
+
+```bash
+git push heroku master
+```
+
+6: In your heroku app, **set** the following variables:
 
 **Key**|**Value**
 :-----:|:-----:
-IP|0.0.0.0
+HOSTNAME|0.0.0.0
 PORT|5000
-MONGO\_URI|mongodb+srv://<username>:<password>@<cluster\_name>-qtxun.mongodb.net/<database\_name>?retryWrites=true&w=majority
-SECRET\_KEY|"your\_secret\_key"
+MONGO_URI|mongodb+srv://<username>:<password>@<cluster\_name>-qtxun.mongodb.net/<database\_name>?retryWrites=true&w=majority
+SECRET_KEY|"your\_secret\_key"
+
+*Please make sure you enter your own *SECRET_KEY*, and *MONGO_URL*.
 
 7: Click the deploy button on the Heroku dashboard.
 8: The site has been deployed the Heroku.
