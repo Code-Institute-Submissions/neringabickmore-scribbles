@@ -2,3 +2,5 @@
 .gitpod.dockerfile
 .gitpod.yml
 .vscode
+env.py
+__pycache__/
