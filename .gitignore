@@ -3,4 +3,4 @@
 .gitpod.yml
 .vscode
 env.py
-__pycache__/
+__pycache__
