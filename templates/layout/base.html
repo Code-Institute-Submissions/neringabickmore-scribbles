@@ -7,13 +7,20 @@
 
 </head>
 
-{% include 'components/header/header.html' %}
-
 <body>
+
+    <header class="container">
+        {% include 'components/header/header.html' %}
+    </header>
+       
     <main class="container">
         {% block content %} {% endblock %}
     </main>
-    {% include 'components/footer/footer.html' %}
+
+    <footer class="container">
+      {% include 'components/footer/footer.html' %}  
+    </footer>
+    
     {% include 'layout/scripts.html' %}
 
 </body>
