@@ -25,6 +25,16 @@ def about():
     return render_template("pages/about.html")
 
 
+@app.route("/discover")
+def discover():
+    return render_template("pages/discover.html")
+
+
+@app.route("/favorites")
+def favorites():
+    return render_template("pages/favorites.html")
+
+
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
