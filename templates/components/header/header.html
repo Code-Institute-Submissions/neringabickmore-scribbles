@@ -10,17 +10,29 @@
     <div class="collapse navbar-collapse nav-text-color" id="navbarNavDropdown">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item mr-2">
-                <a href="{{ url_for('about') }}" class="nav-link nav-text-color book-button">About</a>
+                <a href="{{ url_for('discover') }}" class="nav-link nav-text-color">Discover</a>
+            </li>
+            {% if session.user %}
+            <li class="nav-item mr-2">
+                <a href="{{ url_for('favorites') }}" class="nav-link nav-text-color">Favorites</a>
             </li>
             <li class="nav-item mr-2">
-                <a href="#" class="nav-link nav-text-color book-button">Discover</a>
+                <a href="#" class="nav-link nav-text-color">My Reviews</a>
             </li>
             <li class="nav-item mr-2">
-                <a href="{{ url_for('login') }}" class="nav-link nav-text-color book-button">Login</a>
+                <a href="{{ url_for('account', username=session['user']) }}" class="nav-link nav-text-color">Account</a>
+            </li>
+            {% else %}
+            <li class="nav-item mr-2">
+                <a href="{{ url_for('about') }}" class="nav-link nav-text-color">About</a>
             </li>
             <li class="nav-item mr-2">
-                <a href="{{ url_for('register') }}" class="nav-link nav-text-color book-button">Register</a>
+                <a href="{{ url_for('login') }}" class="nav-link nav-text-color">Login</a>
             </li>
+            <li class="nav-item mr-2">
+                <a href="{{ url_for('register') }}" class="nav-link nav-text-color">Register</a>
+            </li>
+            {% endif %}
         </ul>
     </div>
 </nav>
