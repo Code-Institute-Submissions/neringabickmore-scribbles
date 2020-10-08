@@ -25,9 +25,15 @@ def about():
     return render_template("pages/about.html")
 
 
-@app.route("/account")
-def account():
-    return render_template("components/forms/account.html")
+@app.route("/account/<username>", methods=["GET", "POST"])
+def account(username):
+    # grab the session user's username from db
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
+
+    if session["user"]:
+        return render_template("components/forms/account.html", username=username)
+    return redirect(url_for("login"))
 
 
 @app.route("/favorites")
@@ -94,7 +100,6 @@ def discover(username):
 
     if session["user"]:
         return render_template("pages/discover.html", username=username)
-    
     return redirect(url_for("login"))
 
 

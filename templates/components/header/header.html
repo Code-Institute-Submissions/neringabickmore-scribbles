@@ -20,11 +20,11 @@
                 <a href="#" class="nav-link nav-text-color">My Reviews</a>
             </li>
             <li class="nav-item mr-2">
-                <a href="{{ url_for('account') }}" class="nav-link nav-text-color">Account</a>
+                <a href="{{ url_for('account', username=session['user']) }}" class="nav-link nav-text-color">Account</a>
             </li>
             {% else %}
             <li class="nav-item mr-2">
-                <a href="{{ url_for('about', username=session['user']) }}" class="nav-link nav-text-color">About</a>
+                <a href="{{ url_for('about') }}" class="nav-link nav-text-color">About</a>
             </li>
             <li class="nav-item mr-2">
                 <a href="{{ url_for('login') }}" class="nav-link nav-text-color">Login</a>
