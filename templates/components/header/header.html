@@ -20,12 +20,12 @@
                 <a href="#" class="nav-link nav-text-color">My Reviews</a>
             </li>
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="{{ url_for('account', username=session['user']) }}" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Account
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <a class="dropdown-item" href="{{ url_for('logout') }}">Log Out</a>
-                  <a class="dropdown-item" href="#">Edit Account</a>
+                  <a class="dropdown-item" href="{{ url_for('edit_account', username=session['user']) }}">Edit Account</a>
                 </div>
               </li>
             {% else %}
