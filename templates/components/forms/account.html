@@ -3,4 +3,21 @@
 
 <h1>{{ username }}'s Profile</h1>
 
+<div class="row">
+    <div class="col-12">
+        <form method="POST" action="{{ url_for('account', username=session['user']) }}">
+            <!-- Username -->
+            <div class="form-group">
+                <input id="username" name="username" type="text" class="form-control" minlength="5" maxlength="15"
+                    pattern="^[a-zA-Z0-9{5,15}$" value="{{ username.username }}" required>
+                <label for="username">Username</label>
+            </div>
+            <!-- Submit/Cancel buttons-->
+            <a href="{{ url_for('discover', username=username) }}" class="btn-large red text-shadow">
+                Cancel <i class="fas fa-times-circle right"></i>
+            </a>
+            <button type="submit" class="btn btn-primary">Change Username</button>
+        </form>
+</div>
+
 {% endblock %}
