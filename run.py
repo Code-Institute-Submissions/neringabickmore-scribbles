@@ -92,6 +92,13 @@ def login():
     return render_template("components/forms/login.html")
 
 
+@app.route("/logout")
+def logout():
+    # remove user from session cookies
+    session.pop("user")
+    return redirect(url_for("login"))
+
+
 @app.route("/discover/<username>", methods=["GET", "POST"])
 def discover(username):
     # grab the session user's username from db
