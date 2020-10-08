@@ -25,14 +25,14 @@ def about():
     return render_template("pages/about.html")
 
 
-@app.route("/edit_account/<username>", methods=["GET", "POST"])
-def edit_account(username):
+@app.route("/account/<username>", methods=["GET", "POST"])
+def account(username):
     # grab the session user's username from db
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
 
     if session["user"]:
-        return render_template("components/forms/edit_account.html", username=username)
+        return render_template("components/forms/account.html", username=username)
     return redirect(url_for("login"))
 
 
