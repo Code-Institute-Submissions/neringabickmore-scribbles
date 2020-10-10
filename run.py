@@ -25,14 +25,13 @@ def about():
     return render_template("pages/about.html")
 
 
-@app.route("/account/<username>", methods=["GET", "POST"])
-def account(username):
-    # grab the session user's username from db
-    username = mongo.db.users.find_one(
-        {"username": session["user"]})["username"]
-
+@app.route("/account", methods=["GET", "POST"])
+def account():
     if session["user"]:
-        return render_template("components/forms/account.html", username=username)
+        # grab the session user's credentials from database
+        user_profile = mongo.db.users.find_one({"username": session["user"]})
+        print(user_profile) 
+        return render_template("pages/account.html", user=user_profile)
     return redirect(url_for("login"))
 
 
