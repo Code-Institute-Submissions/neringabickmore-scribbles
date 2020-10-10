@@ -10,7 +10,7 @@
     <div class="collapse navbar-collapse nav-text-color" id="navbarNavDropdown">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item mr-2">
-                <a href="{{ url_for('discover') }}" class="nav-link nav-text-color">Discover</a>
+                <a href="{{ url_for('discover', username=session['user']) }}" class="nav-link nav-text-color">Discover</a>
             </li>
             {% if session.user %}
             <li class="nav-item mr-2">
@@ -19,9 +19,15 @@
             <li class="nav-item mr-2">
                 <a href="#" class="nav-link nav-text-color">My Reviews</a>
             </li>
-            <li class="nav-item mr-2">
-                <a href="{{ url_for('account', username=session['user']) }}" class="nav-link nav-text-color">Account</a>
-            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Account
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="{{ url_for('logout') }}">Log Out</a>
+                  <a class="dropdown-item" href="{{ url_for('account') }}">View Profile</a>
+                </div>
+              </li>
             {% else %}
             <li class="nav-item mr-2">
                 <a href="{{ url_for('about') }}" class="nav-link nav-text-color">About</a>

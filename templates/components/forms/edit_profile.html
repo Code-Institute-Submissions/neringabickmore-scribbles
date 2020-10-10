@@ -3,8 +3,8 @@
 
 <div class="row">
     <div class="col-12">
-        <h3 class="center">Register</h3>
-        <form method="POST" action="{{ url_for('register') }}">
+        <h3 class="center">New Details</h3>
+        <form method="POST" action="">
             <!-- Username -->
             <div class="form-group">
                 <label for="username">Username</label>
@@ -22,11 +22,16 @@
                 <input id="password" name="password" type="password" minlength="5" maxlength="15"
                     pattern="^[a-zA-Z0-9{5,15}$" class="form-control" required>
             </div>
-            <!-- Register -->
-            <button type="submit" class="btn btn-primary">Register</button>
+            <!-- Cancel -->
+            <a href="" class="btn-large red text-shadow">
+                Cancel <i class="fas fa-times-circle right"></i>
+            </a>
+            <!-- Update details -->
+            <button type="submit" class="btn btn-primary">Update details</button>
+
         </form>
     </div>
 </div>
 
-
 {% endblock %}
+
