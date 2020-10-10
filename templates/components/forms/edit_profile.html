@@ -1,0 +1,37 @@
+{% extends "layout/base.html" %}
+{% block content %}
+
+<div class="row">
+    <div class="col-12">
+        <h3 class="center">New Details</h3>
+        <form method="POST" action="">
+            <!-- Username -->
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input id="username" name="username" type="text" class="form-control" minlength="5" maxlength="15"
+                    pattern="^[a-zA-Z0-9{5,15}$" required>
+            </div>
+            <!-- Email -->
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input id="email" name="email" type="email" class="form-control" required>
+            </div>
+            <!-- Password -->
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input id="password" name="password" type="password" minlength="5" maxlength="15"
+                    pattern="^[a-zA-Z0-9{5,15}$" class="form-control" required>
+            </div>
+            <!-- Cancel -->
+            <a href="" class="btn-large red text-shadow">
+                Cancel <i class="fas fa-times-circle right"></i>
+            </a>
+            <!-- Update details -->
+            <button type="submit" class="btn btn-primary">Update details</button>
+
+        </form>
+    </div>
+</div>
+
+{% endblock %}
+
