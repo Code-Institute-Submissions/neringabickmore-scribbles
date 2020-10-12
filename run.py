@@ -55,7 +55,11 @@ def edit_profile(user_profile_id):
 
 @app.route("/favorites")
 def favorites():
-    return render_template("pages/favorites.html")
+    if session["user"]:
+        # grab the session user's credentials from database
+        user_profile = mongo.db.users.find_one({"username": session["user"]})
+        return render_template("pages/favorites.html", user=user_profile)
+    return redirect(url_for("login"))
 
 
 @app.route("/register", methods=["GET", "POST"])
