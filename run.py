@@ -37,15 +37,16 @@ def account():
 @app.route("/edit_profile/<user_profile_id>", methods=["GET", "POST"])
 def edit_profile(user_profile_id):
     if request.method == "POST":
-        submit = {
+        submit = {"$set": {
             "username": request.form.get("username"), 
             "email": request.form.get("email"),
-            "password": generate_password_hash("password"),
+            "password": generate_password_hash("password")
+            }
         }
-        mongo.db.users.update({"_id": ObjectId(user_profile_id)}, submit)
+        mongo.db.users.update_one({"_id": ObjectId(user_profile_id)}, submit)
         flash("User Profile Successfully Updated!")
         return redirect(url_for("account"))
-
+        
     user_profile = mongo.db.users.find_one({"_id": ObjectId(user_profile_id)})
     return render_template("components/forms/edit_profile.html", user=user_profile)
 
@@ -123,7 +124,7 @@ def discover(username):
     if session["user"]:
         return render_template("pages/discover.html", username=username)
     return redirect(url_for("login"))
-
+    
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"), 
