@@ -40,10 +40,12 @@ def edit_profile(user_profile_id):
         submit = {"$set": {
             "username": request.form.get("username"), 
             "email": request.form.get("email"),
-            "password": generate_password_hash("password")
+            "password": generate_password_hash(request.form.get("password"))
             }
         }
         mongo.db.users.update_one({"_id": ObjectId(user_profile_id)}, submit)
+        #update user session to push new username before re-directing
+        session["user"] = request.form.get("username")
         flash("User Profile Successfully Updated!")
         return redirect(url_for("account"))
         
@@ -124,7 +126,7 @@ def discover(username):
     if session["user"]:
         return render_template("pages/discover.html", username=username)
     return redirect(url_for("login"))
-    
+            
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"), 
