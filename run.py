@@ -70,6 +70,30 @@ def my_reviews():
     return redirect(url_for("login"))
 
 
+@app.route("/add_review", methods={"GET", "POST"})
+def add_review():
+    if request.method == "POST":
+        review = {
+            "title": request.form.get("title"),
+            "author": request.form.get("author"),
+            "genre": request.form.get("genre_category"),
+            "length": request.form.get("length"),
+            "ease_of_reading": request.form.get("ease_of_reading"),
+            "plot_summary": request.form.get("plot_summary"),
+            "favorite_quote": request.form.get("favorite_quote"),
+            "emoji": request.form.get("emoji"),
+            "rating": request.form.get("rating"),
+            "link_to_image": request.form.get("link_to_image"),
+            "link_to_buy": request.form.get("link_to_buy")
+        }
+        mongo.db.reviews.insert_one(review)
+        flash("review added")
+        return redirect(url_for("my_reviews"))
+
+    genre = mongo.db.genre.find().sort("genre_category", 1)
+    return render_template("components/forms/add-review.html", genre=genre)
+
+
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
