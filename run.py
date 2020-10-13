@@ -62,6 +62,14 @@ def favorites():
     return redirect(url_for("login"))
 
 
+@app.route("/my_reviews")
+def my_reviews():
+    if session["user"]:
+        user_profile = mongo.db.users.find_one({"username": session["user"]})
+        return render_template("pages/my-reviews.html", user=user_profile)
+    return redirect(url_for("login"))
+
+
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
