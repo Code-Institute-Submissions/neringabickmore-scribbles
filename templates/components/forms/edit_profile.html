@@ -23,11 +23,11 @@
                     pattern="^[a-zA-Z0-9{5,15}$" class="form-control" required>
             </div>
             <!-- Cancel -->
-            <a href="" class="btn-large red text-shadow">
+            <a href="{{ url_for('discover') }}" class="btn btn-primary">
                 Cancel <i class="fas fa-times-circle right"></i>
             </a>
             <!-- Update details -->
-            <button type="submit" class="btn btn-primary">Update details</button>
+            <button class="btn btn-primary" type="submit"> Update details</button>
 
         </form>
     </div>
