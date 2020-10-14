@@ -2,6 +2,26 @@
 {% block content %}
 
 <h1> My Reviews </h1>
-<a class="btn btn-primary" href="#">Add review</a>
+
+<a class="btn btn-primary" href="{{ url_for('add_review') }}">Add Review</a>
+<a class="btn btn-primary" href="#">Delete Review</a>
+<a class="btn btn-primary" href="#">Edit Review</a>
+
+
+{% for review in reviews %}
+        <div class="">
+            <p>Book title: {{ review.title }}</p>
+            <p>Author: {{ review.author }}</p>
+            <p>Genre: {{ review.genre }}</p>
+            <p>How many pages? {{ review.length }}</p>
+            <p>How easy was it to read the book? {{ review.ease_of_reading }}</p>
+            <p>Plot summary: {{ review.plot_summary }}</p>
+            <p>Your favorite quote: {{ review.favorite_quote }}</p>
+            <p>Describe the book in 3 emoji's {{ review.emoji }}</p>
+            <p>How do you rate the book? {{ review.rating }}</p>
+            <img src="{{ review.link_to_image }}">Book image</img>
+            <a class="btn btn-primary" href="{{ review.link_to_buy }}">Buy</a>
+        </div> <br>
+{% endfor %}
 
 {% endblock %}
