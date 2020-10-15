@@ -1,6 +1,24 @@
 {% extends "layout/base.html" %}
 {% block content %}
 
-<h1>discover empty page</h1>
+<h1> Discover book reviews </h1>
+
+{% for review in reviews %}
+        <div class="">
+            <p>Book title: {{ review.title }}</p>
+            <p>Author: {{ review.author }}</p>
+            <p>Genre: {{ review.genre }}</p>
+            <p>How many pages? {{ review.length }}</p>
+            <p>How easy was it to read the book? {{ review.ease_of_reading }}</p>
+            <p>Plot summary: {{ review.plot_summary }}</p>
+            <p>Your favorite quote: {{ review.favorite_quote }}</p>
+            <p>Describe the book in 3 emoji's {{ review.emoji }}</p>
+            <p>How do you rate the book? {{ review.rating }}</p>
+            <img src="{{ review.link_to_image }}">Book image</img><br>
+            <a class="btn btn-primary m-2" href="{{ review.link_to_buy }}">Buy the book</a>
+            <br>
+        
+        </div> <br>
+{% endfor %}
 
 {% endblock %}

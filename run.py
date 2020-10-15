@@ -188,9 +188,10 @@ def logout():
     return redirect(url_for("login"))
 
 
-@app.route("/discover")
+@app.route("/discover", methods=["GET", "POST"])
 def discover():
-    return render_template("pages/discover.html")
+    reviews = list(mongo.db.reviews.find())
+    return render_template("pages/discover.html", reviews=reviews)
          
 
 if __name__ == "__main__":
