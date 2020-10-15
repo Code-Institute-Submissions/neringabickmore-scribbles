@@ -46,3 +46,7 @@ def edit_profile(user_profile_id):
     user_profile = mongo.db.users.find_one({"_id": ObjectId(user_profile_id)})
     return render_template("components/forms/edit_profile.html", user=user_profile)
 ```
+
+### Unsolved bugs ###
+
+1. All users in their my-reviews.html are able to see other users entries. This shouldn't happen and they should only see their own entries in this template.
