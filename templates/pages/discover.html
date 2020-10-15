@@ -14,6 +14,7 @@
             <p>Your favorite quote: {{ review.favorite_quote }}</p>
             <p>Describe the book in 3 emoji's {{ review.emoji }}</p>
             <p>How do you rate the book? {{ review.rating }}</p>
+            <p>Review by: {{ review.reviewed_by }}</p>
             <img src="{{ review.link_to_image }}">Book image</img><br>
             <a class="btn btn-primary m-2" href="{{ review.link_to_buy }}">Buy the book</a>
             <br>

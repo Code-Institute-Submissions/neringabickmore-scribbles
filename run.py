@@ -85,7 +85,8 @@ def add_review():
             "emoji": request.form.get("emoji"),
             "rating": request.form.get("rating"),
             "link_to_image": request.form.get("link_to_image"),
-            "link_to_buy": request.form.get("link_to_buy")
+            "link_to_buy": request.form.get("link_to_buy"),
+            "reviewed_by": session["user"]
         }
         mongo.db.reviews.insert_one(review)
         flash("review added")
