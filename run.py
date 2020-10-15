@@ -66,7 +66,7 @@ def favorites():
 def my_reviews():
     if session["user"]:
         user_profile = mongo.db.users.find_one({"username": session["user"]})
-        reviews = list(mongo.db.reviews.find())
+        reviews = list(mongo.db.reviews.find({"reviewed_by": session["user"]}))
         return render_template("pages/my-reviews.html", user=user_profile, reviews=reviews)
     return redirect(url_for("login"))
 
