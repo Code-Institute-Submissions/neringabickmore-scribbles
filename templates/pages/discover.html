@@ -6,10 +6,8 @@
 <h2> Action & Adventure </h2>
 {% for review in action_adventure %}
 <div class="">
-    {% if review.favorite == true %}
     {% if session.user %}
     <button class="btn btn-primary">Favorite</button>
-    {% endif %}
     {% endif %}
     <p>Book title: {{ review.title }}</p>
     <p>Author: {{ review.author }}</p>
@@ -32,6 +30,9 @@
 <h2> Children's Books </h2>
 {% for review in children_books %}
 <div class="">
+    {% if session.user %}
+    <button class="btn btn-primary">Favorite</button>
+    {% endif %}
     <p>Book title: {{ review.title }}</p>
     <p>Author: {{ review.author }}</p>
     <p>Genre: {{ review.genre }}</p>
