@@ -67,5 +67,15 @@ reviews = list(mongo.db.reviews.find({"reviewed_by": session["user"]}))
 
 ```
 
+3. Discover.html shows "favorite" button to both registered and non-registered users.
+   Bug-fix by adding below to the button:
+
+```python
+{% if session.user %}
+    <button class="btn btn-primary">Favorite</button>
+{% endif %}
+
+```
+
 ### Unsolved bugs ###
 
