@@ -55,6 +55,7 @@ def edit_profile(user_profile_id):
 
 @app.route("/favorites")
 def favorites():
+    
     if session["user"]:
         # grab the session user's credentials from database
         user_profile = mongo.db.users.find_one({"username": session["user"]})
@@ -190,6 +191,8 @@ def logout():
 
 @app.route("/discover", methods=["GET", "POST"])
 def discover():
+    if request.method == "GET":
+        favorite = True if request.form.get("favorite") else False
     action_adventure = mongo.db.reviews.find({"genre":"Action & Adventure"})
     novel = mongo.db.reviews.find({"genre":"Action & Novel"})
     detective_mystery = mongo.db.reviews.find({"genre":"Detective & Mystery"})
@@ -218,7 +221,7 @@ def discover():
         thriller_suspense=thriller_suspense, 
         biography_memoirs=biography_memoirs,
         poetry=poetry, self_help=self_help,
-        children_books=children_books, education=education)
+        children_books=children_books, education=education, favorite=favorite)
          
 
 if __name__ == "__main__":

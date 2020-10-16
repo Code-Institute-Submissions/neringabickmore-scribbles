@@ -6,6 +6,9 @@
 <h2> Action & Adventure </h2>
 {% for review in action_adventure %}
 <div class="">
+    {% if review.favorite == true %}
+    <button class="btn btn-primary">Favorite</button>
+    {% endif %}
     <p>Book title: {{ review.title }}</p>
     <p>Author: {{ review.author }}</p>
     <p>Genre: {{ review.genre }}</p>
@@ -19,7 +22,7 @@
     <img src="{{ review.link_to_image }}">Book image</img><br>
     <a class="btn btn-primary m-2" href="{{ review.link_to_buy }}">Buy the book</a>
     <br>
-    {% else %}
+{% else %}
     <h4>There are currently no reviews in this genre.</h4>
 </div> <br>
 {% endfor %}
