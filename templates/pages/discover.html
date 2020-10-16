@@ -1,6 +1,54 @@
 {% extends "layout/base.html" %}
 {% block content %}
 
-<h1>discover empty page</h1>
+<h1> Discover book </h1>
+
+<h2> Action & Adventure </h2>
+{% for review in action_adventure %}
+<div class="">
+    {% if session.user %}
+    <button class="btn btn-primary">Favorite</button>
+    {% endif %}
+    <p>Book title: {{ review.title }}</p>
+    <p>Author: {{ review.author }}</p>
+    <p>Genre: {{ review.genre }}</p>
+    <p>How many pages? {{ review.length }}</p>
+    <p>How easy was it to read the book? {{ review.ease_of_reading }}</p>
+    <p>Plot summary: {{ review.plot_summary }}</p>
+    <p>Your favorite quote: {{ review.favorite_quote }}</p>
+    <p>Describe the book in 3 emoji's {{ review.emoji }}</p>
+    <p>How do you rate the book? {{ review.rating }}</p>
+    <p>Review by: {{ review.reviewed_by }}</p>
+    <img src="{{ review.link_to_image }}">Book image</img><br>
+    <a class="btn btn-primary m-2" href="{{ review.link_to_buy }}">Buy the book</a>
+    <br>
+{% else %}
+    <h4>There are currently no reviews in this genre.</h4>
+</div> <br>
+{% endfor %}
+
+<h2> Children's Books </h2>
+{% for review in children_books %}
+<div class="">
+    {% if session.user %}
+    <button class="btn btn-primary">Favorite</button>
+    {% endif %}
+    <p>Book title: {{ review.title }}</p>
+    <p>Author: {{ review.author }}</p>
+    <p>Genre: {{ review.genre }}</p>
+    <p>How many pages? {{ review.length }}</p>
+    <p>How easy was it to read the book? {{ review.ease_of_reading }}</p>
+    <p>Plot summary: {{ review.plot_summary }}</p>
+    <p>Your favorite quote: {{ review.favorite_quote }}</p>
+    <p>Describe the book in 3 emoji's {{ review.emoji }}</p>
+    <p>How do you rate the book? {{ review.rating }}</p>
+    <p>Review by: {{ review.reviewed_by }}</p>
+    <img src="{{ review.link_to_image }}">Book image</img><br>
+    <a class="btn btn-primary m-2" href="{{ review.link_to_buy }}">Buy the book</a>
+    <br>
+    {% else %}
+    <h4>There are currently no reviews in this genre.</h4>
+</div> <br>
+{% endfor %}
 
 {% endblock %}
