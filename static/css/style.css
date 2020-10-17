@@ -15,3 +15,29 @@
     --default-transition: all 0.3s;
     --default-transform: transform: scale(1.2);
 }
+
+html{
+    font-size: 62.5%
+}
+
+/* Body Main Styling */
+body{
+    font-family: var(--main-font);
+    font-size: 1.6rem;
+    background-color: var(--cold-white);
+    color: var(--black);
+    text-align: center;
+}
+
+/* Header Main Styling */
+header {
+    background-color: var(--baby-blue);
+    font: var(--header-title-font);
+    width: 100%;
+    padding: 0;
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    text-transform: capitalize;
+    box-shadow: var(--default-box-shadow);
+    text-shadow: var(--default-text-shadow);
+}
