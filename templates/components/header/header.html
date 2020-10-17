@@ -1,14 +1,14 @@
 {% block header %}
 
 <nav class="navbar navbar-expand-sm container-fluid sticky-top navbar-light ">
-    <a href="{{ url_for('about') }}"><img src="\static\images\logo.png" class="m-2 logo"
+    <a href="{{ url_for('about') }}"><img src="\static\images\logo.png" class="m-2" id="logo"
             alt="scribbles logo" /></a>
     <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
         aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse text-right mr-4" id="navbarNavDropdown">
-        <ul class="navbar-nav ml-auto d-lg-flex">
+    <div class="collapse navbar-collapse mr-4" id="navbarNavDropdown">
+        <ul class="navbar-nav ml-auto d-lg-flex align-items-md-center">
             <li class="nav-item mr-2">
                 <a href="{{ url_for('discover') }}" class="nav-link">discover</a>
             </li>
@@ -20,11 +20,11 @@
                 <a href="{{ url_for('my_reviews') }}" class="nav-link">my reviews</a>
             </li>
             <li class="nav-item dropdown mr-2">
-                <a class="nav-link mr-2" id="navbarDropdown" role="button" data-toggle="dropdown"
+                <a class="nav-link" id="navbarDropdown" role="button" data-toggle="dropdown"
                     aria-haspopup="true" aria-expanded="false">
                     account
                 </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown" id=nav-dropdown-menu>
                     <a class="dropdown-item" href="{{ url_for('logout') }}">log out</a>
                     <a class="dropdown-item" href="{{ url_for('account') }}">view profile</a>
                 </div>
