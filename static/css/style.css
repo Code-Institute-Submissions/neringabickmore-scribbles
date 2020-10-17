@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Rubik&display=swap');
+
+:root{
+    --charcoal: #39454E;
+    --cold-white: #E1EBF2;
+    --black: #151717;
+    --baby-blue: #B5CBE1;
+    --grey: #98A5B2;
+    --slate-grey: #728395;
+    --header-title-font: 'Rubik', sans-serif;
+    --main-font: 'Lato', sans-serif;
+    --default-box-shadow: 1px 1px 6px #728395;
+    --dark-box-shadow: 1px 1px 6px #151717;
+    --default-text-shadow: 1px 1px 5px #728395;
+    --default-transition: all 0.3s;
+    --default-transform: transform: scale(1.2);
+}
