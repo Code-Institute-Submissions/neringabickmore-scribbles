@@ -7,7 +7,7 @@
     --baby-blue: #B5CBE1;
     --grey: #98A5B2;
     --slate-grey: #728395;
-    --header-title-font: 'Rubik', sans-serif;
+    --heading-title-font: 'Rubik', sans-serif;
     --main-font: 'Lato', sans-serif;
     --default-box-shadow: 1px 1px 6px #728395;
     --dark-box-shadow: 1px 1px 6px #151717;
@@ -32,7 +32,7 @@ body{
 /* Header Main Styling */
 header {
     background-color: var(--baby-blue);
-    font: var(--header-title-font);
+    font: var(--heading-title-font);
     width: 100%;
     padding: 0;
     font-size: 1.2rem;
@@ -41,15 +41,25 @@ header {
     box-shadow: var(--default-box-shadow);
     text-shadow: var(--default-text-shadow);
 }
+/* Main Body Styling */
+main{
+    min-height: 84vh;
+}
+
+main h1, h2, h3, h4{
+    font: var(--heading-title-font);
+}
+main p{
+    font: var(--main-font);
+}
 
 /* Footer Styling*/
 footer {
     background-color: var(--charcoal);
-    font: var(--header-title-font);
+    font: var(--heading-title-font);
 }
 
 footer small {
-    font: var(--header-title-font);
     font-size: 1.5rem;
 }
 
