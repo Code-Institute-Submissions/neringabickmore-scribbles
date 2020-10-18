@@ -13,7 +13,7 @@
     --dark-box-shadow: 2px 2px 9px #151717;
     --default-text-shadow: 1px 1px 9px #728395;
     --default-transition: all 0.3s;
-    --default-transform: transform: scale(1.2);
+    --default-transform: scale(1.2);
 }
 
 
@@ -143,7 +143,13 @@ header img{
     box-shadow: var(--dark-box-shadow);
 }
 
-/* About Page Styling */
+/** Main body headers **/
+#intro h1, 
+.account h1{
+    font-weight: bolder;
+}
+
+/* About Page Template Styling */
 /** Carousel styling **/
 
 .carousel-item img{
@@ -158,9 +164,37 @@ header img{
     text-shadow: none;
 }
 
-/** **/
-#intro h1{
-    font-weight: bolder;
+/* Account Template Styling */
+.account{
+    text-transform: capitalize;
+    margin: 2rem;
+    text-align: left;
+    color: var(--charcoal);
+}
+
+
+/* Main Buttons */
+.icon-btn{
+    font-size: 3rem;
+    transition: var(--default-transition);
+    color:var(--slate-grey);
+}
+
+.btn{
+    box-shadow: var(--default-box-shadow);
+    transition: var(--default-transition);
+    height: 4rem;
+    width: 5rem;
+    margin: 0.5rem;
+    float: right;
+}
+
+.icon-btn:hover{
+    color: var(--charcoal);
+    
+}
+.btn:hover{
+    transform: var(--default-transform);
 }
 
 /* Responsive breakpoints styling */
