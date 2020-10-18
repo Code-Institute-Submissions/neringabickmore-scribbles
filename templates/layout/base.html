@@ -13,28 +13,33 @@
         {% include 'components/header/header.html' %}
     </header>
 
-    <main class="container-fluid">
-        {% block content %}
-        <section>
-            <!-- flash messages-->
+    <main class="container-fluid mt-3">
+        <!-- flash messages-->
+        <section class="row m-2 justify-content-center">
             {% with messages = get_flashed_messages() %}
                 {% if messages %}
                     {% for message in messages %}
-                        <div class="row">
-                            <h4 class="">{{ message }}</h4>
+                        <div class="col-12 col-sm-9 m-2" id="flash-message">
+                            <h1 class="text-center">{{ message }}</h1>
                         </div>
                     {% endfor %}
                 {% endif %}
             {% endwith %}
         </section>
-         {% endblock %}
+        <!-- Main app content -->
+        <section id="main-content" class="row">
+            {% block content %}
+            {% endblock %}
+        </section>
+        
     </main>
 
     <footer class="container-fluid">
-      {% include 'components/footer/footer.html' %}  
+        {% include 'components/footer/footer.html' %}  
     </footer>
-    
-        {% include 'layout/scripts.html' %}
+
+    <!-- Scripts-->
+    {% include 'layout/scripts.html' %}
 </body>
 
 </html>

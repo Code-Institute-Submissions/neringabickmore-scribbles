@@ -67,8 +67,7 @@ footer ul i {
 
 footer ul i:hover{
     color: var(--grey);
- }
-
+}
 
 /* Additional Header Styling */
 
@@ -81,6 +80,7 @@ header img{
     height: 10rem;
 }
 
+/* Special Navbar styling*/
 #nav-dropdown-menu{
     background-color: var(--baby-blue);
     border: none!important;
@@ -94,6 +94,7 @@ header img{
     background-color: var(--baby-blue);
     box-shadow: var(--default-box-shadow);
 }
+
 .dropdown-item:hover{
     color: var(--cold-white);
     background-color: var(--baby-blue);
@@ -103,6 +104,7 @@ header img{
 .navbar{
     background-color: var(--baby-blue);
 }
+
 .navbar-nav{
     height: 12rem;
 }
@@ -110,12 +112,23 @@ header img{
 .nav-link{
     transition: var(--default-transition);
 }
+
 .nav-item{
     text-align: right;
 }
 
 .nav-link:hover{
     color: var(--cold-white)!important;
+}
+
+/* Flash Message Styling */
+#flash-message h1{
+    text-shadow: var(--default-text-shadow);
+    font-size: 3.5rem;
+    text-transform: capitalize;
+}
+#flash-message{
+    box-shadow: var(--dark-box-shadow);
 }
 
 /* Responsive breakpoints styling */
