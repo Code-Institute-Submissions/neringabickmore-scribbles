@@ -1,9 +1,16 @@
 {% extends "layout/base.html" %}
 {% block content %}
 
-<!-- Images Carousel-->
-<div class="col-12">
+<!-- Intro -->
+<div class="col-12 mt-4 mb-3" id="intro">
+    <h1 class="mb-2"> Track of your personal book reviews. </h1>
+    <h1>Discover something new from your fellow scribblers.</h1>
+</div>
+
+<!-- Images Carousel -->
+<div class="col-12" id="carouselBox">
     <div id="aboutCarousel" class="carousel slide" data-ride="carousel">
+        <!-- Carousel indicators -->
         <ol class="carousel-indicators mt-3">
             <li data-target="#aboutCarousel" data-slide-to="0" class="active"></li>
             <li data-target="#aboutCarousel" data-slide-to="1"></li>
@@ -13,6 +20,7 @@
             <li data-target="#aboutCarousel" data-slide-to="5"></li>
             <li data-target="#aboutCarousel" data-slide-to="6"></li>
         </ol>
+        <!-- Carousel images -->
         <div class="carousel-inner" id="carousel-img">
             <div class="carousel-item active">
                 <img src="static/images/carousel/boy-with-a-book.jpg" alt="boy with a book">
@@ -37,17 +45,28 @@
             </div>
         </div>
     </div>
-</div>
-        
+</div>  
 
-
-    
-
-<!-- Intro -->
-    <div class="col-12">
-        <h1>Welcome to Scribbles!</h1>
-        <h4>A safe place to keep track of your personal book reviews and discover recommendations by your fellow scribblers.</h4>
-        <h4>It's that simple.</h4>
+<!-- Quote -->
+    <div class="col-sm-4 col-12 p-4 mt-3 mb-2 rounded quote-text-box">
+        <blockquote class="blockquote">
+            <p class="text-left m-2"> “In the case of good books, the point is not to see how many of them you can get
+                through, but rather how many can get through to you.” </p>
+            <p class="blockquote-footer text-right pr-1"> Mortimer J. Adler</p>
+        </blockquote>
     </div>
+    <div class="col-sm-4 col-12 p-4 mt-3 rounded quote-text-box">
+        <blockquote class="blockquote">
+            <p class="text-left m-2"> “We read to get lost, to forget the hard times we're living in, and we read to remember those who came before us who lived through something harder.” </p>
+            <p class="blockquote-footer text-right pr-1"> Jacqueline Woodson</p>
+        </blockquote>
+    </div>
+    <div class="col-sm-4 col-12 p-4 mt-3 rounded quote-text-box">
+        <blockquote class="blockquote">
+            <p class="text-left m-2"> “It is what you read when you don’t have to that determines what you will be when you can’t help it.” ” </p>
+            <p class="blockquote-footer text-right pr-1"> Oscar Wilde</p>
+        </blockquote>
+    </div>
+
 
 {% endblock %}

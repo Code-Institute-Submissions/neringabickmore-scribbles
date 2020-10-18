@@ -22,17 +22,24 @@ html{
 
 /* Body Main Styling */
 body{
-    font-family: var(--main-font);
     font-size: 1.6rem;
     background-color: var(--cold-white);
     color: var(--black);
     text-align: center;
 }
 
+/* Fonts */
+h1, h2, h3, h4{
+    font: var(--heading-title-font);
+}
+
+p{
+    font: var(--main-font);
+}
+
 /* Header Main Styling */
 header {
     background-color: var(--baby-blue);
-    font: var(--heading-title-font);
     width: 100%;
     padding: 0;
     font-size: 1.2rem;
@@ -44,19 +51,12 @@ header {
 /* Main Body Styling */
 main{
     min-height: 84vh;
-}
-
-main h1, h2, h3, h4{
-    font: var(--heading-title-font);
-}
-main p{
-    font: var(--main-font);
+    text-shadow: var(--default-text-shadow);
 }
 
 /* Footer Styling*/
 footer {
     background-color: var(--charcoal);
-    font: var(--heading-title-font);
 }
 
 footer small {
@@ -147,20 +147,61 @@ header img{
 
 .carousel-item img{
     width: 100%;
+    box-shadow: var(--dark-box-shadow);
+}
+
+/** quotes **/
+.blockquote{
+    font-size: 1.5rem;
+    font-style: italic;
+    text-shadow: none;
+}
+
+/** **/
+#intro h1{
+    font-weight: bolder;
 }
 
 /* Responsive breakpoints styling */
 
 /** Styling for devices 
 with the screens
-larger than small 
-(> than mobile) **/
+wider than mobile **/
 
 @media(min-width: 768px){
     header{
         font-size: 1.8rem;
     }
     .carousel-item img{
-        width: 60%;
+        width: 80%;
+    }
+    .carousel-inner{
+        margin-top: 9rem;
+    }
+}
+
+/** Styling for devices 
+with the screens
+wider than tablet **/
+
+@media(min-width: 1024px){
+    .carousel-inner{
+        margin-top: 2rem;
+    }
+}
+
+/** Styling for devices
+with medium sized screens*/
+@media(min-height: 1024px){
+    #carouselBox{
+        min-height: 40vh;
+    }
+}
+
+/** Styling for devices
+with extra large screens*/
+@media(min-height: 1366px){
+    .carousel-inner img{
+        width: 85%;
     }
 }
