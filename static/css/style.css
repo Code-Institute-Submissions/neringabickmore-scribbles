@@ -172,9 +172,6 @@ header img{
     color: var(--charcoal);
 }
 
-.account td{
-    text-transform: none;
-}
 /* Main Buttons */
 .icon-btn{
     font-size: 3rem;
