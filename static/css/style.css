@@ -9,12 +9,13 @@
     --slate-grey: #728395;
     --heading-title-font: 'Rubik', sans-serif;
     --main-font: 'Lato', sans-serif;
-    --default-box-shadow: 1px 1px 6px #728395;
-    --dark-box-shadow: 1px 1px 6px #151717;
-    --default-text-shadow: 1px 1px 5px #728395;
+    --default-box-shadow: 2px 2px 9px #728395;
+    --dark-box-shadow: 2px 2px 9px #151717;
+    --default-text-shadow: 1px 1px 9px #728395;
     --default-transition: all 0.3s;
     --default-transform: transform: scale(1.2);
 }
+
 
 html{
     font-size: 62.5%
