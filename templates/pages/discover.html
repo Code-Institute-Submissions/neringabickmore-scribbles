@@ -3,7 +3,7 @@
 
 
 <div class="col-12" id="discover-template">
-    <img src="static/images/library.jpg" alt="library">
+    <img src="static/images/library.jpg" class="img-fluid" alt="library">
 </div>
 <!-- Reviews container -->
 <div class="container-fluid m-3" id="discover-reviews">
@@ -18,7 +18,8 @@
                 <!-- Logged in users will see "favorite button"-->
                 {% if session.user %}
                 <button class="btn "><i class="far fa-heart icon-btn" title="add to favorites"></i></button>
-                <a class="btn" href="{{ review.link_to_buy }}"><i class="fas fa-shopping-cart icon-btn" title="buy the book"></i></a>
+                <a class="btn" href="{{ review.link_to_buy }}"><i class="fas fa-shopping-cart icon-btn"
+                        title="buy the book"></i></a>
                 {% endif %}
 
                 <table class="table text-left">
@@ -80,26 +81,11 @@
                 <!-- If there are no reviews show below message -->
                 {% else %}
                 <h3>There are currently no reviews in this genre.</h3>
-
-                {% endfor %}</div>
-
+                {% endfor %}
+            </div>
         </div>
     </div>
 
-    <!--Novel {% for review in novel %}-->
-    <!--Detective & Mystery {% for review in detective_mystery %}-->
-    <!--Crime {% for review in crime %}-->
-    <!--Fantasy {% for review in fantasy %}-->
-    <!--History {% for review in history %}-->
-    <!--Fiction {% for review in fiction %}-->
-    <!--Romance {% for review in romance %}-->
-    <!--Sci-Fi {% for review in sci_fi %}-->
-    <!--Short Stories {% for review in short_stories %}-->
-    <!--Thriller & Suspense {% for review in thriller_suspense %}-->
-    <!--Biography & Memoirs {% for review in biography_memoirs %}-->
-    <!--Poetry {% for review in poetry %}-->
-    <!--Self-help {% for review in self_help %}-->
-    
     <!-- Children's books-->
     <div class="row m-2">
         <div class="col-sm-4 col-12">
@@ -111,7 +97,8 @@
                 <!-- Logged in users will see "favorite button"-->
                 {% if session.user %}
                 <button class="btn"><i class="far fa-heart icon-btn" title="add to favorites"></i></button>
-                <a class="btn" href="{{ review.link_to_buy }}"><i class="fas fa-shopping-cart icon-btn" title="buy the book "></i></a>
+                <a class="btn" href="{{ review.link_to_buy }}"><i class="fas fa-shopping-cart icon-btn"
+                        title="buy the book "></i></a>
                 {% endif %}
 
                 <table class="table text-left">
@@ -173,13 +160,9 @@
                 <!-- If there are no reviews show below message -->
                 {% else %}
                 <h3>There are currently no reviews in this genre.</h3>
-
-                {% endfor %}</div>
+                {% endfor %}
+            </div>
         </div>
     </div>
 
-    <!--Education {% for review in education %}-->
-    
-</div>
-
-{% endblock %}
+    {% endblock %}
