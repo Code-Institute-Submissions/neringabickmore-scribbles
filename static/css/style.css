@@ -30,12 +30,21 @@ body{
 }
 
 /* Fonts */
-h1, h2, h3, h4{
+h1, h2, h3{
     font: var(--heading-title-font);
 }
-
+h1{
+    font-size: 2.6rem;
+}
+h2{
+    font-size: 2.4rem;
+}
+h3{
+    font-size: 2.2rem;
+}
 p{
     font: var(--main-font);
+    font-size: 1.8rem;
 }
 
 /* Header Main Styling */
@@ -141,12 +150,6 @@ header img{
 }
 #flash-message{
     box-shadow: var(--dark-box-shadow);
-}
-
-/** Main body headers **/
-#intro h1, 
-.account h1{
-    font-weight: bolder;
 }
 
 /* About Page Template Styling */
