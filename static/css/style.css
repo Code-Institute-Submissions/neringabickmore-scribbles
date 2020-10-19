@@ -167,6 +167,25 @@ header img{
     text-shadow: none;
 }
 
+/* Discover template Styling */
+#discover-template img {
+    box-shadow: var(--dark-box-shadow);
+    width: 50%;
+    height: 10%;
+}
+#discover-reviews {
+    text-transform: uppercase;
+}
+#discover-reviews td{
+    text-transform: none;
+}
+
+/* Register template Styling */
+/* Login template Styling */
+/* Favorites template Styling */
+/* My reviews template Styling */
+/* Edit review template Styling */
+
 /* Account Template Styling */
 .account{
     text-transform: capitalize;
@@ -174,6 +193,7 @@ header img{
     text-align: left;
     color: var(--charcoal);
 }
+/* Edit Account template styling */
 
 /* Main Buttons */
 .icon-btn{
