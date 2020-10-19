@@ -173,11 +173,17 @@ header img{
     width: 50%;
     height: 10%;
 }
+
 #discover-reviews {
     text-transform: uppercase;
 }
+
 #discover-reviews td{
     text-transform: none;
+}
+
+.review-box{
+    box-shadow: var(--default-box-shadow);
 }
 
 /* Register template Styling */
