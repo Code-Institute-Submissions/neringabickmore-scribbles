@@ -167,12 +167,13 @@ header img{
     text-shadow: none;
 }
 
-/* Discover template Styling */
-#discover-template img {
+/* Discover template Styling */ 
+.img-fluid{
+    max-width: 100%;
+    height: auto;
     box-shadow: var(--dark-box-shadow);
-    width: 50%;
-    height: 10%;
 }
+
 
 #discover-reviews {
     text-transform: uppercase;
