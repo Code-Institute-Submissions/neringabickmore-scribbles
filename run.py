@@ -193,7 +193,7 @@ def logout():
 def discover():
     if request.method == "GET":
         action_adventure = mongo.db.reviews.find({"genre":"Action & Adventure"})
-        novel = mongo.db.reviews.find({"genre":"Action & Novel"})
+        novel = mongo.db.reviews.find({"genre":"Novel"})
         detective_mystery = mongo.db.reviews.find({"genre":"Detective & Mystery"})
         crime = mongo.db.reviews.find({"genre":"Crime"})
         fantasy = mongo.db.reviews.find({"genre":"Fantasy"})

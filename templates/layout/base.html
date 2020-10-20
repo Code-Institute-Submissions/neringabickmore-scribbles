@@ -9,33 +9,37 @@
 
 <body>
 
-    <header class="container">
+    <header class="container-fluid">
         {% include 'components/header/header.html' %}
     </header>
 
-    <section>
+    <main class="container-fluid mt-3">
         <!-- flash messages-->
-        {% with messages = get_flashed_messages() %}
-            {% if messages %}
-                {% for message in messages %}
-                    <div class="row">
-                        <h4 class="">{{ message }}</h4>
-                    </div>
-                {% endfor %}
-            {% endif %}
-        {% endwith %}
-    </section>
-       
-    <main class="container">
-        {% block content %} {% endblock %}
+        <section class="row m-2 justify-content-center">
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    {% for message in messages %}
+                        <div class="col-12 col-sm-9 m-2" id="flash-message">
+                            <h1 class="text-center">{{ message }}</h1>
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+        </section>
+        <!-- Main app content -->
+        <section id="main-content" class="row align-items-center">
+            {% block content %}
+            {% endblock %}
+        </section>
+        
     </main>
 
-    <footer class="container">
-      {% include 'components/footer/footer.html' %}  
+    <footer class="container-fluid">
+        {% include 'components/footer/footer.html' %}  
     </footer>
-    
-    {% include 'layout/scripts.html' %}
 
+    <!-- Scripts-->
+    {% include 'layout/scripts.html' %}
 </body>
 
 </html>
