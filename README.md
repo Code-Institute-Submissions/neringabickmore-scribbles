@@ -1,6 +1,8 @@
 # Scribbles #
 
-[Scribbles]() is an interactive book review app where site users create, read, update and delete their own content.
+![Scribbles](\static\images\logo.png)
+
+[Scribbles](https://scribbles-app.herokuapp.com/) is an interactive book review app where site users create, read, update and delete their own content.
 
 About three years ago I have made a conscious decision to read more books. I have read quite a lot of them since but could never keep the track of them. I am also always interested in recommendations from other like-minded readers. When it come to creating my third milestone project at [Code Institute](https://codeinstitute.net/), it had to be a book review app where I can share my reviews with site visitors and other users.
 
@@ -140,7 +142,7 @@ I chose easy to read and light fonts for this app. I am keeping it simple and wi
 
 I chose the colours that I felt are quite delicate and not overpowering the main content of the app.
 
-![Colour palette](/wireframes/colour-palette/color-palette.jpg)
+![Colour palette](\wireframes\color-palette\color_palette.jpg)
 
 [Back to content](#contents)
 
