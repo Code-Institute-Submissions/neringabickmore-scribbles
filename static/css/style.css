@@ -174,13 +174,24 @@ header img{
     box-shadow: var(--dark-box-shadow);
 }
 
-
-#discover-reviews {
+.book-cover{
+    max-width: 80%;
+    align-self: center;
+}
+#discover-reviews{
     text-transform: uppercase;
 }
 
-#discover-reviews td{
+#discover-reviews dd{
     text-transform: none;
+}
+
+dd{
+    text-align: left;
+}
+
+dl{
+    text-align: right;
 }
 
 .review-box{
