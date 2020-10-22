@@ -6,10 +6,10 @@
     <img src="static/images/library.jpg" class="img-fluid" alt="library">
 </div>
 <!-- Reviews container -->
-<div class="container-fluid m-3" id="discover-reviews">
+<div class="container-fluid m-md-3" id="discover-reviews">
     <!-- Action & Adventure-->
-    <div class="row m-2">
-        <div class="col-sm-4 col-12">
+    <div class="row my-2">
+        <div class="col-lg-4 col-md-6 col-12">
             <h1 class="text-left"> Action & Adventure </h1>
             <div class="review-box p-2">
                 <!-- Review  -->
@@ -21,141 +21,60 @@
                 <a class="btn" href="{{ review.link_to_buy }}"><i class="fas fa-shopping-cart icon-btn"
                         title="buy the book"></i></a>
                 {% endif %}
-
-                <table class="table text-left">
-                    <tbody>
-                        <!-- Book picture -->
-                        <img src="{{ review.link_to_image }}"></img><br>
+                <!-- Book picture -->
+                <img class="col-sm-12 book-cover m-2" src="{{ review.link_to_image }}"></img><br>
+                <dl class="row" id="#discover-reviews">
+                        
                         <!-- Book title-->
-                        <tr>
-                            <th scope="row"><i class="fas fa-book-open pr-1" aria-hidden="true"></i>book title</th>
-                            <td>{{ review.title }}</td>
-                        </tr>
+                        
+                            <dl class="col-6"><i class="fas fa-book-open pr-1" aria-hidden="true"></i>book title</dl>
+                            <dd class="col-6">{{ review.title }}</dd>
+                       
                         <!-- Author -->
-                        <tr>
-                            <th scope="row"><i class="fas fa-feather pr-1" aria-hidden="true"></i>author</th>
-                            <td> {{ review.author }} </td>
-                        </tr>
+                        
+                            <dl class="col-6"><i class="fas fa-feather pr-1" aria-hidden="true"></i>author</dl>
+                            <dd class="col-6"> {{ review.author }} </dd>
+                        
                         <!-- Number of pages -->
-                        <tr>
-                            <th scope="row"><i class="fas fa-layer-group pr-1" aria-hidden="true"></i>number of pages
-                            </th>
-                            <td> {{ review.length }} </td>
-                        </tr>
+                        
+                            <dl class="col-6"><i class="fas fa-layer-group pr-1" aria-hidden="true"></i>number of pages
+                            </dl>
+                            <dd class="col-6"> {{ review.length }} </dd>
+                        
                         <!-- Ease of reading -->
-                        <tr>
-                            <th scope="row"><i class="fas fa-balance-scale-right pr-1" aria-hidden="true"></i>ease of
+                        
+                            <dl class="col-6"><i class="fas fa-balance-scale-right pr-1" aria-hidden="true"></i>ease of
                                 read
-                            </th>
-                            <td> {{ review.ease_of_reading }} </td>
-                        </tr>
+                            </dl>
+                            <dd class="col-6"> {{ review.ease_of_reading }} </dd>
+                        
                         <!-- Plot summary-->
-                        <tr>
-                            <th scope="row"><i class="fas fa-align-left pr-1" aria-hidden="true"></i>plot</th>
-                            <td> {{ review.plot_summary }} </td>
-                        </tr>
+                        
+                            <dl class="col-6"><i class="fas fa-align-left pr-1" aria-hidden="true"></i>plot</dl>
+                            <dd class="col-6"> {{ review.plot_summary }} </dd>
+                        
                         <!--Favorite quote from the book -->
-                        <tr>
-                            <th scope="row"><i class="fas fa-quote-left pr-1" aria-hidden="true"></i>favorite quote</th>
-                            <td> {{ review.favorite_quote }} </td>
-                        </tr>
+                        
+                            <dl class="col-6"><i class="fas fa-quote-left pr-1" aria-hidden="true"></i>favorite quote</dl>
+                            <dd class="col-6"> {{ review.favorite_quote }} </dd>
+                        
                         <!-- Book sum up in emojis -->
-                        <tr>
-                            <th scope="row"><i class="far fa-smile pr-1" aria-hidden="true"></i>book sum up in emoji
-                            </th>
-                            <td> {{ review.emoji }} </td>
-                        </tr>
+                        
+                            <dl class="col-6"><i class="far fa-smile pr-1" aria-hidden="true"></i>book sum up in emoji
+                            </dl>
+                            <dd class="col-6"> {{ review.emoji }} </dd>
+                        
                         <!-- Rate the book -->
-                        <tr>
-                            <th scope="row"><i class="fas fa-star-half-alt pr-1" aria-hidden="true"></i>rating</th>
-                            <td> {{ review.rating }} </td>
-                        </tr>
+                        
+                            <dl class="col-6"><i class="fas fa-star-half-alt pr-1" aria-hidden="true"></i>rating</dl>
+                            <dd class="col-6"> {{ review.rating }} </dd>
+                        
                         <!-- Author of the review -->
-                        <tr>
-                            <th scope="row"><i class="fas fa-user pr-1" aria-hidden="true"></i>scribbled by:</th>
-                            <td> {{ review.reviewed_by }} </td>
-                        </tr>
-                    </tbody>
-                </table>
-
-                <!-- If there are no reviews show below message -->
-                {% else %}
-                <h3>There are currently no reviews in this genre.</h3>
-                {% endfor %}
-            </div>
-        </div>
-    </div>
-
-    <!-- Children's books-->
-    <div class="row m-2">
-        <div class="col-sm-4 col-12">
-            <h1 class="text-left"> Children's books </h1>
-            <div class="review-box p-2">
-                <!-- Review -->
-                {% for review in children_books %}
-
-                <!-- Logged in users will see "favorite button"-->
-                {% if session.user %}
-                <button class="btn"><i class="far fa-heart icon-btn" title="add to favorites"></i></button>
-                <a class="btn" href="{{ review.link_to_buy }}"><i class="fas fa-shopping-cart icon-btn"
-                        title="buy the book "></i></a>
-                {% endif %}
-
-                <table class="table text-left">
-                    <tbody>
-                        <!-- Book picture -->
-                        <img src="{{ review.link_to_image }}"></img><br>
-                        <!-- Book title-->
-                        <tr>
-                            <th scope="row"><i class="fas fa-book-open pr-1" aria-hidden="true"></i>book title</th>
-                            <td>{{ review.title }}</td>
-                        </tr>
-                        <!-- Author -->
-                        <tr>
-                            <th scope="row"><i class="fas fa-feather pr-1" aria-hidden="true"></i>author</th>
-                            <td> {{ review.author }} </td>
-                        </tr>
-                        <!-- Number of pages -->
-                        <tr>
-                            <th scope="row"><i class="fas fa-layer-group pr-1" aria-hidden="true"></i>number of pages
-                            </th>
-                            <td> {{ review.length }} </td>
-                        </tr>
-                        <!-- Ease of reading -->
-                        <tr>
-                            <th scope="row"><i class="fas fa-balance-scale-right pr-1" aria-hidden="true"></i>ease of
-                                read
-                            </th>
-                            <td> {{ review.ease_of_reading }} </td>
-                        </tr>
-                        <!-- Plot summary-->
-                        <tr>
-                            <th scope="row"><i class="fas fa-align-left pr-1" aria-hidden="true"></i>plot</th>
-                            <td> {{ review.plot_summary }} </td>
-                        </tr>
-                        <!--Favorite quote from the book -->
-                        <tr>
-                            <th scope="row"><i class="fas fa-quote-left pr-1" aria-hidden="true"></i>favorite quote</th>
-                            <td> {{ review.favorite_quote }} </td>
-                        </tr>
-                        <!-- Book sum up in emojis -->
-                        <tr>
-                            <th scope="row"><i class="far fa-smile pr-1" aria-hidden="true"></i>book sum up in emoji
-                            </th>
-                            <td> {{ review.emoji }} </td>
-                        </tr>
-                        <!-- Rate the book -->
-                        <tr>
-                            <th scope="row"><i class="fas fa-star-half-alt pr-1" aria-hidden="true"></i>rating</th>
-                            <td> {{ review.rating }} </td>
-                        </tr>
-                        <!-- Author of the review -->
-                        <tr>
-                            <th scope="row"><i class="fas fa-user pr-1" aria-hidden="true"></i>scribbled by:</th>
-                            <td> {{ review.reviewed_by }} </td>
-                        </tr>
-                    </tbody>
-                </table>
+                        
+                            <dl class="col-6"><i class="fas fa-user pr-1" aria-hidden="true"></i>scribbled by:</dl>
+                            <dd class="col-6"> {{ review.reviewed_by }} </dd>
+                        
+                </dl>
 
                 <!-- If there are no reviews show below message -->
                 {% else %}

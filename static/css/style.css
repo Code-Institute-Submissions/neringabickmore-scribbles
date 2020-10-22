@@ -3,9 +3,9 @@
 :root{
     --charcoal: #39454E;
     --cold-white: #E1EBF2;
+    --white: #ffffff;
     --black: #151717;
     --baby-blue: #B5CBE1;
-    --grey: #98A5B2;
     --slate-grey: #728395;
     --heading-title-font: 'Rubik', sans-serif;
     --main-font: 'Lato', sans-serif;
@@ -23,8 +23,8 @@ html{
 
 /* Body Main Styling */
 body{
-    font-size: 1.6rem;
-    background-color: var(--cold-white);
+    font-size: 1.2rem;
+    background-color: var(--white);
     color: var(--black);
     text-align: center;
 }
@@ -34,17 +34,17 @@ h1, h2, h3{
     font: var(--heading-title-font);
 }
 h1{
-    font-size: 2.6rem;
+    font-size: 1.8rem;
 }
 h2{
-    font-size: 2.4rem;
+    font-size: 1.6rem;
 }
 h3{
-    font-size: 2.2rem;
+    font-size: 1.4rem;
 }
 p{
     font: var(--main-font);
-    font-size: 1.8rem;
+    font-size: 1rem;
 }
 
 /* Header Main Styling */
@@ -86,7 +86,7 @@ footer ul i {
 }
 
 footer ul i:hover{
-    color: var(--grey);
+    color: var(--white);
 }
 
 /* Additional Header Styling */
@@ -174,16 +174,28 @@ header img{
     box-shadow: var(--dark-box-shadow);
 }
 
-
-#discover-reviews {
+.book-cover{
+    max-width: 80%;
+    align-self: center;
+}
+#discover-reviews{
     text-transform: uppercase;
 }
 
-#discover-reviews td{
+#discover-reviews dd{
     text-transform: none;
 }
 
+dd{
+    text-align: left;
+}
+
+dl{
+    text-align: right;
+}
+
 .review-box{
+    background-color: var(--cold-white);
     box-shadow: var(--default-box-shadow);
 }
 
@@ -207,6 +219,7 @@ header img{
     font-size: 3rem;
     transition: var(--default-transition);
     color:var(--slate-grey);
+    text-shadow: none;
 }
 
 .btn{
@@ -216,10 +229,11 @@ header img{
     width: 5rem;
     margin: 0.5rem;
     float: right;
+    background-color: var(--charcoal);
 }
 
 .icon-btn:hover{
-    color: var(--charcoal);
+    color: var(--white);
     
 }
 .btn:hover{
@@ -233,6 +247,9 @@ with the screens
 wider than mobile **/
 
 @media(min-width: 768px){
+    body{
+        font-size: 1.6rem;
+    }
     header{
         font-size: 1.8rem;
     }
@@ -241,6 +258,18 @@ wider than mobile **/
     }
     .carousel-inner{
         margin-top: 9rem;
+    }
+    h1{
+        font-size: 2.6rem;
+    }
+    h2{
+        font-size: 2.4rem;
+    }
+    h3{
+        font-size: 2.2rem;
+    }
+    p{
+        font-size: 1.8rem;
     }
 }
 
