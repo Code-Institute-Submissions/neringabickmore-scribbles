@@ -1,8 +1,5 @@
-{% extends "layout/base.html" %}
-{% block content %}
-
 <div class="row">
-    <div class="col-12">
+    <div class="col-5">
         <h3 class="center">Register</h3>
         <form method="POST" action="{{ url_for('register') }}">
             <!-- Username -->
@@ -23,10 +20,14 @@
                     pattern="^[a-zA-Z0-9{5,15}$" class="form-control" required>
             </div>
             <!-- Register -->
-            <button type="submit" class="btn btn-primary">Register</button>
+        <button type="submit" class="btn">Register</button>
         </form>
     </div>
+    
 </div>
-
-
-{% endblock %}
+<div class="row">
+    <div class="col-5">
+        
+        <p class="">Already have an account? <a href="{{ url_for('login') }}" class="btn">login</a></p>
+    </div>
+</div>

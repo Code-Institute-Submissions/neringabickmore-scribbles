@@ -25,53 +25,6 @@ def about():
     return render_template("pages/about.html")
 
 
-@app.route("/account", methods=["GET", "POST"])
-def account():
-    if session["user"]:
-        # grab the session user's credentials from database
-        user_profile = mongo.db.users.find_one({"username": session["user"]})
-        return render_template("pages/account.html", user=user_profile)
-    return redirect(url_for("login"))
-
-
-@app.route("/edit_profile/<user_profile_id>", methods=["GET", "POST"])
-def edit_profile(user_profile_id):
-    if request.method == "POST":
-        submit = {"$set": {
-            "username": request.form.get("username"), 
-            "email": request.form.get("email"),
-            "password": generate_password_hash(request.form.get("password"))
-            }
-        }
-        mongo.db.users.update_one({"_id": ObjectId(user_profile_id)}, submit)
-        #update user session to push new username before re-directing
-        session["user"] = request.form.get("username")
-        flash("User Profile Successfully Updated!")
-        return redirect(url_for("account"))
-        
-    user_profile = mongo.db.users.find_one({"_id": ObjectId(user_profile_id)})
-    return render_template("components/forms/edit_profile.html", user=user_profile)
-
-
-@app.route("/favorites")
-def favorites():
-    
-    if session["user"]:
-        # grab the session user's credentials from database
-        user_profile = mongo.db.users.find_one({"username": session["user"]})
-        return render_template("pages/favorites.html", user=user_profile)
-    return redirect(url_for("login"))
-
-
-@app.route("/my_reviews")
-def my_reviews():
-    if session["user"]:
-        user_profile = mongo.db.users.find_one({"username": session["user"]})
-        reviews = list(mongo.db.reviews.find({"reviewed_by": session["user"]}))
-        return render_template("pages/my-reviews.html", user=user_profile, reviews=reviews)
-    return redirect(url_for("login"))
-
-
 @app.route("/add_review", methods={"GET", "POST"})
 def add_review():
     if request.method == "POST":
@@ -130,62 +83,12 @@ def delete_review(review_id):
     return redirect(url_for("my_reviews"))
 
 
-@app.route("/register", methods=["GET", "POST"])
-def register():
-    if request.method == "POST":
-        # check if username already exists in database
-        existing_user = mongo.db.users.find_one(
-            { "username": request.form.get("username").lower()})
-
-        if existing_user:
-            flash("Username already exists")
-            return redirect(url_for("register"))
-        
-        register = {
-            "username": request.form.get("username").lower(),
-            "email": request.form.get("email").lower(),
-            "password": generate_password_hash(request.form.get("password"))
-        }
-        mongo.db.users.insert_one(register)
-
-        # put the new user into 'session' cookie
-        session["user"] = request.form.get("username").lower()
-        return redirect(url_for("discover", username=session["user"]))
-
-    return render_template("components/forms/register.html")
-
-
-@app.route("/login", methods=["GET", "POST"])
-def login():
-    if request.method == "POST":
-        # check if username exists in database
-        existing_user = mongo.db.users.find_one(
-            {"username": request.form.get("username").lower()})
-
-        if existing_user: 
-            # ensure hashed password matches user input
-            if check_password_hash(
-                existing_user["password"], request.form.get("password")):
-                    session["user"] = request.form.get("username").lower()
-                    flash("Welcome, {}".format(
-                        request.form.get("username")))
-                    return redirect(url_for(
-                        "discover", username=session["user"]))
-            else: 
-                # invalid password match
-                return redirect(url_for("login"))
-
-        else: 
-            # username doesn't exist
-            return redirect(url_for("login"))
-
-    return render_template("components/forms/login.html")
-
-
-@app.route("/logout")
-def logout():
-    # remove user from session cookies
-    session.pop("user")
+@app.route("/my_reviews")
+def my_reviews():
+    if session["user"]:
+        user_profile = mongo.db.users.find_one({"username": session["user"]})
+        reviews = list(mongo.db.reviews.find({"reviewed_by": session["user"]}))
+        return render_template("pages/my-reviews.html", user=user_profile, reviews=reviews)
     return redirect(url_for("login"))
 
 
@@ -218,7 +121,104 @@ def discover():
         short_stories=short_stories, thriller_suspense=thriller_suspense, 
         biography_memoirs=biography_memoirs, poetry=poetry, 
         self_help=self_help, children_books=children_books, education=education)
-         
+
+
+@app.route("/favorites")
+def favorites():
+    
+    if session["user"]:
+        # grab the session user's credentials from database
+        user_profile = mongo.db.users.find_one({"username": session["user"]})
+        return render_template("pages/favorites.html", user=user_profile)
+    return redirect(url_for("login"))
+
+
+@app.route("/register", methods=["GET", "POST"])
+def register():
+    if request.method == "POST":
+        # check if username already exists in database
+        existing_user = mongo.db.users.find_one(
+            { "username": request.form.get("username").lower()})
+        # if the user exists - it flashes a message
+        if existing_user:
+            flash("Username already exists")
+            return redirect(url_for("register"))
+        
+        register = {
+            "username": request.form.get("username").lower(),
+            "email": request.form.get("email").lower(),
+            "password": generate_password_hash(request.form.get("password"))
+        }
+        mongo.db.users.insert_one(register)
+
+        # put the new user into 'session' cookie
+        session["user"] = request.form.get("username").lower()
+        return redirect(url_for("discover", username=session["user"]))
+
+    return render_template("pages/access.html", main_content="register")
+
+
+@app.route("/login", methods=["GET", "POST"])
+def login():
+    if request.method == "POST":
+        # check if username exists in database
+        existing_user = mongo.db.users.find_one(
+            {"username": request.form.get("username").lower()})
+
+        if existing_user: 
+            # ensure hashed password matches user input
+            if check_password_hash(
+                existing_user["password"], request.form.get("password")):
+                    session["user"] = request.form.get("username").lower()
+                    flash("Welcome, {}".format(
+                        request.form.get("username")))
+                    return redirect(url_for(
+                        "discover", username=session["user"]))
+            else: 
+                # invalid password match
+                return redirect(url_for("login"))
+
+        else: 
+            # username doesn't exist
+            return redirect(url_for("login"))
+
+    return render_template("pages/access.html", main_content="login")
+
+
+@app.route("/logout")
+def logout():
+    # remove user from session cookies
+    session.pop("user")
+    return redirect(url_for("login"))
+
+
+@app.route("/account", methods=["GET", "POST"])
+def account():
+    if session["user"]:
+        # grab the session user's credentials from database
+        user_profile = mongo.db.users.find_one({"username": session["user"]})
+        return render_template("pages/account.html", user=user_profile)
+    return redirect(url_for("login"))
+
+
+@app.route("/edit_profile/<user_profile_id>", methods=["GET", "POST"])
+def edit_profile(user_profile_id):
+    if request.method == "POST":
+        submit = {"$set": {
+            "username": request.form.get("username"), 
+            "email": request.form.get("email"),
+            "password": generate_password_hash(request.form.get("password"))
+            }
+        }
+        mongo.db.users.update_one({"_id": ObjectId(user_profile_id)}, submit)
+        #update user session to push new username before re-directing
+        session["user"] = request.form.get("username")
+        flash("User Profile Successfully Updated!")
+        return redirect(url_for("account"))
+        
+    user_profile = mongo.db.users.find_one({"_id": ObjectId(user_profile_id)})
+    return render_template("components/forms/edit_profile.html", user=user_profile)
+
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"), 
