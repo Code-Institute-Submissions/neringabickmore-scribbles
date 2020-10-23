@@ -2,16 +2,19 @@
 {% block content %}
 
 
-<div class="col-12" id="discover-template">
-    <img src="static/images/library.jpg" class="img-fluid" alt="library">
+<div class="col-12 mb-2" id="discover">
+    <h1 class="m-2"> Discover book collections </h1>
+</br>
+    <img src="static/images/library.jpg" alt="library">
 </div>
 <!-- Reviews container -->
 <div class="container-fluid m-md-3" id="discover-reviews">
     <!-- Action & Adventure-->
-    <div class="row my-2">
+    <div class="row my-2 mt-3">
         <div class="col-lg-4 col-md-6 col-12">
             <h1 class="text-left"> Action & Adventure </h1>
-            <div class="review-box p-2">
+        </br>
+            <div class="review-box m-2">
                 <!-- Review  -->
                 {% for review in action_adventure %}
 
