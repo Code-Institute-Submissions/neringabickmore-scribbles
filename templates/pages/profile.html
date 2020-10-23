@@ -6,33 +6,36 @@
 </div>
 
 {% else %}
-<!-- Title -->
+<!-- User Profile -->
 <div class="container-fluid">
-    <div class="col-12 account">
-        <h1>account details</h1>
+
+    <!-- Title -->
+    <div class="row justify-content-center mb-4">
+        <div class="col-5 account text-center">
+            <h1>account details</h1>
+        </div>
     </div>
 
-    <div class="col-12 col-sm-6 account p-2">
-        <!-- Details -->
-        <table class="table">
-            <tbody>
-                <tr>
-                    <th scope="row"><i class="fas fa-envelope" aria-hidden="true"></i> username</th>
-                    <td> {{ user.username }} </td>
-                </tr>
-                <tr>
-                    <th scope="row"><i class="fas fa-at pr-1" aria-hidden="true"></i>email</th>
-                    <td> {{ user.email }} </td>
-                </tr>
-            </tbody>
-        </table>
-
-        <!-- Action Buttons -->
-        <a class="btn" href="/discover" title="cancel"><i class="fas fa-times-circle icon-btn"
-                aria-hidden="true"></i></a>
-        <a class="btn" href="{{ url_for('edit_profile', user_profile_id=user._id) }}" title="edit account"><i
-                class="fas fa-user-edit icon-btn" aria-hidden="true"></i></a>
+    <!-- User Details -->
+    <div class="row justify-content-center mb-4">
+        <div class="col-10 col-sm-5 access-box p-2 ">
+            <dl class="row mt-5" id="view-profile">
+                    
+                        <dl class="col-6"><i class="fas fa-envelope" aria-hidden="true"></i> username</dl>
+                        <dd> {{ user.username }} </dd>
+                    
+                        <dl class="col-6"><i class="fas fa-at pr-1" aria-hidden="true"></i>email</dl>
+                        <dd> {{ user.email }} </dd>
+                    
+             </dl>   
+            <!-- Action Buttons -->
+            <a class="btn" href="/discover" title="cancel"><i class="fas fa-times-circle icon-btn"
+                    aria-hidden="true"></i></a>
+            <a class="btn" href="{{ url_for('edit_profile', user_profile_id=user._id) }}" title="edit account"><i
+                    class="fas fa-user-edit icon-btn" aria-hidden="true"></i></a>
+        </div>
     </div>
 </div>
+
 {% endif %}
 {% endblock %}
