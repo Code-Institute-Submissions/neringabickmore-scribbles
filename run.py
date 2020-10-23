@@ -192,16 +192,16 @@ def logout():
     return redirect(url_for("login"))
 
 
-@app.route("/account", methods=["GET", "POST"])
-def account():
+@app.route("/profile", methods=["GET", "POST"])
+def profile():
     if session["user"]:
         # grab the session user's credentials from database
         user_profile = mongo.db.users.find_one({"username": session["user"]})
-        return render_template("pages/account.html", user=user_profile)
+        return render_template("pages/profile.html", user=user_profile)
     return redirect(url_for("login"))
 
 
-@app.route("/edit_profile/<user_profile_id>", methods=["GET", "POST"])
+@app.route("/edit/profile/<user_profile_id>", methods=["GET", "POST"])
 def edit_profile(user_profile_id):
     if request.method == "POST":
         submit = {"$set": {
@@ -217,7 +217,7 @@ def edit_profile(user_profile_id):
         return redirect(url_for("account"))
         
     user_profile = mongo.db.users.find_one({"_id": ObjectId(user_profile_id)})
-    return render_template("components/forms/edit_profile.html", user=user_profile)
+    return render_template("pages/profile.html", main_content="edit_profile", user=user_profile)
 
 
 if __name__ == "__main__":

@@ -1,0 +1,38 @@
+{% extends "layout/base.html" %}
+{% block content %}
+{% if main_content == "edit_profile" %}
+<div class="container-fluid">
+{% include "components/forms/edit-profile.html" %}
+</div>
+
+{% else %}
+<!-- Title -->
+<div class="container-fluid">
+    <div class="col-12 account">
+        <h1>account details</h1>
+    </div>
+
+    <div class="col-12 col-sm-6 account p-2">
+        <!-- Details -->
+        <table class="table">
+            <tbody>
+                <tr>
+                    <th scope="row"><i class="fas fa-envelope" aria-hidden="true"></i> username</th>
+                    <td> {{ user.username }} </td>
+                </tr>
+                <tr>
+                    <th scope="row"><i class="fas fa-at pr-1" aria-hidden="true"></i>email</th>
+                    <td> {{ user.email }} </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Action Buttons -->
+        <a class="btn" href="/discover" title="cancel"><i class="fas fa-times-circle icon-btn"
+                aria-hidden="true"></i></a>
+        <a class="btn" href="{{ url_for('edit_profile', user_profile_id=user._id) }}" title="edit account"><i
+                class="fas fa-user-edit icon-btn" aria-hidden="true"></i></a>
+    </div>
+</div>
+{% endif %}
+{% endblock %}

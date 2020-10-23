@@ -1,6 +1,3 @@
-{% extends "layout/base.html" %}
-{% block content %}
-
 <div class="row">
     <div class="col-12">
         <h3 class="center">New Details</h3>
@@ -8,8 +5,8 @@
             <!-- Username -->
             <div class="form-group">
                 <label for="username">Username</label>
-                <input id="username" name="username" type="text" class="form-control" minlength="5" maxlength="15"
-                    pattern="^[a-zA-Z0-9{5,15}$" required>
+                <input id="username" name="username" type="text" class="form-control" minlength="4" maxlength="10"
+                    pattern="^[a-zA-Z0-9{4,10}$" required>
             </div>
             <!-- Email -->
             <div class="form-group">
@@ -19,8 +16,8 @@
             <!-- Password -->
             <div class="form-group">
                 <label for="password">Password</label>
-                <input id="password" name="password" type="password" minlength="5" maxlength="15"
-                    pattern="^[a-zA-Z0-9{5,15}$" class="form-control" required>
+                <input id="password" name="password" type="password" minlength="4" maxlength="10"
+                    pattern="^[a-zA-Z0-9{4,10}$" class="form-control" required>
             </div>
             <!-- Cancel -->
             <a href="{{ url_for('discover') }}" class="btn btn-primary">
@@ -32,6 +29,3 @@
         </form>
     </div>
 </div>
-
-{% endblock %}
-
