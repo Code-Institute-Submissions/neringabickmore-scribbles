@@ -1,12 +1,18 @@
-<div class="row">
+<!-- Title -->
+<div class="row justify-content-center mb-4">
     <div class="col-5">
-        <h3 class="center">Register</h3>
-        <form method="POST" action="{{ url_for('register') }}">
+        <h3 >Register</h3>
+    </div>
+</div>
+<!-- Registration form -->
+<div class="row justify-content-center mb-4">
+    <div class="col-sm-5 col-10 access-box p-2">
+        <form method="POST" action="/register">
             <!-- Username -->
             <div class="form-group">
                 <label for="username">Username</label>
-                <input id="username" name="username" type="text" class="form-control" minlength="5" maxlength="15"
-                    pattern="^[a-zA-Z0-9{5,15}$" required>
+                <input id="username" name="username" type="text" class="form-control" minlength="4" maxlength="10"
+                    pattern="^[a-zA-Z0-9{4,10}$" required>
             </div>
             <!-- Email -->
             <div class="form-group">
@@ -16,18 +22,20 @@
             <!-- Password -->
             <div class="form-group">
                 <label for="password">Password</label>
-                <input id="password" name="password" type="password" minlength="5" maxlength="15"
-                    pattern="^[a-zA-Z0-9{5,15}$" class="form-control" required>
+                <input id="password" name="password" type="password" minlength="4" maxlength="10"
+                    pattern="^[a-zA-Z0-9{4,10}$" class="form-control" required>
             </div>
             <!-- Register -->
-        <button type="submit" class="btn">Register</button>
+        <button type="submit" class="btn"><i class="fas fa-user-plus icon-btn"></i></button>
         </form>
     </div>
     
 </div>
-<div class="row">
-    <div class="col-5">
-        
-        <p class="">Already have an account? <a href="{{ url_for('login') }}" class="btn">login</a></p>
+<!-- Redirection to login -->    
+<div class="row mt-2 justify-content-center">
+    <div class="col-sm-5 col-10 p-2 access-box">
+        <h2 class="">Already have an account? </h2>
+        <a href="/login" class="btn"><i class="fas fa-sign-in-alt icon-btn"></i></a>
+    </div>
     </div>
 </div>
