@@ -2,7 +2,7 @@
 {% block content %}
 {% if main_content == "edit_profile" %}
 <div class="container-fluid">
-{% include "components/forms/edit-profile.html" %}
+    {% include "components/forms/edit-profile.html" %}
 </div>
 
 {% else %}
@@ -20,17 +20,19 @@
     <div class="row justify-content-center mb-4">
         <div class="col-10 col-sm-5 access-box p-2 ">
             <dl class="row mt-5" id="view-profile">
-                    
-                        <dl class="col-6"><i class="fas fa-envelope" aria-hidden="true"></i> username</dl>
-                        <dd> {{ user.username }} </dd>
-                    
-                        <dl class="col-6"><i class="fas fa-at pr-1" aria-hidden="true"></i>email</dl>
-                        <dd> {{ user.email }} </dd>
-                    
-             </dl>   
+                <!-- Username -->
+                <dl class="col-6"><i class="fas fa-envelope" aria-hidden="true"></i> username</dl>
+                <dd> {{ user.username }} </dd>
+                <!-- Email Address -->
+                <dl class="col-6"><i class="fas fa-at pr-1" aria-hidden="true"></i>email</dl>
+                <dd> {{ user.email }} </dd>
+            </dl>
+
             <!-- Action Buttons -->
+            <!-- Cancel -->
             <a class="btn" href="/discover" title="cancel"><i class="fas fa-times-circle icon-btn"
                     aria-hidden="true"></i></a>
+            <!-- Edit profile -->
             <a class="btn" href="{{ url_for('edit_profile', user_profile_id=user._id) }}" title="edit account"><i
                     class="fas fa-user-edit icon-btn" aria-hidden="true"></i></a>
         </div>
