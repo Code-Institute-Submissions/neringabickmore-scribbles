@@ -1,31 +1,39 @@
-<div class="row">
-    <div class="col-12">
-        <h3 class="center">New Details</h3>
+<!-- Title -->
+<div class="row justify-content-center mb-4">
+    <div class="col-5">
+        <h1>Enter New Details</h1>
+    </div>
+</div>
+<!-- User Details update form -->
+<div class="row justify-content-center mb-4">
+    <div class="col-sm-5 col-10 access-box p-2">
         <form method="POST" action="">
+
             <!-- Username -->
             <div class="form-group">
                 <label for="username">Username</label>
                 <input id="username" name="username" type="text" class="form-control" minlength="4" maxlength="10"
                     pattern="^[a-zA-Z0-9{4,10}$" required>
             </div>
+
             <!-- Email -->
             <div class="form-group">
                 <label for="email">Email Address</label>
                 <input id="email" name="email" type="email" class="form-control" required>
             </div>
+
             <!-- Password -->
             <div class="form-group">
                 <label for="password">Password</label>
                 <input id="password" name="password" type="password" minlength="4" maxlength="10"
                     pattern="^[a-zA-Z0-9{4,10}$" class="form-control" required>
             </div>
+            <!-- Action Buttons -->
+            <!-- Update Details -->
+            <button type="submit" class="btn"><i class="fas fa-user-plus icon-btn"></i></button>
             <!-- Cancel -->
-            <a href="{{ url_for('discover') }}" class="btn btn-primary">
-                Cancel <i class="fas fa-times-circle right"></i>
-            </a>
-            <!-- Update details -->
-            <button class="btn btn-primary" type="submit"> Update details</button>
-
+            <a href="/discover" class="btn "><i class="fas fa-times-circle icon-btn"></i></a>
         </form>
     </div>
+
 </div>
