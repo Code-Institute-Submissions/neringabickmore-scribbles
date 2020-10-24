@@ -181,7 +181,8 @@ def login():
         else: 
             # username doesn't exist
             return redirect(url_for("login"))
-
+            
+        return redirect(url_for("login"))
     return render_template("pages/access.html", main_content="login")
 
 
