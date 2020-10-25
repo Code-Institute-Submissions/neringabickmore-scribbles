@@ -1,28 +1,39 @@
 {% extends "layout/base.html" %}
 {% block content %}
 
-<h1> My Reviews </h1>
+<!-- Title -->
+<div class="col-12 mb-2">
+    <div class="d-flex justify-content-center">
+        <h1 class="m-2"> My reviews </h1>
+        <!-- Add review button"-->
+        <a class="btn" href="{{ url_for('add_review') }}"><i class="fas fa-plus icon-btn"></i></a>
+    </div>
+</div>
 
-<a class="btn btn-primary" href="{{ url_for('add_review') }}">Add Review</a>
+<!-- Reviews container -->
+<div class="container-fluid m-md-3" id="my-reviews">
+    <div class="row my-2">
+        <div class="col-lg-4 col-md-6 col-12">
+            {% for review in reviews %}
+            <!-- Genre category -->
+            <h1 class="text-left my-4"> {{ review.genre}} </h1>
+            <div class="review-box m-3 p-2">
 
-{% for review in reviews %}
-        <div class="">
-            <p>Book title: {{ review.title }}</p>
-            <p>Author: {{ review.author }}</p>
-            <p>Genre: {{ review.genre }}</p>
-            <p>How many pages? {{ review.length }}</p>
-            <p>How easy was it to read the book? {{ review.ease_of_reading }}</p>
-            <p>Plot summary: {{ review.plot_summary }}</p>
-            <p>Your favorite quote: {{ review.favorite_quote }}</p>
-            <p>Describe the book in 3 emoji's {{ review.emoji }}</p>
-            <p>How do you rate the book? {{ review.rating }}</p>
-            <img src="{{ review.link_to_image }}">Book image</img><br>
-            <a class="btn btn-primary m-2" href="{{ review.link_to_buy }}">Buy the book</a>
-            <br>
-        
-        <a class="btn btn-primary m-2" href="{{ url_for('delete_review', review_id=review._id)}}">Delete Review</a>
-        <a class="btn btn-primary m-2" href="{{ url_for('edit_review', review_id=review._id)}}">Edit Review</a>
-        </div> <br>
-{% endfor %}
+                <!-- Action button"-->
+                <a class="btn" href="{{ url_for('delete_review', review_id=review._id)}}"><i
+                        class="fas fa-trash-alt icon-btn"></i></a>
+                <a class="btn" href="{{ url_for('edit_review', review_id=review._id)}}"><i
+                        class="fas fa-pen icon-btn"></i></a>
+
+                <!-- Book cover img -->
+                <img class="col-sm-12 book-cover m-2" src="{{ review.link_to_image }}"></img><br>
+
+                <!-- Book review -->
+                {% include 'components/content/review.html' %}
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
 
 {% endblock %}
