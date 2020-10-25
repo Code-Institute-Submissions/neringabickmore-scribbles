@@ -92,35 +92,13 @@ def my_reviews():
     return redirect(url_for("login"))
 
 
-@app.route("/discover", methods=["GET", "POST"])
+@app.route("/discover/reviews", methods=["GET"])
 def discover():
-    if request.method == "GET":
-        action_adventure = mongo.db.reviews.find({"genre":"Action & Adventure"})
-        novel = mongo.db.reviews.find({"genre":"Novel"})
-        detective_mystery = mongo.db.reviews.find({"genre":"Detective & Mystery"})
-        crime = mongo.db.reviews.find({"genre":"Crime"})
-        fantasy = mongo.db.reviews.find({"genre":"Fantasy"})
-        history = mongo.db.reviews.find({"genre":"History"})
-        horror = mongo.db.reviews.find({"genre":"Horror"})
-        fiction = mongo.db.reviews.find({"genre":"Fiction"})
-        romance = mongo.db.reviews.find({"genre":"Romance"})
-        sci_fi = mongo.db.reviews.find({"genre":"Sci-Fi"})
-        short_stories = mongo.db.reviews.find({"genre":"Short Stories"})
-        thriller_suspense= mongo.db.reviews.find({"genre":"Thriller & Suspense"})
-        biography_memoirs = mongo.db.reviews.find({"genre":"Biography & Memoirs"})
-        poetry = mongo.db.reviews.find({"genre":"Poetry"})
-        self_help = mongo.db.reviews.find({"genre":"Self-help"})
-        children_books = mongo.db.reviews.find({"genre":"Children's books"})
-        education = mongo.db.reviews.find({"genre":"Education"})
 
-    return render_template("pages/discover.html", 
-        action_adventure=action_adventure, novel=novel, 
-        detective_mystery=detective_mystery, crime=crime, 
-        fantasy=fantasy, history=history, horror=horror,
-        fiction=fiction, romance=romance, sci_fi=sci_fi, 
-        short_stories=short_stories, thriller_suspense=thriller_suspense, 
-        biography_memoirs=biography_memoirs, poetry=poetry, 
-        self_help=self_help, children_books=children_books, education=education)
+    if request.method == "GET":
+        reviews = mongo.db.reviews.find().sort("genre")
+        return render_template("pages/discover.html", reviews=reviews)
+    return redirect(url_for("discover"))
 
 
 @app.route("/favorites")
