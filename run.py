@@ -44,7 +44,7 @@ def add_review():
         }
         mongo.db.reviews.insert_one(review)
         flash("review added")
-        return redirect(url_for("my_reviews"))
+        return redirect(url_for("my/reviews"))
 
     genre = mongo.db.genre.find().sort("genre_category", 1)
     return render_template("components/forms/add-review.html", genre=genre)
@@ -69,7 +69,7 @@ def edit_review(review_id):
         }
         mongo.db.reviews.update_one({"_id": ObjectId(review_id)}, submit)
         flash("Review Updated!")
-        return redirect(url_for("my_reviews"))
+        return redirect(url_for("my/reviews"))
         
     review = mongo.db.reviews.find_one({"_id": ObjectId(review_id)})
     genre = mongo.db.genre.find().sort("genre_category", 1)
@@ -80,10 +80,10 @@ def edit_review(review_id):
 def delete_review(review_id):
     mongo.db.reviews.remove({"_id": ObjectId(review_id)})
     flash("Review Deleted")
-    return redirect(url_for("my_reviews"))
+    return redirect(url_for("my/reviews"))
 
 
-@app.route("/my_reviews")
+@app.route("/my/reviews")
 def my_reviews():
     if session["user"]:
         user_profile = mongo.db.users.find_one({"username": session["user"]})
@@ -94,16 +94,14 @@ def my_reviews():
 
 @app.route("/discover/reviews", methods=["GET"])
 def discover():
-
     if request.method == "GET":
         reviews = mongo.db.reviews.find().sort("genre")
         return render_template("pages/discover.html", reviews=reviews)
-    return redirect(url_for("discover"))
+    return redirect(url_for("discover/reviews"))
 
 
 @app.route("/favorites")
 def favorites():
-    
     if session["user"]:
         # grab the session user's credentials from database
         user_profile = mongo.db.users.find_one({"username": session["user"]})
