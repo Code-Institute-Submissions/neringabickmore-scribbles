@@ -181,7 +181,7 @@ def login():
         else: 
             # username doesn't exist
             return redirect(url_for("login"))
-            
+
         return redirect(url_for("login"))
     return render_template("pages/access.html", main_content="login")
 
@@ -215,7 +215,7 @@ def edit_profile(user_profile_id):
         #update user session to push new username before re-directing
         session["user"] = request.form.get("username")
         flash("User Profile Successfully Updated!")
-        return redirect(url_for("account"))
+        return redirect(url_for("profile"))
         
     user_profile = mongo.db.users.find_one({"_id": ObjectId(user_profile_id)})
     return render_template("pages/profile.html", main_content="edit_profile", user=user_profile)
