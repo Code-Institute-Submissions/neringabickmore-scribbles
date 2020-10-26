@@ -50,7 +50,7 @@ def add_review():
     return render_template("pages/my-reviews.html", main_content="add_review", genre=genre)
 
 
-@app.route("/edit_review/<review_id>", methods=["GET", "POST"])
+@app.route("/edit/review/<review_id>", methods=["GET", "POST"])
 def edit_review(review_id):
     if request.method == "POST":
         submit = {"$set": {
