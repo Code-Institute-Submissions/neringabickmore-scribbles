@@ -10,14 +10,14 @@
     <div class="collapse navbar-collapse mr-4" id="navbarNavDropdown">
         <ul class="navbar-nav ml-auto d-lg-flex align-items-md-center">
             <li class="nav-item mr-2">
-                <a href="{{ url_for('discover') }}" class="nav-link">discover</a>
+                <a href="/discover/reviews" class="nav-link">discover</a>
             </li>
             {% if session.user %}
             <li class="nav-item mr-2">
                 <a href="{{ url_for('favorites') }}" class="nav-link">favorites</a>
             </li>
             <li class="nav-item mr-2">
-                <a href="{{ url_for('my_reviews') }}" class="nav-link">my reviews</a>
+                <a href="/my/reviews" class="nav-link">my reviews</a>
             </li>
             <li class="nav-item dropdown mr-2">
                 <a class="nav-link" id="navbarDropdown" role="button" data-toggle="dropdown"
@@ -25,19 +25,16 @@
                     account
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown" id=nav-dropdown-menu>
-                    <a class="dropdown-item" href="{{ url_for('logout') }}">log out</a>
-                    <a class="dropdown-item" href="{{ url_for('account') }}">view profile</a>
+                    <a class="dropdown-item" href="/logout">log out</a>
+                    <a class="dropdown-item" href="/profile">view profile</a>
                 </div>
             </li>
             {% else %}
             <li class="nav-item mr-2">
-                <a href="{{ url_for('about') }}" class="nav-link">about</a>
+                <a href="/about" class="nav-link">about</a>
             </li>
             <li class="nav-item mr-2">
-                <a href="{{ url_for('login') }}" class="nav-link">login</a>
-            </li>
-            <li class="nav-item mr-2">
-                <a href="{{ url_for('register') }}" class="nav-link">register</a>
+                <a href="/login" class="nav-link">login</a>
             </li>
             {% endif %}
         </ul>

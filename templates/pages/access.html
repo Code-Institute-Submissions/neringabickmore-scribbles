@@ -1,0 +1,12 @@
+{% extends "layout/base.html" %}
+{% block content %}
+{% if main_content == "register" %}
+<div class="container-fluid">
+{% include "components/forms/register.html" %}
+</div>
+{% else %}
+<div class="container-fluid">
+{% include "components/forms/login.html" %}    
+</div>
+{% endif %}
+{% endblock %}

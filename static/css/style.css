@@ -156,8 +156,9 @@ header img{
 /** Carousel styling **/
 
 .carousel-item img{
-    width: 100%;
     box-shadow: var(--dark-box-shadow);
+    width: 375px;
+    position: relative;
 }
 
 /** quotes **/
@@ -168,21 +169,23 @@ header img{
 }
 
 /* Discover template Styling */ 
-.img-fluid{
-    max-width: 100%;
-    height: auto;
+
+#discover img{
     box-shadow: var(--dark-box-shadow);
+    width: 100%;
+    position: relative;
+    
 }
 
 .book-cover{
     max-width: 80%;
     align-self: center;
 }
-#discover-reviews{
+#discover-reviews, #view-profile, #my-reviews{
     text-transform: uppercase;
 }
 
-#discover-reviews dd{
+#discover-reviews dd, #view-profile dd, .my-reviews input{
     text-transform: none;
 }
 
@@ -199,10 +202,14 @@ dl{
     box-shadow: var(--default-box-shadow);
 }
 
-/* Register template Styling */
-/* Login template Styling */
+/* Register/Login component Styling */
+
+.access-box, .review-box{
+    background-color: var(--cold-white);
+    box-shadow: var(--default-box-shadow);
+}
+
 /* Favorites template Styling */
-/* My reviews template Styling */
 /* Edit review template Styling */
 
 /* Account Template Styling */
@@ -240,6 +247,13 @@ dl{
     transform: var(--default-transform);
 }
 
+input:-internal-autofill-selected {
+    background-color: var(--white)!important;
+}
+.form-control{
+    font-size: 1.8rem;
+    line-height: 1.8;
+}
 /* Responsive breakpoints styling */
 
 /** Styling for devices 
@@ -286,9 +300,10 @@ wider than tablet **/
 /** Styling for devices
 with medium sized screens*/
 @media(min-height: 1024px){
-    #carouselBox{
+    #carouselBox, #discover{
         min-height: 40vh;
     }
+    
 }
 
 /** Styling for devices
