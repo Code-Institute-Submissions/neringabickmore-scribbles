@@ -1,118 +1,106 @@
-<h1> Add a new review </h1>
+<!-- Title -->
+<div class="row justify-content-center mb-4">
+    <div class="col-5">
+        <h1>Add New Review</h1>
+    </div>
+</div>
 
-<div class="container">
-    <div class="row justify-content-center">
-        <form class="container pt-1" method="POST" action="{{ url_for('add_review') }}">
-            <div class="row justify-content-center">
-                <div class="col-12">
-                    
-                    <!-- Book title -->
-                    <div class="form-group mb-0">
-                        <label for="title">Title</label>
-                        <input name="title" type="text" class="form-control" id="title" placeholder="" required />
-                    </div>
+<!-- Book Review form -->
+<div class="row justify-content-center mb-4">
+    <div class="col-sm-5 col-10 review-box p-2">
+        <form method="POST">
 
-                    <!-- Author -->
-                    <div class="form-group mb-0">
-                        <label for="author">Author</label>
-                        <input name="author" type="text" class="form-control" id="title" placeholder="" required />
-                    </div>
-
-                    <!-- Select Genre -->
-                    <div class="form-group">
-                        <div class="px-0">
-                            <label for="genre_category">
-                                Genre
-                            </label>
-                        </div>
-                        <div class="px-0">
-                            <select name="genre_category" class="form-control" id="genre_category">
-                                <option value="">Choose genre </option>
-                                {% for genre in genre %}
-                                <option value="{{ genre.genre_category }}">{{ genre.genre_category }}</option>
-                                {% endfor %}
-                            </select>
-                        </div>
-                    </div>
-
-                    <!-- Length of reading -->
-                    <div class="form-group mb-0">
-                        <label for="length">Length</label>
-                        <input name="length" type="text" class="form-control" id="length" placeholder="" required />
-                    </div>
-
-                    <!-- Ease of reading -->
-                    <div class="form-group mb-0">
-                        <label for="ease_of_reading">Ease of Reading</label>
-                        <input name="ease_of_reading" type="text" class="form-control" id="title" placeholder=""required />
-                    </div>
-
-                    <!-- Plot summary -->
-                    <div class="form-group mb-0">
-                        <label for="plot_summary">Plot Summary</label>
-                        <textarea class="form-control" id="plot_summary" rows="3" name="plot_summary" minlength="5" maxlength="200"></textarea>
-                    </div>
-
-                    <!-- favorite quote -->
-                    <div class="form-group mb-0">
-                        <label for="favorite_quote">Favorite Quote</label>
-                        <textarea class="form-control" id="plot_summary" rows="3" name="favorite_quote" minlength="5" maxlength="200"></textarea>
-                    </div>
-
-                    <!-- Select Emoji-->
-                    <div class="form-group">
-                        <div class="px-0">
-                            <label for="emoji">
-                                Describe the book in three emojis
-                            </label>
-                        </div>
-                        <div class="px-0">
-                            <select name="emoji" class="form-control" id="emoji">
-                                <!--{% for emoji in emojis %} -->
-                                <option value="{{ emoji.emoji_category }}">{{ emoji.emoji_category }}</option>
-                                <!--{% endfor %}-->
-                            </select>
-                        </div>
-                    </div>
-
-                    <!-- rating -->
-                    <div class="form-group">
-                        <div class="px-0">
-                            <label for="rating">
-                                Rate the book
-                            </label>
-                        </div>
-                        <div class="px-0">
-                            <select name="rating" class="form-control" id="rating">
-                                <option value=""></option>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <!-- Image link -->
-                    <div class="form-group mb-0">
-                        <label for="link_to_image">Insert Link to Image</label>
-                        <input name="link_to_image" type="url" class="form-control" id="link_to_image"
-                            placeholder="" />
-                    </div>
-
-                    <!-- Link to buy a book -->
-                    <div class="form-group">
-                        <label for="link_to_buy">Insert Link where to purchase the book </label>
-                        <input name="link_to_buy" type="url" class="form-control" id="link_to_buy" placeholder="" />
-                    </div>
-
-                    <!-- submit button -->
-                    <button type="submit" class="btn btn-primary">Add review</button>
-                    <!-- cancel-->
-                    <a class="btn btn-primary" href="/my/reviews">Cancel</a>
-                </div>
+            <!-- Book title -->
+            <div class="form-group mb-0">
+                <label for="title">Title</label>
+                <input class="form-control" id="title" name="title" type="text" required></input>
             </div>
+
+            <!-- Author -->
+            <div class="form-group mb-0">
+                <label for="author">Author</label>
+                <input class="form-control" id="author" name="author" required ></input>
+            </div>
+
+            <!-- Select Genre -->
+            <div class="form-group mb-0">
+                <label for="genre_category">Genre</label>
+                <select name="genre_category" class="form-control" id="genre_category">
+                    <option value="Choose genre">Choose genre </option>
+                    {% for genre in genre %}
+                    <option value="{{ genre.genre_category }}">{{ genre.genre_category }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <!-- Length of reading -->
+            <div class="form-group mb-0">
+                <label for="length">Length</label>
+                <input class="form-control" id="length" name="length" required ></input>
+            </div>
+
+            <!-- Ease of reading -->
+            <div class="form-group mb-0">
+                <label for="ease_of_reading">Ease of Reading</label>
+                <input class="form-control" id="ease_of_reading" name="ease_of_reading" required></input>
+            </div>
+
+            <!-- Plot summary -->
+            <div class="form-group mb-0">
+                <label for="plot_summary">Plot Summary</label>
+                <input class="form-control" id="plot_summary" rows="3" name="plot_summary"
+                    required maxlength="300" ></input>
+            </div>
+
+            <!-- favorite quote -->
+            <div class="form-group mb-0">
+                <label for="favorite_quote">Favorite Quote</label>
+                <input class="form-control" id="plot_summary" rows="3" name="favorite_quote"
+                    required></input>
+            </div>
+
+            <!-- Select Emoji-->
+            <div class="form-group">
+                <label for="emoji">Describe the book in three emojis</label>
+                <select name="emoji" class="form-control" id="emoji">
+                    <!--{% for emoji in emojis %} -->
+                    <option value=""></option>
+                    <!--{% endfor %}-->
+                </select>
+            </div>
+
+            <!-- rating -->
+            <div class="form-group">
+                <label for="rating">
+                    Rate the book
+                </label>
+                <select name="rating" class="form-control" id="rating">
+                    <option value=""></option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </div>
+
+            <!-- Image link -->
+            <div class="form-group mb-0">
+                <label for="link_to_image">Insert Image URL</label>
+                <input class="form-control" id="link_to_image" name="link_to_image" required></input>
+            </div>
+
+            <!-- Link to buy a book -->
+            <div class="form-group">
+                <label for="link_to_buy ">Insert Book Vendor URL </label>
+                <input class="form-control" id="link_to_buy " name="link_to_buy"  required></input>
+            </div>
+            <!-- Action buttons-->
+            <!-- cancel-->
+            <a class="btn" href="/my/reviews"><i class="fas fa-times-circle icon-btn"></i></a>
+            <!-- submit -->
+            <button type="submit" class="btn"><i class="fas fa-check icon-btn "></i></button>
+            
         </form>
     </div>
 </div>
