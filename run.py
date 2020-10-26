@@ -54,7 +54,7 @@ def add_review():
 def edit_review(review_id):
     if request.method == "POST":
         submit = {"$set": {
-             "title": request.form.get("title"),
+            "title": request.form.get("title"),
             "author": request.form.get("author"),
             "genre": request.form.get("genre_category"),
             "length": request.form.get("length"),
@@ -69,12 +69,12 @@ def edit_review(review_id):
         }
         mongo.db.reviews.update_one({"_id": ObjectId(review_id)}, submit)
         flash("Review Updated!")
-        return redirect(url_for("my/reviews"))
+        return redirect(url_for("my/reviews"))   
         
     review = mongo.db.reviews.find_one({"_id": ObjectId(review_id)})
     genre = mongo.db.genre.find().sort("genre_category", 1)
-    return render_template("components/forms/edit-review.html", review=review, genre=genre)
-
+    return render_template("pages/my-reviews.html", main_content="edit_review", review=review, genre=genre)
+    
 
 @app.route("/delete_review/<review_id>")
 def delete_review(review_id):
@@ -91,7 +91,7 @@ def my_reviews():
         return render_template("pages/my-reviews.html", user=user_profile, reviews=reviews)
     return redirect(url_for("login"))
 
-
+    
 @app.route("/discover/reviews", methods=["GET"])
 def discover():
     if request.method == "GET":
