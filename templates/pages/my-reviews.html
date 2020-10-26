@@ -4,14 +4,17 @@
 <div class="container-fluid">
     {% include "components/forms/edit-review.html" %}
 </div>
-
+{% elif main_content == "add_review" %}
+<div class="container-fluid">
+    {% include "components/forms/add-review.html" %}
+</div>
 {% else %}
 <!-- Title -->
 <div class="col-12 mb-2">
     <div class="d-flex justify-content-center">
         <h1 class="m-2"> My reviews </h1>
         <!-- Add review button"-->
-        <a class="btn" href="{{ url_for('add_review') }}"><i class="fas fa-plus icon-btn"></i></a>
+        <a class="btn" href="/add/review"><i class="fas fa-plus icon-btn"></i></a>
     </div>
 </div>
 

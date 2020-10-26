@@ -25,7 +25,7 @@ def about():
     return render_template("pages/about.html")
 
 
-@app.route("/add_review", methods={"GET", "POST"})
+@app.route("/add/review", methods={"GET", "POST"})
 def add_review():
     if request.method == "POST":
         review = {
@@ -47,7 +47,7 @@ def add_review():
         return redirect(url_for("user_reviews"))
 
     genre = mongo.db.genre.find().sort("genre_category", 1)
-    return render_template("components/forms/add-review.html", genre=genre)
+    return render_template("pages/my-reviews.html", main_content="add_review", genre=genre)
 
 
 @app.route("/edit_review/<review_id>", methods=["GET", "POST"])
