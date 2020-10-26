@@ -1,6 +1,11 @@
 {% extends "layout/base.html" %}
 {% block content %}
+{% if main_content == "edit_review" %}
+<div class="container-fluid">
+    {% include "components/forms/edit-review.html" %}
+</div>
 
+{% else %}
 <!-- Title -->
 <div class="col-12 mb-2">
     <div class="d-flex justify-content-center">
@@ -36,4 +41,5 @@
     </div>
 </div>
 
+{% endif %}
 {% endblock %}
