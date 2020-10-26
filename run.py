@@ -44,7 +44,7 @@ def add_review():
         }
         mongo.db.reviews.insert_one(review)
         flash("review added")
-        return redirect(url_for("my/reviews"))
+        return redirect(url_for("user_reviews"))
 
     genre = mongo.db.genre.find().sort("genre_category", 1)
     return render_template("components/forms/add-review.html", genre=genre)
@@ -69,7 +69,7 @@ def edit_review(review_id):
         }
         mongo.db.reviews.update_one({"_id": ObjectId(review_id)}, submit)
         flash("Review Updated!")
-        return redirect(url_for("my/reviews"))   
+        return redirect(url_for("user_reviews"))   
         
     review = mongo.db.reviews.find_one({"_id": ObjectId(review_id)})
     genre = mongo.db.genre.find().sort("genre_category", 1)
@@ -80,24 +80,24 @@ def edit_review(review_id):
 def delete_review(review_id):
     mongo.db.reviews.remove({"_id": ObjectId(review_id)})
     flash("Review Deleted")
-    return redirect(url_for("my/reviews"))
+    return redirect(url_for("user_reviews"))
 
 
-@app.route("/my/reviews")
-def my_reviews():
+@app.route("/my/reviews", methods=["GET", "POST"])
+def user_reviews():
     if session["user"]:
-        user_profile = mongo.db.users.find_one({"username": session["user"]})
+        user_profile = mongo.db.users.find({"username": session["user"]})
         reviews = list(mongo.db.reviews.find({"reviewed_by": session["user"]}))
         return render_template("pages/my-reviews.html", user=user_profile, reviews=reviews)
-    return redirect(url_for("login"))
+    return redirect(url_for("user_reviews"))
 
-    
+
 @app.route("/discover/reviews", methods=["GET"])
 def discover():
     if request.method == "GET":
         reviews = mongo.db.reviews.find().sort("genre")
         return render_template("pages/discover.html", reviews=reviews)
-    return redirect(url_for("discover/reviews"))
+    return redirect(url_for("discover"))
 
 
 @app.route("/favorites")
@@ -106,7 +106,7 @@ def favorites():
         # grab the session user's credentials from database
         user_profile = mongo.db.users.find_one({"username": session["user"]})
         return render_template("pages/favorites.html", user=user_profile)
-    return redirect(url_for("login"))
+    return redirect(url_for("discover"))
 
 
 @app.route("/register", methods=["GET", "POST"])
