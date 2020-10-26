@@ -185,7 +185,7 @@ header img{
     text-transform: uppercase;
 }
 
-#discover-reviews dd, #view-profile dd{
+#discover-reviews dd, #view-profile dd, .my-reviews input{
     text-transform: none;
 }
 
@@ -204,13 +204,12 @@ dl{
 
 /* Register/Login component Styling */
 
-.access-box{
+.access-box, .review-box{
     background-color: var(--cold-white);
     box-shadow: var(--default-box-shadow);
 }
 
 /* Favorites template Styling */
-/* My reviews template Styling */
 /* Edit review template Styling */
 
 /* Account Template Styling */
