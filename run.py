@@ -105,9 +105,17 @@ def discover():
     return redirect(url_for("discover"))
 
 
-@app.route("/add/favorites/<review_id>")
+@app.route("/add/favorites/<review_id>", methods=["GET", "POST"])
 def add_favorites(review_id):
     if session["user"]:
+        # check if favorite review already exists in database
+        favorite_review_exists = mongo.db.favorites.find_one({"favorite": review_id})
+
+        # if the favorite review already in the database - it flashes a message    
+        if favorite_review_exists:
+            flash("This review is already in your favorites")
+            return redirect(url_for("discover"))
+        
         favorite_review = {
             "username": session["user"],
             "favorite" : review_id
