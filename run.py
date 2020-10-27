@@ -105,12 +105,16 @@ def discover():
     return redirect(url_for("discover"))
 
 
-@app.route("/favorites")
-def favorites():
+@app.route("/add/favorites/<review_id>")
+def add_favorites(review_id):
     if session["user"]:
-        # grab the session user's credentials from database
-        user_profile = users.find_one({"username": session["user"]})
-        return render_template("pages/favorites.html", user=user_profile)
+        favorite_review = {
+            "username": session["user"],
+            "favorite" : review_id
+        }
+        mongo.db.favorites.insert_one(favorite_review)
+        flash("new favorite added to your collection")
+        return redirect(url_for("discover"))
     return redirect(url_for("discover"))
 
 

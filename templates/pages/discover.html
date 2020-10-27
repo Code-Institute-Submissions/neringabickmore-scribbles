@@ -18,7 +18,8 @@
             <div class="review-box m-3 p-2">
                 <!-- Logged in users will see "favorite button"-->
                 {% if session.user %}
-                <button class="btn "><i class="far fa-heart icon-btn" title="add to favorites"></i></button>
+                    <a class="btn" href="{{ url_for('add_favorites', review_id=review._id) }}" title="add to favorites"><i
+                    class="far fa-heart icon-btn"></i></a>
                 {% endif %}
                 <!-- Link to re-direct to vendor page for purchase -->
                 <a class="btn" target="_blank" href="{{ review.link_to_buy }}"><i class="fas fa-shopping-cart icon-btn"
