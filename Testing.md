@@ -77,10 +77,8 @@ reviews = list(mongo.db.reviews.find({"reviewed_by": session["user"]}))
 
 ```
 
-### Unsolved bugs ###
-
-1. Favorites button in discover.html adds the same review to favorites multiple times.
-   Current code:
+4. Favorites button in discover.html adds the same review to favorites multiple times.
+   Original code:
 
 ```python
 @app.route("/add/favorites/<review_id>")
@@ -95,3 +93,22 @@ def add_favorites(review_id):
         return redirect(url_for("discover"))
     return redirect(url_for("discover"))
 ```
+
+Bug-fix: check if the favorite item already exists first before proceeding:
+
+```python
+if session["user"]:
+        # check if favorite review already exists in database
+        favorite_review_exists = mongo.db.favorites.find_one({"favorite": review_id})
+
+        # if the favorite review already in the database - it flashes a message
+        if favorite_review_exists:
+            flash("This review is already in your favorites")
+            return redirect(url_for("discover"))
+```
+
+### Unsolved bugs ###
+
+1. Favorites button in discover.html adds the same review to favorites multiple times.
+   Current code:
+
