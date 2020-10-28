@@ -1,6 +1,40 @@
 {% extends "layout/base.html" %}
 {% block content %}
 
-<h1>favorites empty page</h1>
+<!-- Title and image display -->
+<div class="col-12 mb-2" id="discover">
+    <h1 class="m-2"> Your favorite reviews </h1>
+    </br>
+</div>
+
+<!-- Reviews container -->
+<div class="container-fluid m-md-3" id="discover-reviews">
+    <div class="row my-2">
+        <div class="col-lg-4 col-md-6 col-12">
+            {% for review in fav_review %}
+            <!-- Genre category -->
+            <h1 class="text-left my-4"> {{ review.genre}} </h1>
+            <div class="review-box m-3 p-2">
+
+                <!-- Remove from favorites button"-->
+                <a class="btn" href="" title="remove from favorites"><i
+                    class="far fa-bin icon-btn"></i></a>
+
+                <!-- Link to re-direct to vendor page for purchase -->
+                <a class="btn" target="_blank" href="{{ review.link_to_buy }}"><i class="fas fa-shopping-cart icon-btn"
+                        title="buy the book" rel="noopener"></i></a>
+
+                <!-- Book cover img -->
+                <img class="col-sm-12 book-cover m-2" src="{{ review.link_to_image }}"></img><br>
+
+                <!-- Book review -->
+                {% include 'components/content/review.html' %} 
+            </div>
+            {% else %}
+                <H1>You have no favorites</H1>
+            {% endfor %}
+        </div>
+    </div>
+</div>
 
 {% endblock %}

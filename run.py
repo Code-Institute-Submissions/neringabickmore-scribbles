@@ -121,6 +121,28 @@ def add_favorites(review_id):
     return redirect(url_for('discover'))
 
 
+@app.route("/user/favorites", methods=["GET", "POST"])
+def user_favorites():
+    session_user = users.find_one({'username': session['user'].lower()})
+    session_user_fav = session_user['favorites']
+    fav_review = []
+    fav_review_id = []
+
+    if len(session_user['favorites']) != 0:
+        for fav in session_user_fav:
+            review = reviews.find_one({'_id': fav})
+            review_id = review['_id']
+            fav_review_id.append(review_id)
+
+    for fav in session_user_fav:
+        review = reviews.find_one({'_id': fav})
+        fav_review.append(review)
+
+    return render_template("pages/favorites.html", fav_review_id=fav_review_id,
+                           fav_review=fav_review, session_user=users.find_one(
+                               {'username': session['user'].lower()}))
+
+
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
