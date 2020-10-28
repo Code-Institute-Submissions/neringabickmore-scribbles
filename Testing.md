@@ -84,14 +84,11 @@ reviews = list(mongo.db.reviews.find({"reviewed_by": session["user"]}))
 @app.route("/add/favorites/<review_id>")
 def add_favorites(review_id):
     if session["user"]:
-        favorite_review = {
-            "username": session["user"],
-            "favorite" : review_id
-        }
-        mongo.db.favorites.insert_one(favorite_review)
-        flash("new favorite added to your collection")
-        return redirect(url_for("discover"))
-    return redirect(url_for("discover"))
+        user_profile = users.find_one({'username': session['user'].lower()})
+        users.update(user_profile, {"$push": {"favorites": ObjectId(review_id)}})
+        flash("Review added to favorites")
+        return redirect(url_for('discover'))
+    return redirect(url_for('discover'))
 ```
 
 Bug-fix: check if the favorite item already exists first before proceeding:
@@ -102,6 +99,7 @@ if session["user"]:
         favorite_review_exists = mongo.db.favorites.find_one({"favorite": review_id})
 
         # if the favorite review already in the database - it flashes a message
+        favorite_review_exists = users.find_one({"favorites": ObjectId(review_id)})
         if favorite_review_exists:
             flash("This review is already in your favorites")
             return redirect(url_for("discover"))
