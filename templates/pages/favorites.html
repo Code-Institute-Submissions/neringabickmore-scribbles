@@ -17,8 +17,8 @@
             <div class="review-box m-3 p-2">
 
                 <!-- Remove from favorites button"-->
-                <a class="btn" href="" title="remove from favorites"><i
-                    class="far fa-bin icon-btn"></i></a>
+                <a class="btn" href="{{ url_for('delete_favorites', review_id=review._id)}}" title="remove from favorites"><i
+                    class="far fa-trash-alt icon-btn"></i></a>
 
                 <!-- Link to re-direct to vendor page for purchase -->
                 <a class="btn" target="_blank" href="{{ review.link_to_buy }}"><i class="fas fa-shopping-cart icon-btn"

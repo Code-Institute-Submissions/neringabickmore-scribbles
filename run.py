@@ -121,6 +121,13 @@ def add_favorites(review_id):
     return redirect(url_for('discover'))
 
 
+@app.route('/delete/favorites/<review_id>')
+def delete_favorites(review_id):
+    current_user = users.find_one({'username': session['user'].lower()})
+    users.update(current_user, {"$pull": {"favorites": ObjectId(review_id)}})
+    return redirect(url_for('user_favorites'))
+
+
 @app.route("/user/favorites", methods=["GET", "POST"])
 def user_favorites():
     session_user = users.find_one({'username': session['user'].lower()})
