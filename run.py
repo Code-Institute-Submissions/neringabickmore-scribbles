@@ -91,7 +91,7 @@ def delete_review(review_id):
 @app.route("/my/reviews", methods=["GET", "POST"])
 def user_reviews():
     if session["user"]:
-        user_profile = users.find({"username": session["user"]})
+        user_profile = users.find_one({"username": session["user"]})
         reviews = list(mongo.db.reviews.find({"reviewed_by": session["user"]}))
         return render_template("pages/my-reviews.html", user=user_profile, reviews=reviews)
     return redirect(url_for("user_reviews"))
@@ -114,8 +114,8 @@ def add_favorites(review_id):
             flash("This review is already in your favorites")
             return redirect(url_for("discover"))
         
-        current_user = users.find_one({'username': session['user'].lower()})
-        users.update(current_user, {"$push": {"favorites": ObjectId(review_id)}})
+        user_profile = users.find_one({'username': session['user'].lower()})
+        users.update(user_profile, {"$push": {"favorites": ObjectId(review_id)}})
         return redirect(url_for('discover'))
         
     return redirect(url_for('discover'))
@@ -123,30 +123,30 @@ def add_favorites(review_id):
 
 @app.route('/delete/favorites/<review_id>')
 def delete_favorites(review_id):
-    current_user = users.find_one({'username': session['user'].lower()})
-    users.update(current_user, {"$pull": {"favorites": ObjectId(review_id)}})
+    user_profile = users.find_one({'username': session['user'].lower()})
+    users.update(user_profile, {"$pull": {"favorites": ObjectId(review_id)}})
     return redirect(url_for('user_favorites'))
 
 
 @app.route("/user/favorites", methods=["GET", "POST"])
 def user_favorites():
-    session_user = users.find_one({'username': session['user'].lower()})
-    session_user_fav = session_user['favorites']
+    user_profile = users.find_one({'username': session['user'].lower()})
+    user_profile_fav = user_profile['favorites']
     fav_review = []
     fav_review_id = []
 
-    if len(session_user['favorites']) != 0:
-        for fav in session_user_fav:
+    if len(user_profile['favorites']) != 0:
+        for fav in user_profile_fav:
             review = reviews.find_one({'_id': fav})
             review_id = review['_id']
             fav_review_id.append(review_id)
 
-    for fav in session_user_fav:
+    for fav in user_profile_fav:
         review = reviews.find_one({'_id': fav})
         fav_review.append(review)
 
     return render_template("pages/favorites.html", fav_review_id=fav_review_id,
-                           fav_review=fav_review, session_user=users.find_one(
+                           fav_review=fav_review, user_profile=users.find_one(
                                {'username': session['user'].lower()}))
 
 
