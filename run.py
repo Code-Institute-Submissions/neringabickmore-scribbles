@@ -109,13 +109,14 @@ def discover():
 def add_favorites(review_id):
     if session["user"]:
 
-        favorite_review_exists = users.find_one({"favorite": ObjectId(review_id)})
+        favorite_review_exists = users.find_one({"favorites": ObjectId(review_id)})
         if favorite_review_exists: 
             flash("This review is already in your favorites")
             return redirect(url_for("discover"))
         
         user_profile = users.find_one({'username': session['user'].lower()})
         users.update(user_profile, {"$push": {"favorites": ObjectId(review_id)}})
+        flash("Review added to favorites")
         return redirect(url_for('discover'))
         
     return redirect(url_for('discover'))
