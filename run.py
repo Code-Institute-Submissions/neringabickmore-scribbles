@@ -30,6 +30,13 @@ def about():
     return render_template("pages/about.html")
 
 
+@app.route("/search", methods=["GET", "POST"])
+def search_discover():
+    query = request.form.get("query")
+    reviews = list(mongo.db.reviews.find({"$text": {"$search": query}}))
+    return render_template("pages/discover.html", reviews=reviews)
+
+
 @app.route("/add/review", methods={"GET", "POST"})
 def add_review():
     if request.method == "POST":
