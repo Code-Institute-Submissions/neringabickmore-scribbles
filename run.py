@@ -48,7 +48,6 @@ def add_review():
             "ease_of_reading": request.form.get("ease_of_reading"),
             "plot_summary": request.form.get("plot_summary"),
             "favorite_quote": request.form.get("favorite_quote"),
-            "emoji": request.form.get("emoji"),
             "rating": request.form.get("rating"),
             "link_to_image": request.form.get("link_to_image"),
             "link_to_buy": request.form.get("link_to_buy"),
@@ -73,7 +72,6 @@ def edit_review(review_id):
             "ease_of_reading": request.form.get("ease_of_reading"),
             "plot_summary": request.form.get("plot_summary"),
             "favorite_quote": request.form.get("favorite_quote"),
-            "emoji": request.form.get("emoji"),
             "rating": request.form.get("rating"),
             "link_to_image": request.form.get("link_to_image"),
             "link_to_buy": request.form.get("link_to_buy")
