@@ -1,11 +1,9 @@
 {% extends "layout/base.html" %}
 {% block content %}
 
-<!-- Title and image display -->
-<div class="col-12 mb-2" id="discover">
-    <h1 class="m-2"> Discover book collections </h1>
-    </br>
-    <img src="\static\images\library.jpg" alt="library">
+<!-- Title -->
+<div class="col-12 mb-2">
+    <h1 class="m-2"> Discover book reviews </h1>
 </div>
 
 <!-- Reviews container -->
@@ -14,22 +12,31 @@
         <!-- Search field -->
         <div class="col-12 text-right">
             <form action="{{ url_for('search_discover') }}" method="POST" role="search" class="align-items-center oval">
-                <i class="fas fa-search left"></i>
-                <input type="text" name="query" id="query" minlength="3" class="validate badge-pill" required placeholder="search...">
-                <label for="query"></label>
-                <button type="submit"><i class="fas fa-search"></i></button>
+                <div class="form-group search-form mb-0">
+                    <!-- Input -->
+                    <input type="text" name="query" id="query" minlength="3" class="validate badge-pill" required
+                        placeholder="search...">
+                    <label for="query"></label>
+
+                    <!-- Action buttons -->
+                    <!-- Cancel -->
+                    <a class="btn" href="/discover/reviews" title="clear search"><i
+                            class="fas fa-times icon-btn"></i></a>
+                    <!-- Search -->
+                    <button type="submit" class="btn"><i class="fas fa-search icon-btn"></i></button>
+                </div>
             </form>
         </div>
         {% for review in reviews %}
         <div class="col-lg-4 col-md-6 col-12">
-            
+
             <!-- Genre category -->
             <h1 class="text-left my-4"> {{ review.genre}} </h1>
             <div class="review-box m-3 p-2">
                 <!-- Logged in users will see "favorite button"-->
                 {% if session.user %}
-                    <a class="btn" href="{{ url_for('add_favorites', review_id=review._id) }}" title="add to favorites"><i
-                    class="far fa-heart icon-btn"></i></a>
+                <a class="btn" href="{{ url_for('add_favorites', review_id=review._id) }}" title="add to favorites"><i
+                        class="far fa-heart icon-btn"></i></a>
                 {% endif %}
                 <!-- Link to re-direct to vendor page for purchase -->
                 <a class="btn" target="_blank" href="{{ review.link_to_buy }}"><i class="fas fa-shopping-cart icon-btn"
@@ -39,9 +46,9 @@
                 <img class="col-sm-12 book-cover m-2" src="{{ review.link_to_image }}"></img><br>
 
                 <!-- Book review -->
-                {% include 'components/content/review.html' %} 
+                {% include 'components/content/review.html' %}
             </div>
-            
+
         </div>
         {% endfor %}
     </div>
