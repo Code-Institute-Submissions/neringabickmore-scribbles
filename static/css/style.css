@@ -170,12 +170,12 @@ header img{
 
 /* Discover template Styling */ 
 
-#discover img{
+/* #discover img{
     box-shadow: var(--dark-box-shadow);
     width: 100%;
     position: relative;
     
-}
+} */
 
 .book-cover{
     max-width: 80%;
@@ -254,6 +254,15 @@ input:-internal-autofill-selected {
     font-size: 1.8rem;
     line-height: 1.8;
 }
+
+.search-form input {
+    height: 4rem;
+    margin: 0.5rem;
+}
+.search-form input:focus {
+    outline: none;
+}
+
 /* Responsive breakpoints styling */
 
 /** Styling for devices 
@@ -300,7 +309,7 @@ wider than tablet **/
 /** Styling for devices
 with medium sized screens*/
 @media(min-height: 1024px){
-    #carouselBox, #discover{
+    #carouselBox{
         min-height: 40vh;
     }
     

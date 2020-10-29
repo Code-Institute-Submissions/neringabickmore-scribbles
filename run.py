@@ -17,12 +17,24 @@ app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 app.secret_key = os.environ.get("SECRET_KEY")
 
 
+# Global Variables:
 mongo = PyMongo(app)
+reviews = mongo.db.reviews
+genres = mongo.db.genre
+users =  mongo.db.users
+
 
 @app.route("/")
 @app.route("/about")
 def about():
     return render_template("pages/about.html")
+
+
+@app.route("/search", methods=["GET", "POST"])
+def search_discover():
+    query = request.form.get("query")
+    reviews = list(mongo.db.reviews.find({"$text": {"$search": query}}))
+    return render_template("pages/discover.html", reviews=reviews)
 
 
 @app.route("/add/review", methods={"GET", "POST"})
@@ -42,11 +54,11 @@ def add_review():
             "link_to_buy": request.form.get("link_to_buy"),
             "reviewed_by": session["user"]
         }
-        mongo.db.reviews.insert_one(review)
+        reviews.insert_one(review)
         flash("review added")
         return redirect(url_for("user_reviews"))
 
-    genre = mongo.db.genre.find().sort("genre_category", 1)
+    genre = genres.find().sort("genre_category", 1)
     return render_template("pages/my-reviews.html", main_content="add_review", genre=genre)
 
 
@@ -67,18 +79,18 @@ def edit_review(review_id):
             "link_to_buy": request.form.get("link_to_buy")
             }
         }
-        mongo.db.reviews.update_one({"_id": ObjectId(review_id)}, submit)
+        reviews.update_one({"_id": ObjectId(review_id)}, submit)
         flash("Review Updated!")
         return redirect(url_for("user_reviews"))   
         
-    review = mongo.db.reviews.find_one({"_id": ObjectId(review_id)})
-    genre = mongo.db.genre.find().sort("genre_category", 1)
+    review = reviews.find_one({"_id": ObjectId(review_id)})
+    genre = genres.find().sort("genre_category", 1)
     return render_template("pages/my-reviews.html", main_content="edit_review", review=review, genre=genre)
     
 
 @app.route("/delete/review/<review_id>")
 def delete_review(review_id):
-    mongo.db.reviews.remove({"_id": ObjectId(review_id)})
+    reviews.remove({"_id": ObjectId(review_id)})
     flash("Review Deleted")
     return redirect(url_for("user_reviews"))
 
@@ -86,7 +98,7 @@ def delete_review(review_id):
 @app.route("/my/reviews", methods=["GET", "POST"])
 def user_reviews():
     if session["user"]:
-        user_profile = mongo.db.users.find({"username": session["user"]})
+        user_profile = users.find_one({"username": session["user"]})
         reviews = list(mongo.db.reviews.find({"reviewed_by": session["user"]}))
         return render_template("pages/my-reviews.html", user=user_profile, reviews=reviews)
     return redirect(url_for("user_reviews"))
@@ -100,20 +112,57 @@ def discover():
     return redirect(url_for("discover"))
 
 
-@app.route("/favorites")
-def favorites():
+@app.route("/add/favorites/<review_id>")
+def add_favorites(review_id):
     if session["user"]:
-        # grab the session user's credentials from database
-        user_profile = mongo.db.users.find_one({"username": session["user"]})
-        return render_template("pages/favorites.html", user=user_profile)
-    return redirect(url_for("discover"))
+
+        favorite_review_exists = users.find_one({"favorites": ObjectId(review_id)})
+        if favorite_review_exists: 
+            flash("This review is already in your favorites")
+            return redirect(url_for("discover"))
+        
+        user_profile = users.find_one({'username': session['user'].lower()})
+        users.update(user_profile, {"$push": {"favorites": ObjectId(review_id)}})
+        flash("Review added to favorites")
+        return redirect(url_for('discover'))
+        
+    return redirect(url_for('discover'))
+
+
+@app.route('/delete/favorites/<review_id>')
+def delete_favorites(review_id):
+    user_profile = users.find_one({'username': session['user'].lower()})
+    users.update(user_profile, {"$pull": {"favorites": ObjectId(review_id)}})
+    return redirect(url_for('user_favorites'))
+
+
+@app.route("/user/favorites", methods=["GET", "POST"])
+def user_favorites():
+    user_profile = users.find_one({'username': session['user'].lower()})
+    user_profile_fav = user_profile['favorites']
+    fav_review = []
+    fav_review_id = []
+
+    if len(user_profile['favorites']) != 0:
+        for fav in user_profile_fav:
+            review = reviews.find_one({'_id': fav})
+            review_id = review['_id']
+            fav_review_id.append(review_id)
+
+    for fav in user_profile_fav:
+        review = reviews.find_one({'_id': fav})
+        fav_review.append(review)
+
+    return render_template("pages/favorites.html", fav_review_id=fav_review_id,
+                           fav_review=fav_review, user_profile=users.find_one(
+                               {'username': session['user'].lower()}))
 
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
         # check if username already exists in database
-        existing_user = mongo.db.users.find_one(
+        existing_user = users.find_one(
             { "username": request.form.get("username").lower()})
         # if the user exists - it flashes a message
         if existing_user:
@@ -125,7 +174,7 @@ def register():
             "email": request.form.get("email").lower(),
             "password": generate_password_hash(request.form.get("password"))
         }
-        mongo.db.users.insert_one(register)
+        users.insert_one(register)
 
         # put the new user into 'session' cookie
         session["user"] = request.form.get("username").lower()
@@ -138,7 +187,7 @@ def register():
 def login():
     if request.method == "POST":
         # check if username exists in database
-        existing_user = mongo.db.users.find_one(
+        existing_user = users.find_one(
             {"username": request.form.get("username").lower()})
 
         if existing_user: 
@@ -173,7 +222,7 @@ def logout():
 def profile():
     if session["user"]:
         # grab the session user's credentials from database
-        user_profile = mongo.db.users.find_one({"username": session["user"]})
+        user_profile = users.find_one({"username": session["user"]})
         return render_template("pages/profile.html", user=user_profile)
     return redirect(url_for("login"))
 
@@ -187,13 +236,13 @@ def edit_profile(user_profile_id):
             "password": generate_password_hash(request.form.get("password"))
             }
         }
-        mongo.db.users.update_one({"_id": ObjectId(user_profile_id)}, submit)
+        users.update_one({"_id": ObjectId(user_profile_id)}, submit)
         #update user session to push new username before re-directing
         session["user"] = request.form.get("username")
         flash("User Profile Successfully Updated!")
         return redirect(url_for("profile"))
         
-    user_profile = mongo.db.users.find_one({"_id": ObjectId(user_profile_id)})
+    user_profile = users.find_one({"_id": ObjectId(user_profile_id)})
     return render_template("pages/profile.html", main_content="edit_profile", user=user_profile)
 
 
