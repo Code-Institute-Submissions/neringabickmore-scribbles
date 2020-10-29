@@ -1,40 +1,63 @@
 {% block header %}
-
+<!-- Navbar -->
 <nav class="navbar navbar-expand-sm container-fluid sticky-top navbar-light ">
-    <a href="{{ url_for('about') }}"><img src="\static\images\logo.png" class="m-2" id="logo"
+    {% if not session.user %}
+    <!-- Re-directs to about page if non-registered user -->
+    <a href="/about" title="App info"><img src="\static\images\logo.png" class="m-2" id="logo"
             alt="scribbles logo" /></a>
+    {% else %}
+    <!-- Re-directs to discover page if registered user -->
+    <a href="/discover/reviews" title="Discover book reviews"><img src="\static\images\logo.png" class="m-2" id="logo"
+            alt="scribbles logo" /></a>
+    {% endif %}
+    <!-- Toggle button for mobile view -->
     <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
         aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse mr-4" id="navbarNavDropdown">
         <ul class="navbar-nav ml-auto d-lg-flex align-items-md-center">
+            <!-- Shows about button if non-registered user -->
+            {% if not session.user %}
             <li class="nav-item mr-2">
-                <a href="/discover/reviews" class="nav-link">discover</a>
+                <a href="/about" class="nav-link" title="App info">about</a>
             </li>
+            {% endif %}
+            <!-- Shows discover button to all of the users -->
+            <li class="nav-item mr-2">
+                <a href="/discover/reviews" class="nav-link" title="Discover book reviews">discover</a>
+            </li>
+
             {% if session.user %}
+            <!-- Shows session user's (when logged in) favorite reviews -->
             <li class="nav-item mr-2">
-                <a href="/user/favorites" class="nav-link">favorites</a>
+                <a href="/user/favorites" class="nav-link" title="Favorite reviews">favorites</a>
             </li>
+            <!-- Shows session user's personal reviews -->
             <li class="nav-item mr-2">
-                <a href="/my/reviews" class="nav-link">my reviews</a>
+                <a href="/my/reviews" class="nav-link" title="Your reviews">my reviews</a>
             </li>
+            <!-- Shows session user's account -->
             <li class="nav-item dropdown mr-2">
-                <a class="nav-link" id="navbarDropdown" role="button" data-toggle="dropdown"
-                    aria-haspopup="true" aria-expanded="false">
+                <a class="nav-link" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false" title="Your account">
                     account
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown" id=nav-dropdown-menu>
-                    <a class="dropdown-item" href="/logout">log out</a>
-                    <a class="dropdown-item" href="/profile">view profile</a>
+                    <!-- Option to log-out-->
+                    <a class="dropdown-item" href="/logout" title="Ready to leave? Log out!">log out</a>
+                    <!-- Option to view profile -->
+                    <a class="dropdown-item" href="/profile" title="Check out your profile info!">view profile</a>
                 </div>
             </li>
             {% else %}
+            <!-- Option to login -->
             <li class="nav-item mr-2">
-                <a href="/about" class="nav-link">about</a>
+                <a href="/login" class="nav-link" title="Login to your account!">login</a>
             </li>
+            <!-- Option to register new account -->
             <li class="nav-item mr-2">
-                <a href="/login" class="nav-link">login</a>
+                <a href="/register" class="nav-link" title="Register a new account!">register</a>
             </li>
             {% endif %}
         </ul>
