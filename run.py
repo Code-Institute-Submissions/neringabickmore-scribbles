@@ -114,7 +114,7 @@ def discover():
 def add_favorites(review_id):
     if session["user"]:
 
-        favorite_review_exists = users.find_one({"favorites": ObjectId(review_id)})
+        favorite_review_exists = users.find_one(session["user"], {"favorites": ObjectId(review_id)})
         if favorite_review_exists: 
             flash("This review is already in your favorites")
             return redirect(url_for("discover"))
