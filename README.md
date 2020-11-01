@@ -447,7 +447,8 @@ SECRET_KEY|"your\_secret\_key"
 ### Code ideas ###
 
 - To enable better understanding on how to plan database design, I have [referred to](https://github.com/Geomint/beer-time) the fellow student project.
-
+- Scroll Up Button borrowed from [W3Schools](https://www.w3schools.com/howto/howto_js_scroll_to_top.asp) tutorial.
+- Redirection to vendor site to purchase the books idea borrowed from [here](https://github.com/Pysched/MS3-DM)
 
 [Back to content](#contents)
 

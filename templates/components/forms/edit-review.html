@@ -48,39 +48,28 @@
             <!-- Plot summary -->
             <div class="form-group mb-0">
                 <label for="plot_summary">Plot Summary</label>
-                <input class="form-control" id="plot_summary" rows="3" name="plot_summary"
+                <input class="form-control" id="plot_summary" name="plot_summary"
                     required value="{{ review.plot_summary }}"></input>
             </div>
 
             <!-- favorite quote -->
             <div class="form-group mb-0">
                 <label for="favorite_quote">Favorite Quote</label>
-                <input class="form-control" id="plot_summary" rows="3" name="favorite_quote"
+                <input class="form-control" id="plot_summary" name="favorite_quote"
                     required value="{{ review.favorite_quote }}"></input>
             </div>
-
-            <!-- Select Emoji-->
-            <div class="form-group">
-                <label for="emoji">Describe the book in three emojis</label>
-                <select name="emoji" class="form-control" id="emoji">
-                    <!--{% for emoji in emojis %} -->
-                    <option value=""></option>
-                    <!--{% endfor %}-->
-                </select>
-            </div>
-
             <!-- rating -->
             <div class="form-group">
                 <label for="rating">
                     Rate the book
                 </label>
                 <select name="rating" class="form-control" id="rating">
-                    <option value="{{ review.rating }}">{{ review.rating }}</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
+                    <option value="{{ review.rating }}" selected>{{ review.rating }}</option>
+                    <option value="&#11088">&#11088</i></option>
+                    <option value="&#11088 &#11088">&#11088 &#11088</option>
+                    <option value="&#11088 &#11088 &#11088">&#11088 &#11088 &#11088</option>
+                    <option value="&#11088 &#11088 &#11088 &#11088">&#11088 &#11088 &#11088 &#11088</option>
+                    <option value="&#11088 &#11088 &#11088 &#11088 &#11088">&#11088 &#11088 &#11088 &#11088 &#11088</option>
                 </select>
             </div>
 

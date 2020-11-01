@@ -21,8 +21,9 @@
 <!-- Reviews container -->
 <div class="container-fluid m-md-3" id="my-reviews">
     <div class="row my-2">
+        {% for review in reviews %}
         <div class="col-lg-4 col-md-6 col-12">
-            {% for review in reviews %}
+            
             <!-- Genre category -->
             <h1 class="text-left my-4"> {{ review.genre}} </h1>
             <div class="review-box m-3 p-2">
@@ -39,8 +40,9 @@
                 <!-- Book review -->
                 {% include 'components/content/review.html' %}
             </div>
-            {% endfor %}
+            
         </div>
+        {% endfor %}
     </div>
 </div>
 

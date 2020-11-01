@@ -48,7 +48,6 @@ def add_review():
             "ease_of_reading": request.form.get("ease_of_reading"),
             "plot_summary": request.form.get("plot_summary"),
             "favorite_quote": request.form.get("favorite_quote"),
-            "emoji": request.form.get("emoji"),
             "rating": request.form.get("rating"),
             "link_to_image": request.form.get("link_to_image"),
             "link_to_buy": request.form.get("link_to_buy"),
@@ -73,7 +72,6 @@ def edit_review(review_id):
             "ease_of_reading": request.form.get("ease_of_reading"),
             "plot_summary": request.form.get("plot_summary"),
             "favorite_quote": request.form.get("favorite_quote"),
-            "emoji": request.form.get("emoji"),
             "rating": request.form.get("rating"),
             "link_to_image": request.form.get("link_to_image"),
             "link_to_buy": request.form.get("link_to_buy")
@@ -116,7 +114,7 @@ def discover():
 def add_favorites(review_id):
     if session["user"]:
 
-        favorite_review_exists = users.find_one({"favorites": ObjectId(review_id)})
+        favorite_review_exists = users.find_one(session["user"], {"favorites": ObjectId(review_id)})
         if favorite_review_exists: 
             flash("This review is already in your favorites")
             return redirect(url_for("discover"))
@@ -172,7 +170,8 @@ def register():
         register = {
             "username": request.form.get("username").lower(),
             "email": request.form.get("email").lower(),
-            "password": generate_password_hash(request.form.get("password"))
+            "password": generate_password_hash(request.form.get("password")),
+            "favorites": []
         }
         users.insert_one(register)
 

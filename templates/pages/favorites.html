@@ -10,8 +10,8 @@
 <!-- Reviews container -->
 <div class="container-fluid m-md-3" id="discover-reviews">
     <div class="row my-2">
+        {% for review in fav_review %}
         <div class="col-lg-4 col-md-6 col-12">
-            {% for review in fav_review %}
             <!-- Genre category -->
             <h1 class="text-left my-4"> {{ review.genre}} </h1>
             <div class="review-box m-3 p-2">
@@ -30,10 +30,8 @@
                 <!-- Book review -->
                 {% include 'components/content/review.html' %} 
             </div>
-            {% else %}
-                <H1>You have no favorites</H1>
-            {% endfor %}
         </div>
+        {% endfor %}
     </div>
 </div>
 
