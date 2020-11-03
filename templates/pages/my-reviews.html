@@ -19,13 +19,13 @@
 </div>
 
 <!-- Reviews container -->
-<div class="container-fluid m-md-3" id="my-reviews">
+<div class="container-fluid m-md-3 reviews-container">
     <div class="row my-2">
         {% for review in reviews %}
         <div class="col-lg-4 col-md-6 col-12">
             
             <!-- Genre category -->
-            <h1 class="text-left my-4"> {{ review.genre}} </h1>
+            <h2 class="text-left my-4"> {{ review.genre}} </h2>
             <div class="review-box m-3 p-2">
 
                 <!-- Action button"-->

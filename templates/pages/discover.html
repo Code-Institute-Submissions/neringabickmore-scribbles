@@ -3,11 +3,11 @@
 
 <!-- Title -->
 <div class="col-12 mb-2">
-    <h1 class="m-2"> Discover book reviews </h1>
+    <h1 class="m-2"> discover book reviews </h1>
 </div>
 
 <!-- Reviews container -->
-<div class="container-fluid m-md-3" id="discover-reviews">
+<div class="container-fluid m-md-3 reviews-container">
     <div class="row my-2">
         <!-- Search field -->
         <div class="col-12 text-right">
@@ -31,7 +31,7 @@
         <div class="col-lg-4 col-md-6 col-12">
 
             <!-- Genre category -->
-            <h1 class="text-left my-4"> {{ review.genre}} </h1>
+            <h2 class="text-left my-4"> {{ review.genre}} </h2>
             <div class="review-box m-3 p-2">
                 <!-- Logged in users will see "favorite button"-->
                 {% if session.user %}

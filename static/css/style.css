@@ -16,38 +16,39 @@
     --default-transform: scale(1.2);
 }
 
-
 html{
     font-size: 62.5%
 }
 
-/* Body Main Styling */
+/* Body Styling  - main */
 body{
-    font-size: 1.2rem;
     background-color: var(--white);
-    color: var(--black);
+    color: var(--charcoal);
     text-align: center;
 }
+main{
+    min-height: 84vh;
+}
 
-/* Fonts */
-h1, h2, h3{
+/* Fonts - main */
+h1, h2{
     font: var(--heading-title-font);
+    text-shadow: var(--default-text-shadow);
+    text-transform: capitalize;
+    color: var(--charcoal);
 }
 h1{
-    font-size: 1.8rem;
+    font-size: 2rem;
 }
 h2{
-    font-size: 1.6rem;
-}
-h3{
-    font-size: 1.4rem;
+    font-size: 1.2rem;
 }
 p{
     font: var(--main-font);
     font-size: 1rem;
 }
 
-/* Header Main Styling */
+/* Header Styling - main */
 header {
     background-color: var(--baby-blue);
     width: 100%;
@@ -58,25 +59,22 @@ header {
     box-shadow: var(--default-box-shadow);
     text-shadow: var(--default-text-shadow);
 }
-/* Main Body Styling */
-main{
-    min-height: 84vh;
-    text-shadow: var(--default-text-shadow);
-}
 
-/* Footer Styling*/
+/* Footer Styling - main */
 footer {
     background-color: var(--charcoal);
 }
 
 footer small {
     font-size: 1.5rem;
+    color: var(--black);
 }
 
 footer li {
     list-style-type: none;
 }
 
+/* Footer: Social media buttons styling */
 footer ul i {
     color: var(--slate-grey);
     width: 3.2rem;
@@ -89,43 +87,13 @@ footer ul i:hover{
     color: var(--white);
 }
 
-/* Additional Header Styling */
-
-header img{
-    width: 100%;
-    height: 100%;
-}
-
+/* Header: logo */
 #logo{
     width: 10rem;
     height: 10rem;
 }
 
-/* Special Navbar styling*/
-#nav-dropdown-menu{
-    background-color: var(--baby-blue);
-    border: none!important;
-    box-shadow: var(--darkest-box-shadow);
-    margin: 0;
-    padding: 0;
-}
-
-.dropdown-item:focus{
-    color: var(--cold-white);
-    background-color: var(--baby-blue);
-    box-shadow: var(--default-box-shadow);
-}
-
-.dropdown-item:hover{
-    color: var(--cold-white);
-    background-color: var(--baby-blue);
-    box-shadow: var(--default-box-shadow);
-}
-
-.navbar{
-    background-color: var(--baby-blue);
-}
-
+/* Header: navbar */
 .navbar-nav{
     height: 12rem;
 }
@@ -141,85 +109,84 @@ header img{
 .nav-link:hover{
     color: var(--cold-white)!important;
 }
+.navbar, .dropdown-menu{
+    background-color: var(--baby-blue);
+}
+
+/* Navbar - Account: 
+drop down menu styling*/
+
+.dropdown-menu{
+    border: none!important;
+    margin: 0;
+    padding: 0;
+}
+
+.dropdown-item:focus, .dropdown-item:hover{
+    color: var(--cold-white);
+    background-color: var(--baby-blue);
+    box-shadow: var(--default-box-shadow);
+}
 
 /* Flash Message Styling */
-#flash-message h1{
-    text-shadow: var(--default-text-shadow);
-    font-size: 3.5rem;
-    text-transform: capitalize;
-}
 #flash-message{
     box-shadow: var(--dark-box-shadow);
 }
 
-/* About Page Template Styling */
-/** Carousel styling **/
+/* Templates' Styling */
 
+/* about.html */
 .carousel-item img{
     box-shadow: var(--dark-box-shadow);
     width: 375px;
     position: relative;
 }
 
-/** quotes **/
 .blockquote{
     font-size: 1.5rem;
     font-style: italic;
     text-shadow: none;
 }
 
-/* Discover template Styling */ 
-
-/* #discover img{
-    box-shadow: var(--dark-box-shadow);
-    width: 100%;
-    position: relative;
-    
-} */
-
-.book-cover{
-    max-width: 80%;
-    align-self: center;
-}
-#discover-reviews, #view-profile, #my-reviews{
-    text-transform: uppercase;
-}
-
-#discover-reviews dd, #view-profile dd, .my-reviews input{
+/* about.html */
+#intro h1{
     text-transform: none;
 }
 
-dd{
+/* other templates + forms + content  */ 
+
+.book-cover{
+    min-width: 80%;
+    height: auto;
+    align-self: center;
+}
+.reviews-container{
+    text-transform: uppercase;
+}
+
+dd, .my-reviews input{
     text-align: left;
+    text-transform: none;
 }
 
 dl{
     text-align: right;
 }
 
-.review-box{
-    background-color: var(--cold-white);
-    box-shadow: var(--default-box-shadow);
+.review-box label, .profile label, .profile dl{
+    text-transform: capitalize;
 }
 
-/* Register/Login component Styling */
+/* forms specific styling */
 
 .access-box, .review-box{
     background-color: var(--cold-white);
     box-shadow: var(--default-box-shadow);
 }
-
-/* Favorites template Styling */
-/* Edit review template Styling */
-
-/* Account Template Styling */
-.account{
-    text-transform: capitalize;
-    margin: 2rem;
-    text-align: left;
-    color: var(--charcoal);
+.form-control{
+    font-size: 1.8rem;
+    line-height: 1.8;
 }
-/* Edit Account template styling */
 
 /* Main Buttons */
 /** Go Up button styling **/
@@ -260,6 +227,11 @@ dl{
     text-shadow: none;
 }
 
+.icon-btn:hover{
+    color: var(--white);
+    
+}
+
 .btn{
     box-shadow: var(--default-box-shadow);
     transition: var(--default-transition);
@@ -271,10 +243,6 @@ dl{
     cursor: pointer;
 }
 
-.icon-btn:hover{
-    color: var(--white);
-    
-}
 .btn:hover{
     transform: var(--default-transform);
 }
@@ -282,11 +250,8 @@ dl{
 input:-internal-autofill-selected {
     background-color: var(--white)!important;
 }
-.form-control{
-    font-size: 1.8rem;
-    line-height: 1.8;
-}
 
+/* Search field styling */
 .search-form input {
     height: 4rem;
     margin: 0.5rem;
@@ -315,16 +280,13 @@ wider than mobile **/
         margin-top: 9rem;
     }
     h1{
-        font-size: 2.6rem;
+        font-size: 4rem;
     }
     h2{
-        font-size: 2.4rem;
-    }
-    h3{
-        font-size: 2.2rem;
+        font-size: 3rem;
     }
     p{
-        font-size: 1.8rem;
+        font-size: 2.8rem;
     }
 }
 
