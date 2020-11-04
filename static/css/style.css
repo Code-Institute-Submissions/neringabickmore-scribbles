@@ -66,7 +66,7 @@ footer {
 }
 
 footer small {
-    font-size: 1.5rem;
+    font-size: 1rem;
     color: var(--black);
 }
 
@@ -221,7 +221,7 @@ dl{
 
 /** Other buttons **/
 .icon-btn{
-    font-size: 3rem;
+    font-size: 1.8rem;
     transition: var(--default-transition);
     color:var(--slate-grey);
     text-shadow: none;
@@ -235,9 +235,9 @@ dl{
 .btn{
     box-shadow: var(--default-box-shadow);
     transition: var(--default-transition);
-    height: 4rem;
-    width: 5rem;
-    margin: 0.5rem;
+    height: 2.6rem;
+    width: 3.4rem;
+    margin: 0.25rem;
     float: right;
     background-color: var(--charcoal);
     cursor: pointer;
@@ -253,8 +253,8 @@ input:-internal-autofill-selected {
 
 /* Search field styling */
 .search-form input {
-    height: 4rem;
-    margin: 0.5rem;
+    height:  2.6rem;
+    margin: 0.25rem;
 }
 .search-form input:focus {
     outline: none;
@@ -262,15 +262,12 @@ input:-internal-autofill-selected {
 
 /* Responsive breakpoints styling */
 
-/** Styling for devices 
-with the screens
+/** Size/height/width styling
+for devices with the screens
 wider than mobile **/
 
 @media(min-width: 768px){
-    body{
-        font-size: 1.6rem;
-    }
-    header{
+    body, header, footer small{
         font-size: 1.8rem;
     }
     .carousel-item img{
@@ -282,11 +279,18 @@ wider than mobile **/
     h1{
         font-size: 4rem;
     }
-    h2{
+    h2, .icon-btn{
         font-size: 3rem;
     }
     p{
         font-size: 2.8rem;
+    }
+    .btn{
+        width: 5rem;
+    }
+    .btn, .search-form input {
+        height: 4rem;
+        margin: 0.5rem;
     }
 }
 
