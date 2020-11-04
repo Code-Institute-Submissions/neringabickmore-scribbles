@@ -24,12 +24,14 @@ genres = mongo.db.genre
 users =  mongo.db.users
 
 
+# About page route
 @app.route("/")
 @app.route("/about")
 def about():
     return render_template("pages/about.html")
 
 
+# Search functionality in discovery page
 @app.route("/search", methods=["GET", "POST"])
 def search_discover():
     query = request.form.get("query")
@@ -37,6 +39,7 @@ def search_discover():
     return render_template("pages/discover.html", reviews=reviews)
 
 
+# Add review function
 @app.route("/add/review", methods={"GET", "POST"})
 def add_review():
     if request.method == "POST":
@@ -54,13 +57,16 @@ def add_review():
             "reviewed_by": session["user"]
         }
         reviews.insert_one(review)
+        # Flash message
         flash("review added")
         return redirect(url_for("user_reviews"))
 
     genre = genres.find().sort("genre_category", 1)
+    # My-reviews template is rendered using add_review template as main content
     return render_template("pages/my-reviews.html", main_content="add_review", genre=genre)
 
 
+# Edit review function 
 @app.route("/edit/review/<review_id>", methods=["GET", "POST"])
 def edit_review(review_id):
     if request.method == "POST":
@@ -78,21 +84,26 @@ def edit_review(review_id):
             }
         }
         reviews.update_one({"_id": ObjectId(review_id)}, submit)
-        flash("Review Updated!")
+        # Flash message 
+        flash("review updated!")
         return redirect(url_for("user_reviews"))   
         
     review = reviews.find_one({"_id": ObjectId(review_id)})
     genre = genres.find().sort("genre_category", 1)
+    # My-reviews template is rendered using edit_review template as main content
     return render_template("pages/my-reviews.html", main_content="edit_review", review=review, genre=genre)
     
 
+# Delete function 
 @app.route("/delete/review/<review_id>")
 def delete_review(review_id):
     reviews.remove({"_id": ObjectId(review_id)})
+    # Flash message
     flash("Review Deleted")
     return redirect(url_for("user_reviews"))
 
 
+# My reviews function displaying each user their own reviews
 @app.route("/my/reviews", methods=["GET", "POST"])
 def user_reviews():
     if session["user"]:
@@ -102,6 +113,7 @@ def user_reviews():
     return redirect(url_for("user_reviews"))
 
 
+# Discover reviews function displaying all the reviews that exist in DB
 @app.route("/discover/reviews", methods=["GET"])
 def discover():
     if request.method == "GET":
@@ -110,30 +122,41 @@ def discover():
     return redirect(url_for("discover"))
 
 
+# Function allowing users to add items to their favorites template
 @app.route("/add/favorites/<review_id>")
 def add_favorites(review_id):
     if session["user"]:
-
+        # check if favorite already exists
         favorite_review_exists = users.find_one(session["user"], {"favorites": ObjectId(review_id)})
         if favorite_review_exists: 
-            flash("This review is already in your favorites")
+            # Flash message to announce existing item in favorites
+            flash("this review is already in your favorites")
             return redirect(url_for("discover"))
-        
+        # if doesn't exist, it adds the review to DB
         user_profile = users.find_one({'username': session['user'].lower()})
         users.update(user_profile, {"$push": {"favorites": ObjectId(review_id)}})
+        # Flash message
         flash("Review added to favorites")
         return redirect(url_for('discover'))
         
     return redirect(url_for('discover'))
 
 
+# Delete items from favorites template
 @app.route('/delete/favorites/<review_id>')
 def delete_favorites(review_id):
     user_profile = users.find_one({'username': session['user'].lower()})
     users.update(user_profile, {"$pull": {"favorites": ObjectId(review_id)}})
+    # Flash message
+    flash("Review removed from favorites")
     return redirect(url_for('user_favorites'))
 
 
+# Function to render favorites template for every user
+""" 
+This function idea was borrowed from:
+https://github.com/Geomint/beer-time/blob/master/app.py 
+"""
 @app.route("/user/favorites", methods=["GET", "POST"])
 def user_favorites():
     user_profile = users.find_one({'username': session['user'].lower()})
@@ -156,6 +179,7 @@ def user_favorites():
                                {'username': session['user'].lower()}))
 
 
+# User registration
 @app.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
@@ -164,6 +188,7 @@ def register():
             { "username": request.form.get("username").lower()})
         # if the user exists - it flashes a message
         if existing_user:
+            # Flash message
             flash("Username already exists")
             return redirect(url_for("register"))
         
@@ -174,14 +199,14 @@ def register():
             "favorites": []
         }
         users.insert_one(register)
-
         # put the new user into 'session' cookie
         session["user"] = request.form.get("username").lower()
         return redirect(url_for("discover", username=session["user"]))
-
+    # Access template renders with register form as main content
     return render_template("pages/access.html", main_content="register")
 
 
+# User login
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
@@ -194,6 +219,7 @@ def login():
             if check_password_hash(
                 existing_user["password"], request.form.get("password")):
                     session["user"] = request.form.get("username").lower()
+                    # Flash message
                     flash("Welcome, {}".format(
                         request.form.get("username")))
                     return redirect(url_for(
@@ -201,15 +227,15 @@ def login():
             else: 
                 # invalid password match
                 return redirect(url_for("login"))
-
         else: 
             # username doesn't exist
             return redirect(url_for("login"))
-
         return redirect(url_for("login"))
+    # Access template renders with login form as main content
     return render_template("pages/access.html", main_content="login")
 
 
+# User logout
 @app.route("/logout")
 def logout():
     # remove user from session cookies
@@ -217,6 +243,7 @@ def logout():
     return redirect(url_for("login"))
 
 
+# Function to render profile template
 @app.route("/profile", methods=["GET", "POST"])
 def profile():
     if session["user"]:
@@ -226,6 +253,7 @@ def profile():
     return redirect(url_for("login"))
 
 
+# Function to edit profile
 @app.route("/edit/profile/<user_profile_id>", methods=["GET", "POST"])
 def edit_profile(user_profile_id):
     if request.method == "POST":
@@ -238,10 +266,12 @@ def edit_profile(user_profile_id):
         users.update_one({"_id": ObjectId(user_profile_id)}, submit)
         #update user session to push new username before re-directing
         session["user"] = request.form.get("username")
+        #Flash message
         flash("User Profile Successfully Updated!")
         return redirect(url_for("profile"))
         
     user_profile = users.find_one({"_id": ObjectId(user_profile_id)})
+    # Profile template is rendered using edit_profile template as main content
     return render_template("pages/profile.html", main_content="edit_profile", user=user_profile)
 
 
