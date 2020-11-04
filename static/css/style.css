@@ -154,7 +154,11 @@ drop down menu styling*/
 }
 
 /* other templates + forms + content  */ 
-
+#library-img img{
+    width: 100%;
+    height: auto;
+    box-shadow: var(--dark-box-shadow);
+}
 .book-cover{
     min-width: 80%;
     height: auto;
