@@ -1,6 +1,6 @@
 # Scribbles #
 
-![Scribbles](\static\images\logo.png)
+![Scribbles](/static/images/logo.jpg)
 
 [Scribbles](https://scribbles-app.herokuapp.com/) is an interactive book review app where site users create, read, update and delete their own content.
 
@@ -19,7 +19,6 @@ About three years ago I have made a conscious decision to read more books. I hav
     - [Site Owner Goals](#site-owner-goals)
     - [User Stories](#user-stories)
       - [**Site Visitor**](#site-visitor)
-      - [**Site Admin**](#site-admin)
       - [**Registered Site User**](#registered-site-user)
     - [User Requirements and Expectations](#user-requirements-and-expectations)
       - [**Requirements**](#requirements)
@@ -39,6 +38,14 @@ About three years ago I have made a conscious decision to read more books. I hav
   - [Features](#features)
     - [Implemented Features](#implemented-features)
     - [Future Features](#future-features)
+  - [Changes applied since planning](#changes-applied-since-planning)
+    - [Admin feature](#admin-feature)
+    - [Search feature](#search-feature)
+    - [Emojis](#emojis)
+    - [About template design](#about-template-design)
+    - [Register / Login templates](#register--login-templates)
+    - [Forms and page templates design](#forms-and-page-templates-design)
+    - [Color palette](#color-palette)
   - [Testing](#testing)
   - [Deployment](#deployment)
     - [Cloning *Scribbles* from GitHub](#cloning-scribbles-from-github)
@@ -59,7 +66,7 @@ The **goals** of this project are:
 
 - Create an **interactive app** where site visitors can **create a user account**
 - The app allows the users to manage their content, such as **creating** it, **reading** it **editing** it later or **delete** it completely.
-- The app that has different content functionalities for **site visitors**, **users** and **admin**
+- The app that has different content functionalities for **site visitors** and **users**.
 - The app should also be able to store required data, which is available for access when required
 
 ### Site Owner Goals ###
@@ -67,7 +74,7 @@ The **goals** of this project are:
 - To provide a platform for the users to share their personal views about the books they have read.
 - Encourage users to share their recommendations where they should buy the book they have reviewed, ideally independent online book shops.
 - Build a community of book readers.
-- Monetise the platform through donations to cover platform maintenance costs.
+- Monetise the platform through donations to cover platform maintenance costs (potentially in the future).
 
 ### User Stories ###
 
@@ -80,14 +87,6 @@ The **goals** of this project are:
 - As a **user** I want to find **contact details** for the site admin.
 - As a **user** I want to find **social media** accounts connected to the site.v                    bvZ
 
-#### **Site Admin** ####
-
-- As a **user** I want to be able to **access** needed **information** about **registered** site **users**.
-- As a **user** I want to be able to **delete** registered users.
-- As a **user** I want to be able to **discover and access** all of the book reviews on the site.
-- As a **user** I want to be able to **delete** book reviews.
-- As a **user** I want to be able to **edit** book review template.
-  
 #### **Registered Site User** ####
 
 - As a **user** I want to be able to **Login** to my account.
@@ -142,7 +141,7 @@ I chose easy to read and light fonts for this app. I am keeping it simple and wi
 
 I chose the colours that I felt are quite delicate and not overpowering the main content of the app.
 
-![Colour palette](\wireframes\color-palette\color_palette.jpg)
+![Colour palette](/wireframes/color-palette/color-palette.jpg)
 
 [Back to content](#contents)
 
@@ -279,15 +278,15 @@ The user is redirected to a website when clicks on *purchase* a book button.
 
 The user is able to search books by *title*, *author*, and *genre*.
 
-- **Site admin** edit
-
-Site admin feature allows deletion of inappropriate reviews, change of book review form items, as well as deletion of the registered user accounts.
-
 ### Future Features ###
 
 - **Language Selector**
   
 The user is able to choose English or Lithuanian language to view the site.
+
+- **Site admin** edit
+
+Site admin feature allows deletion of inappropriate reviews, change of book review form items, as well as deletion of the registered user accounts.
   
 - **Defence mechanism**
   
@@ -297,6 +296,38 @@ The user gets a notification before *delete* action is activated in app commands
 
 [Back to content](#contents)
 
+---
+
+## Changes applied since planning ##
+
+### Admin feature ###
+
+- I have decided to move one key feature of the project to future features which is admin side of it. This is due to the fact that the project has taken longer to complete than originally anticipated and the time constrains I have.
+
+### Search feature ###
+
+- During the planning stage of the project it seemed like a good idea to have search option in discover, favorites, and my reviews templates. During the process of developing this project further I came to realization that the users may not have an extensive amount of personal reviews or favorites reviews at the beginning that they would require such feature. Should the app users grow and the list of reviews increase I will consider implementing this feature in the other two templates and therefore I only have this feature in discover template.
+
+### Emojis ###
+
+- My initial idea was to have the users to sum up their views on the book in 3 emojis. I have talked to friends and family and the feedback I was given that quite a few of them disliked emojis completely and it would put them off using the app. To target wider audience I have decided to remove emojis completely.
+
+### About template design ###
+
+- I have decided to remove any reviews from About template due to the fact that I already have a sole page dedicated to display all of the templates. To me the About page look neater without any reviews listed on it. I was also contemplating should I incorporate about page with the discover page, however given the fact that registered users are not seeing about page after logging in at all by default, I have decided against it. In my opinion the design of the page looks neater and more appealing this way.
+
+### Register / Login templates ###
+
+- I have made slight amendment to initial design of both register and login pages by giving the user an option to switch to Login if they already are registered and just click the wrong button and visa versa. In my opinion this way I am enhancing user experience and they can switch from login to register pages with ease.
+
+### Forms and page templates design ###
+
+- The wireframes I have created indicated initial idea of the content the templates and forms should have. During the creation of the app I have assessed carefully how the layout of each form should look like to create the most appealing and pleasant design for the user. I have applied the same tactic when choosing the layout of the page templates. As a result, the final version of the app is likely to have different shape buttons, icons and their positioning on the templates in comparison to the wireframes.
+
+### Color palette ###
+
+- The color palette you see in the final version of the wireframe differ to the original one very slightly. During the development stage of the project the feedback I was given is that some colors blend too much and to enhance visual user experience I needed to reconsider bringing in some base colours of black and white as well as losing one of the shades.
+  
 ---
 
 ## Testing ##
