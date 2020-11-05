@@ -177,7 +177,6 @@ Length|length|string
 Ease of Reading|ease-of-reading|string
 Plot Summary|plot-summary|string
 Favorite Quote|favorite-quote|string
-Emoji|emoji|ObjectId()
 Book rating|rating|string
 Image|link-to-image|string
 Buy a Book|link-to-buy|string
@@ -189,13 +188,6 @@ Buy a Book|link-to-buy|string
 Genre ID|_id|ObjectId()
 Title|title|string
 
-[Emoji Collection](wireframes/data-schemas/emoji.json)
-
-**Title**|**Key in Collection**|**Data Type**
-:-----:|:-----:|:-----:
-Emoji ID|_id|ObjectId()
-Title|title|string
-
 [User Collection](/wireframes/data-schemas/user-collections.json)
 
 **Title**|**Key in Collection**|**Data Type**
@@ -203,7 +195,7 @@ Title|title|string
 User ID|_id|ObjectID()
 Username|username|string
 Email Address|email|string
-Favorite Books|favorites|ObjectId()
+Favorite Books|favorites|[ObjectId()]
 
 #### **Data Storage Types** ####
 
@@ -479,7 +471,7 @@ SECRET_KEY|"your\_secret\_key"
 
 - To enable better understanding on how to plan database design, I have [referred to](https://github.com/Geomint/beer-time) the fellow student project.
 - Scroll Up Button borrowed from [W3Schools](https://www.w3schools.com/howto/howto_js_scroll_to_top.asp) tutorial.
-- Redirection to vendor site to purchase the books idea borrowed from [here](https://github.com/Pysched/MS3-DM)
+- Redirection to vendor site to purchase the books idea borrowed from [here](https://github.com/Pysched/MS3-DM).
 
 [Back to content](#contents)
 
