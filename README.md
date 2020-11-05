@@ -85,7 +85,7 @@ The **goals** of this project are:
 - As a **user** I want to be able to **login** to my account.
 - As a **user** I want to **register** if I don't have an account.
 - As a **user** I want to find **contact details** for the site admin.
-- As a **user** I want to find **social media** accounts connected to the site.v                    bvZ
+- As a **user** I want to find **social media** accounts connected to the site.
 
 #### **Registered Site User** ####
 
