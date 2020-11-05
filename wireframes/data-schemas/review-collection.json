@@ -5,12 +5,11 @@
         "author": "string",
         "genre": "ObjectID()",
         "length": "string",
-        "ease_of_reading": "string",
-        "plot_summary": "string",
-        "favorite_quote": "string",
-        "emoji": ["ObjectId()"],
+        "ease-of-reading": "string",
+        "plot-summary": "string",
+        "favorite-quote": "string",
         "rating": "string",
-        "link_to_image": "string",
-        "link_to_buy": "string"
+        "link-to-image": "string",
+        "link-to-buy": "string"
     }
 ]

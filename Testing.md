@@ -12,6 +12,31 @@
 
 ### Client Stories Testing ###
 
+The following section goes through each of the user stories from the UX section of [README.md](\scribbles\README.md)
+
+#### **Site Visitor** ####
+
+1. As a **user** I want to be able to find out the information **about** the app.
+2. As a **user** I want ot be able to **discover** some book review samples.
+3. As a **user** I want to be able to **login** to my account.
+4. As a **user** I want to **register** if I don't have an account.
+5. As a **user** I want to find **contact details** for the site admin.
+6. As a **user** I want to find **social media** accounts connected to the site.
+
+#### **Registered Site User** ####
+
+1. As a **user** I want to be able to **Login** to my account.
+2. As a **user** I want to be able to  **Logout** of my account.
+3. As a **user** I want to be able to **edit my account** information.
+4. As a **user** I want to be able to **view** other users' book reviews.
+5. As a **user** I want to be able to *heart* other users' book **reviews**.
+6. As a **user** I want to be able to **access** *hearted* books on a **favorites** page.
+7. As a **user** I want to be able to **remove other user's book reviews from my *favorites***.
+8. As a **user** I want to be able to **access my book reviews** I have created before.
+9. As a **user** I want to be able to **create new** book reviews.
+10. As a **user** I want to be able to **edit existing** book reviews.
+11. As a **user** I want to be able to **delete** my book reviews.
+
 ---
 
 ## Manual Testing ##
@@ -24,7 +49,7 @@
 
 #### Solved bugs ####
 
-   1. @app route wasn't pushing new username to the template; The bug was fixed by inserting new bit of code to update the username details before rendering the templae.
+1. @app route wasn't pushing new username to the template; The bug was fixed by inserting new bit of code to update the username details before rendering the template.
 Also, the same @app.route wasn't generating new password and also needed to looked into:
 
 ```python
@@ -47,7 +72,7 @@ def edit_profile(user_profile_id):
     return render_template("components/forms/edit_profile.html", user=user_profile)
 ```
 
-2. All users in their my-reviews.html are able to see other users entries. This shouldn't happen and they should only see their own entries in this template. The code was:
+   2. All users in their my-reviews.html are able to see other users entries. This shouldn't happen and they should only see their own entries in this template. The code was:
 
 ```python
 @app.route("/my_reviews")
@@ -106,7 +131,3 @@ if session["user"]:
 ```
 
 ### Unsolved bugs ###
-
-1. Favorites button in discover.html adds the same review to favorites multiple times.
-   Current code:
-
