@@ -1,0 +1,12 @@
+{% extends "layout/base.html" %}
+{% block content %}
+
+<div class="row justify-content-center mb-4">
+    <div class="col-12" id="error-404">
+        <h1>{{ error }} Ooops something went wrong! Let's take you back</h1>
+        <a aria-label="discover" class="btn" href="{{ url_for('discover')}}">Go back to safety</a>
+    </div>
+</div>
+
+{% endblock %}
+
