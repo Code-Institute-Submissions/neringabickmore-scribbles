@@ -275,6 +275,13 @@ def edit_profile(user_profile_id):
     return render_template("pages/profile.html", main_content="edit_profile", user=user_profile)
 
 
+# error 404 page
+@app.errorhandler(404)
+def page_not_found(error):
+    error = str(error)
+    return render_template('pages/404.html', error=error), 404
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"), 
             port=int(os.environ.get("PORT")), 
