@@ -7,7 +7,7 @@
 <!-- User Details update form -->
 <div class="row justify-content-center mb-4">
     <div class="col-sm-5 col-10 access-box p-2 profile">
-        <form method="POST" action="">
+        <form method="POST">
 
             <!-- Username -->
             <div class="form-group">
@@ -25,14 +25,14 @@
             <!-- Password -->
             <div class="form-group">
                 <label for="password">password</label>
-                <input id="password" name="password" type="password" minlength="4" maxlength="10"
+                <input id="password" name="password" type="text" minlength="4" maxlength="10"
                     pattern="^[a-zA-Z0-9{4,10}$" class="form-control" required>
             </div>
             <!-- Action Buttons -->
             <!-- Update Details -->
-            <button type="submit" class="btn"><i class="fas fa-check icon-btn"></i></button>
+            <button type="submit" class="btn" title="submit"><i class="fas fa-check icon-btn"></i></button>
             <!-- Cancel -->
-            <a href="/discover/reviews" class="btn "><i class="fas fa-times-circle icon-btn"></i></a>
+            <a href="/discover/reviews" class="btn" title="cancel"><i class="fas fa-times-circle icon-btn"></i></a>
         </form>
     </div>
 
