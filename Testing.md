@@ -125,7 +125,41 @@ The following section goes through each of the user stories from the UX section 
 
 ## Manual Testing ##
 
+- **Responsive design**
+
+The app has a different layout options, focused on *mobile-first* design in mind as more users are expected to use mobile rather than larger devices, such as a tablet or a laptop/desktop.
+![mobile and desktop display]()
+
 ### Testing undertaken on Mobile ###
+
+- **Sliding banner** on a home/about page
+
+![sliding banner images]()
+  
+- **Register** account form
+
+![register](/wireframes/testing-video/register.gif)
+
+- **Sign in/out** functionality
+
+![login](/wireframes/testing-video/login.gif)
+![logout](/wireframes/testing-video/logout.gif)
+
+- **Favorites** functionality
+
+![favorites](/wireframes/testing-video/add-to-favorites.gif)
+
+- **Easy navigation** to external sites
+  
+   The user is redirected to a website when clicks on *purchase* a book button.
+
+   ![purchase the book]()
+
+- **Search function**
+
+    The user is able to search books by *title*, *author*, and *genre*.
+
+    ![search functionality]()
 
 ### Testing undertaken on tablet and desktop ###
 
