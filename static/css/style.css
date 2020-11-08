@@ -56,7 +56,8 @@ header {
     font-size: 1.2rem;
     letter-spacing: 2px;
     text-transform: capitalize;
-    box-shadow: var(--default-box-shadow);
+    -webkit-box-shadow: var(--default-box-shadow);
+            box-shadow: var(--default-box-shadow);
     text-shadow: var(--default-text-shadow);
 }
 
@@ -99,6 +100,8 @@ footer ul i:hover{
 }
 
 .nav-link{
+    -webkit-transition: var(--default-transition);
+    -o-transition: var(--default-transition);
     transition: var(--default-transition);
 }
 
@@ -125,19 +128,22 @@ drop down menu styling*/
 .dropdown-item:focus, .dropdown-item:hover{
     color: var(--cold-white);
     background-color: var(--baby-blue);
-    box-shadow: var(--default-box-shadow);
+    -webkit-box-shadow: var(--default-box-shadow);
+            box-shadow: var(--default-box-shadow);
 }
 
 /* Flash Message Styling */
 #flash-message{
-    box-shadow: var(--dark-box-shadow);
+    -webkit-box-shadow: var(--dark-box-shadow);
+            box-shadow: var(--dark-box-shadow);
 }
 
 /* Templates' Styling */
 
 /* about.html */
 .carousel-item img{
-    box-shadow: var(--dark-box-shadow);
+    -webkit-box-shadow: var(--dark-box-shadow);
+            box-shadow: var(--dark-box-shadow);
     width: 375px;
     position: relative;
 }
@@ -157,12 +163,15 @@ drop down menu styling*/
 #library-img img{
     width: 100%;
     height: auto;
-    box-shadow: var(--dark-box-shadow);
+    -webkit-box-shadow: var(--dark-box-shadow);
+            box-shadow: var(--dark-box-shadow);
 }
 .book-cover{
     min-width: 80%;
     height: auto;
-    align-self: center;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
 }
 .reviews-container{
     text-transform: uppercase;
@@ -185,7 +194,8 @@ dl{
 
 .access-box, .review-box{
     background-color: var(--cold-white);
-    box-shadow: var(--default-box-shadow);
+    -webkit-box-shadow: var(--default-box-shadow);
+            box-shadow: var(--default-box-shadow);
 }
 .form-control{
     font-size: 1.8rem;
@@ -226,6 +236,8 @@ dl{
 /** Other buttons **/
 .icon-btn{
     font-size: 1.8rem;
+    -webkit-transition: var(--default-transition);
+    -o-transition: var(--default-transition);
     transition: var(--default-transition);
     color:var(--slate-grey);
     text-shadow: none;
@@ -237,7 +249,10 @@ dl{
 }
 
 .btn{
-    box-shadow: var(--default-box-shadow);
+    -webkit-box-shadow: var(--default-box-shadow);
+            box-shadow: var(--default-box-shadow);
+    -webkit-transition: var(--default-transition);
+    -o-transition: var(--default-transition);
     transition: var(--default-transition);
     height: 2.6rem;
     width: 3.4rem;
@@ -248,7 +263,9 @@ dl{
 }
 
 .btn:hover{
-    transform: var(--default-transform);
+    -webkit-transform: var(--default-transform);
+        -ms-transform: var(--default-transform);
+            transform: var(--default-transform);
 }
 
 input:-internal-autofill-selected {
