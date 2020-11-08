@@ -2,6 +2,10 @@
 
 ![Scribbles](/static/images/logo.jpg)
 
+Main [README.md](README.md) file.
+
+View [website](https://scribbles-app.herokuapp.com/) deployed to Heroku.
+
 ---
 
 ## Contents ##
