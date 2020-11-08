@@ -1,0 +1,11 @@
+{% extends "layout/base.html" %}
+{% block content %}
+
+    <div class="col-12 error-404">
+        <h1>Ooops something went wrong! <br> Let's take you to safety.</h1>
+        <br>
+        <a aria-label="discover" id="safety-btn" href="{{ url_for('discover')}}">OK!</a> 
+    </div>
+
+{% endblock %}
+
