@@ -39,7 +39,7 @@ The following section goes through each of the user stories from the UX section 
 1. As a **user** I want to be able to **Login** to my account.
    - When a user has an existing account, they can follow **login** navigation on the navbar, enter their credentials and click login to view their account. As you see in the below demonstration, the user also sees a greeting once logged in and is directed to **discover** page of the app.
   
-   ![login test video](/wireframes/testing-video/login.mp4)
+   ![login test video](/wireframes/testing-video/login.gif)
 
 2. As a **user** I want to be able to  **Logout** of my account.
 3. As a **user** I want to be able to **edit my account** information.
