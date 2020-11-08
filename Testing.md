@@ -17,11 +17,22 @@ The following section goes through each of the user stories from the UX section 
 #### **Site Visitor** ####
 
 1. As a **user** I want to be able to find out the information **about** the app.
+    - The User is able to view information about the app clicking on **about** navigation on the navbar, which takes them there. Also, About page is the first to render then the app is loaded.
 2. As a **user** I want ot be able to **discover** some book review samples.
+   - The user is able to discover book review samples by following **discover** navigation on the navbar which displays all existing book reviews, including those of the user themselves if they have made any entries.
 3. As a **user** I want to be able to **login** to my account.
+   - Following **login** button on the navbar, the user is able to login to their account.
 4. As a **user** I want to **register** if I don't have an account.
+   - Following **register** button on the navbar, the user is able to create a new account. The form will prompt the user should there be a duplication based on the username.
 5. As a **user** I want to find **contact details** for the site admin.
+    - As this feature was proposed for future development features, unfortunately the users will not be able to find the contact details of the site admin. Instead, they could potentially contact the owner of the app owner via social media at present.
 6. As a **user** I want to find **social media** accounts connected to the site.
+   - All users are able to find **social media** icons in the footer of the page.
+
+![header image](/wireframes/testing-images/header.jpg)
+![footer image](/wireframes/testing-images/footer.jpg)
+![discover image](/wireframes/testing-images/discover.jpg)
+![login image](/wireframes/testing-images/login.jpg)
 
 #### **Registered Site User** ####
 
