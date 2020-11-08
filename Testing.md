@@ -1,5 +1,7 @@
 # Scribbles - Testing Details #
 
+![Scribbles](/static/images/logo.jpg)
+
 ---
 
 ## Contents ##
