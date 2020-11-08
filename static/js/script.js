@@ -9,8 +9,8 @@ $("#goUpBtn").click(function () {
 
 
 $(document).ready(function () {
-    $('.carousel').carousel()
-})
+    $('.carousel').carousel();
+});
 
 /**
  * When the user scrolls down 
@@ -31,7 +31,7 @@ const scrollFunction = () => {
   } else {
     goUpBtn.style.display = "none";
   }
-}
+};
 
 /**
  * When the user clicks on the button
@@ -40,6 +40,6 @@ const scrollFunction = () => {
 const topFunction = () => {
   document.body.scrollTop = 0; // For Safari
   document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-}
+};
 
 
