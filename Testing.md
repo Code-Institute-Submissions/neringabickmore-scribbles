@@ -163,6 +163,8 @@ The app has a different layout options, focused on *mobile-first* design in mind
 
 ### Testing undertaken on tablet and desktop ###
 
+- Just as above testing on mobile, all of the existing features were tested on both laptop and iPad2.
+
 ### Bugs discovered ###
 
 #### Solved bugs ####
