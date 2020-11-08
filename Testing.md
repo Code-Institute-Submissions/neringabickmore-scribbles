@@ -41,50 +41,59 @@ The following section goes through each of the user stories from the UX section 
 
 1. As a **user** I want to be able to **Login** to my account.
    - When a user has an existing account, they can follow **login** navigation on the navbar, enter their credentials and click login to view their account. As you see in the below demonstration, the user also sees a greeting once logged in and is directed to **discover** page of the app.
+
    ![login test video](/wireframes/testing-video/login.gif)
 
-2. As a **user** I want to be able to  **Logout** of my account.
+2. As a **user** I want to be able to  **logout** of my account.
    - The user is able to logout of their account by navigating to **account** on the navbar and choosing the option to logout.
-    ![logout]()
+  
+    ![logout](/wireframes/testing-video/logout.gif)
 
 3. As a **user** I want to be able to **edit my account** information.
    - The user is able to edit their account by navigating to **account** on the navbar and choosing the option to **view profile** and then **edit** button. If they choose **cancel** button, the user is taken to **discover reviews** page.
-    ![edit account]()
+  
+   ![edit account](/wireframes/testing-video/edit-account.gif)
 
 4. As a **user** I want to be able to **view** other users' book reviews.
    -The user has a few options how to **view** other users reviews:
    1. When they login, they are directed to **discover** page
    2. When they navigate to **discover** button on navbar
    3. When they *cancel* **edit account** option
-   4. If they **logout** from their account, the user is redirected to **discover** page
+
+   ![heart reviews](/wireframes/testing-video/discover.gif)
 
 5. As a **user** I want to be able to *heart* other users' book **reviews**.
    - All registered users are able to *heart* other users' reviews by clicking on the *heart* button on **discovery** page. They get a notification on the screen once they add a review to their **favorites**.
-  ![heart reviews]()
-
+  
+    ![favorites page](/wireframes/testing-video/add-to-favorites.gif)
+  
 6. As a **user** I want to be able to **access** *hearted* books on a **favorites** page.
-   -The user is able to view **hearted** reviews if they navigate to navbar and click on **favorites** button. Please note, if the user didn't **heart** any reviews, they will not have content on display on their **favorites** page.
-   ![favorites page]()
+   -The user is able to view **hearted** reviews if they navigate to navbar and click on **favorites** button. Please note, if the user didn't **heart** any reviews, they will not have content on display on their **favorites** page.Please refer to the video above.
 
-7. As a **user** I want to be able to **remove other user's book reviews from my *favorites***.
+7. As a **user** I want to be able to **remove** other user's book reviews from my **favorites**.
    - The user has an option to remove **hearted** reviews from their **favorites** page by clicking on **bin** button.
-   ![remove favorite]()
+  
+   ![remove favorite](/wireframes/testing-video/remove-from-favorites.gif)
 
 8. As a **user** I want to be able to **access my book reviews** I have created before.
    - When the user navigates to navbar and clicks on **my reviews** button, they are re-directed to the **my reviews** page. Please note, if the user hasn't submitted any reviews they will not have content on display except for **add review** button.
-    ![my reviews]()
+  
+    ![my reviews](/wireframes/testing-video/my-reviews.gif)
 
 9. As a **user** I want to be able to **create new** book reviews.
     - The user can add new reviews by clicking on **add review** button at the top of the **my reviews** page.
-    ![add review]()
+
+    ![add review](/wireframes/testing-video/add-review.gif)
 
 10. As a **user** I want to be able to **edit existing** book reviews.
     - The user is able to edit one of their reviews by clicking on **edit** button at the top of each review. They are then redirected to **edit review template**. The template will display the current review details that are pulled from the database and they can therefore change only the parts they wish to change. At this stage, the user has an option to **update** the review or **cancel** the action. Regardless of the option the user choose, they are re-directed back to **my reviews** page.
-    ![edit review]()
+  
+    ![edit review](/wireframes/testing-video/update-review.gif)
 
 11. As a **user** I want to be able to **delete** my book reviews.
     - The user is able to **delete** one of their own reviews by clicking on the **bin** button at the top of each review.
-    ![remove review]()
+
+    ![remove review](/wireframes/testing-video/delete-review.gif)
 
 ---
 
