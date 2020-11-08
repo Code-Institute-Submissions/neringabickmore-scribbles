@@ -4,6 +4,20 @@
 
 ## Contents ##
 
+- [Scribbles - Testing Details](#scribbles---testing-details)
+  - [Contents](#contents)
+  - [Automated Testing](#automated-testing)
+    - [Validation Services](#validation-services)
+    - [Client Stories Testing](#client-stories-testing)
+      - [**Site Visitor**](#site-visitor)
+      - [**Registered Site User**](#registered-site-user)
+  - [Manual Testing](#manual-testing)
+    - [Testing undertaken on Mobile](#testing-undertaken-on-mobile)
+    - [Testing undertaken on tablet and desktop](#testing-undertaken-on-tablet-and-desktop)
+    - [Bugs discovered](#bugs-discovered)
+      - [Solved bugs](#solved-bugs)
+    - [Unsolved bugs](#unsolved-bugs)
+
 ---
 
 ## Automated Testing ##
