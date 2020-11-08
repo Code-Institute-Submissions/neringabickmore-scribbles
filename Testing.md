@@ -146,3 +146,5 @@ if session["user"]:
 ```
 
 ### Unsolved bugs ###
+
+1. On registration, the user is not shown a flash message greeting them.
