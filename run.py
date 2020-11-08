@@ -201,6 +201,9 @@ def register():
         users.insert_one(register)
         # put the new user into 'session' cookie
         session["user"] = request.form.get("username").lower()
+        # Flash message
+        flash("Welcome, {}".format(
+                        request.form.get("username")))
         return redirect(url_for("discover", username=session["user"]))
     # Access template renders with register form as main content
     return render_template("pages/access.html", main_content="register")

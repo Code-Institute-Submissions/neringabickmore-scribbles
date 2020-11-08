@@ -23,7 +23,10 @@ The following section goes through each of the user stories from the UX section 
 3. As a **user** I want to be able to **login** to my account.
    - Following **login** button on the navbar, the user is able to login to their account.
 4. As a **user** I want to **register** if I don't have an account.
-   - Following **register** button on the navbar, the user is able to create a new account. The form will prompt the user should there be a duplication based on the username.
+   - Following **register** button on the navbar, the user is able to create a new account. The form will prompt the user if there is a duplication based on the username.
+![register video](/wireframes/testing-video/register.gif)
+![existing user](/wireframes/testing-video/existing-user.gif)
+
 5. As a **user** I want to find **contact details** for the site admin.
     - As this feature was proposed for future development features, unfortunately the users will not be able to find the contact details of the site admin. Instead, they could potentially contact the owner of the app owner via social media at present.
 6. As a **user** I want to find **social media** accounts connected to the site.
@@ -145,6 +148,18 @@ if session["user"]:
             return redirect(url_for("discover"))
 ```
 
+5. On registration, the user is not shown a flash message greeting them.
+
+![registration without flash message](/wireframes/testing-video/register-with-bug.gif)
+
+Bugfix: Add flash message code
+
+```python
+flash("Welcome, {}".format(
+                        request.form.get("username")))
+        return redirect(url_for("discover", username=session["user"]))
+```
+
 ### Unsolved bugs ###
 
-1. On registration, the user is not shown a flash message greeting them.
+
