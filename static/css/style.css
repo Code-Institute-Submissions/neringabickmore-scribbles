@@ -36,6 +36,9 @@ h1, h2{
     text-shadow: var(--default-text-shadow);
     color: var(--charcoal);
 }
+h1:first-letter, h2:first-letter{
+    text-transform: capitalize;
+}
 h1{
     font-size: 2rem;
 }
