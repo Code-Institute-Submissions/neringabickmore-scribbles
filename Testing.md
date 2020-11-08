@@ -210,3 +210,4 @@ flash("Welcome, {}".format(
 
 1. If the user didn't added any reviews to their **favorites**, they don't have a message on their **favorites** page suggesting they should add some reviews to have anything displayed on the page.
 2. If the user didn't add any of their own reviews to the app, **my reviews** page doesn't have a message to encourage the user to doing so.
+3. If a user deletes one of their reviews, which is favorited by one other users, their favorites template may show error as that review in the collection no longer exists.
