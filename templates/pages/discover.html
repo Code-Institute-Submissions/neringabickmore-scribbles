@@ -7,7 +7,7 @@
 </div>
 <!-- Library image -->
 <div class="col-12 mb-2" id="library-img">
-    <img src="\static\images\library.jpg" alt="library"></img>
+    <img src="/static/images/library.jpg" alt="library">
 </div>
 <!-- Reviews container -->
 <div class="container-fluid m-md-3 reviews-container">
@@ -26,7 +26,7 @@
                     <a class="btn" href="/discover/reviews" title="clear search"><i
                             class="fas fa-times icon-btn"></i></a>
                     <!-- Search -->
-                    <button type="submit" class="btn"><i class="fas fa-search icon-btn"></i></button>
+                    <button type="submit" class="btn" title="search"><i class="fas fa-search icon-btn"></i></button>
                 </div>
             </form>
         </div>
@@ -46,7 +46,7 @@
                         title="buy the book" rel="noopener"></i></a>
 
                 <!-- Book cover img -->
-                <img class="col-sm-12 book-cover m-2" src="{{ review.link_to_image }}"></img><br>
+                <img class="col-sm-12 book-cover m-2" src="{{ review.link_to_image }}" alt="book cover"><br>
 
                 <!-- Book review -->
                 {% include 'components/content/review.html' %}

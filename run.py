@@ -97,7 +97,7 @@ def edit_review(review_id):
 # Delete function 
 @app.route("/delete/review/<review_id>")
 def delete_review(review_id):
-    reviews.remove({"_id": ObjectId(review_id)})
+    reviews.delete_one({"_id": ObjectId(review_id)})
     # Flash message
     flash("Review Deleted")
     return redirect(url_for("user_reviews"))
@@ -201,6 +201,9 @@ def register():
         users.insert_one(register)
         # put the new user into 'session' cookie
         session["user"] = request.form.get("username").lower()
+        # Flash message
+        flash("Welcome, {}".format(
+                        request.form.get("username")))
         return redirect(url_for("discover", username=session["user"]))
     # Access template renders with register form as main content
     return render_template("pages/access.html", main_content="register")

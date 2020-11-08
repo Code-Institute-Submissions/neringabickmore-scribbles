@@ -1,23 +1,15 @@
 //Global Variables
+
 const goUpBtn = document.getElementById("goUpBtn");
-
-// Methods
-
-$("#goUpBtn").click(function () {
-  topFunction();
-});
-
-
-$(document).ready(function () {
-    $('.carousel').carousel()
-})
 
 /**
  * When the user scrolls down 
  * 20px from the top of the document
- * show the button
+ * show the button.
  */
- window.onscroll = function() {scrollFunction()};
+ window.onscroll = function() {
+   scrollFunction();
+  };
 
  /**
   * Scroll function:
@@ -31,7 +23,7 @@ const scrollFunction = () => {
   } else {
     goUpBtn.style.display = "none";
   }
-}
+};
 
 /**
  * When the user clicks on the button
@@ -40,6 +32,11 @@ const scrollFunction = () => {
 const topFunction = () => {
   document.body.scrollTop = 0; // For Safari
   document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-}
+};
 
+// Event Listener
+
+$("#goUpBtn").click(function () {
+  topFunction();
+});
 

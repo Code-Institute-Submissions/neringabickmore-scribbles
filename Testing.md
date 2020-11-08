@@ -1,14 +1,40 @@
 # Scribbles - Testing Details #
 
+![Scribbles](/static/images/logo.jpg)
+
+Main [README.md](README.md) file.
+
+View [website](https://scribbles-app.herokuapp.com/) deployed to Heroku.
+
 ---
 
 ## Contents ##
+
+- [Scribbles - Testing Details](#scribbles---testing-details)
+  - [Contents](#contents)
+  - [Automated Testing](#automated-testing)
+    - [Validation Services](#validation-services)
+    - [Client Stories Testing](#client-stories-testing)
+      - [**Site Visitor**](#site-visitor)
+      - [**Registered Site User**](#registered-site-user)
+  - [Manual Testing](#manual-testing)
+    - [Testing undertaken on Mobile](#testing-undertaken-on-mobile)
+    - [Testing undertaken on tablet and desktop](#testing-undertaken-on-tablet-and-desktop)
+    - [Bugs discovered](#bugs-discovered)
+      - [Solved bugs](#solved-bugs)
+    - [Unsolved bugs](#unsolved-bugs)
 
 ---
 
 ## Automated Testing ##
 
 ### Validation Services ###
+
+- CSS file passed [W3C CSS Validation Services](https://jigsaw.w3.org/css-validator/validator) without faults.
+- Vendor prefixes added using [Autoprefixer](https://autoprefixer.github.io/)
+- Json files in data schemas folder were validated with [JsonLint](https://jsonlint.com/) and all passed.
+- Script.js file was missing a few semicolons but otherwise passed [jshint.com](https://jshint.com/) validation without issues.
+- All HTML files were tested using [W3 validator](https://validator.w3.org) to identify any error or warnings. The validator did throw quite a few errors. The ones that could be fixed (related directly to html elements), however in the instances where python was used I was unable to correct such errors for obvious reasons - I need data to be pushed from he database to the app.
 
 ### Client Stories Testing ###
 
@@ -17,33 +43,127 @@ The following section goes through each of the user stories from the UX section 
 #### **Site Visitor** ####
 
 1. As a **user** I want to be able to find out the information **about** the app.
+    - The User is able to view information about the app clicking on **about** navigation on the navbar, which takes them there. Also, About page is the first to render then the app is loaded.
 2. As a **user** I want ot be able to **discover** some book review samples.
+   - The user is able to discover book review samples by following **discover** navigation on the navbar which displays all existing book reviews, including those of the user themselves if they have made any entries.
 3. As a **user** I want to be able to **login** to my account.
+   - Following **login** button on the navbar, the user is able to login to their account.
 4. As a **user** I want to **register** if I don't have an account.
+   - Following **register** button on the navbar, the user is able to create a new account. The form will prompt the user if there is a duplication based on the username.
+![register video](/wireframes/testing-video/register.gif)
+![existing user](/wireframes/testing-video/existing-user.gif)
+
 5. As a **user** I want to find **contact details** for the site admin.
+    - As this feature was proposed for future development features, unfortunately the users will not be able to find the contact details of the site admin. Instead, they could potentially contact the owner of the app owner via social media at present.
 6. As a **user** I want to find **social media** accounts connected to the site.
+   - All users are able to find **social media** icons in the footer of the page.
+
+![header image](/wireframes/testing-images/header.jpg)
+![discover image](/wireframes/testing-images/discover.jpg)
+![login image](/wireframes/testing-images/login.jpg)
+![footer image](/wireframes/testing-images/footer.jpg)
 
 #### **Registered Site User** ####
 
 1. As a **user** I want to be able to **Login** to my account.
-2. As a **user** I want to be able to  **Logout** of my account.
+   - When a user has an existing account, they can follow **login** navigation on the navbar, enter their credentials and click login to view their account. As you see in the below demonstration, the user also sees a greeting once logged in and is directed to **discover** page of the app.
+
+   ![login test video](/wireframes/testing-video/login.gif)
+
+2. As a **user** I want to be able to  **logout** of my account.
+   - The user is able to logout of their account by navigating to **account** on the navbar and choosing the option to logout.
+  
+    ![logout](/wireframes/testing-video/logout.gif)
+
 3. As a **user** I want to be able to **edit my account** information.
+   - The user is able to edit their account by navigating to **account** on the navbar and choosing the option to **view profile** and then **edit** button. If they choose **cancel** button, the user is taken to **discover reviews** page.
+  
+   ![edit account](/wireframes/testing-video/edit-account.gif)
+
 4. As a **user** I want to be able to **view** other users' book reviews.
+   -The user has a few options how to **view** other users reviews:
+   1. When they login, they are directed to **discover** page
+   2. When they navigate to **discover** button on navbar
+   3. When they *cancel* **edit account** option
+
+   ![heart reviews](/wireframes/testing-video/discover.gif)
+
 5. As a **user** I want to be able to *heart* other users' book **reviews**.
+   - All registered users are able to *heart* other users' reviews by clicking on the *heart* button on **discovery** page. They get a notification on the screen once they add a review to their **favorites**.
+  
+    ![favorites page](/wireframes/testing-video/add-to-favorites.gif)
+  
 6. As a **user** I want to be able to **access** *hearted* books on a **favorites** page.
-7. As a **user** I want to be able to **remove other user's book reviews from my *favorites***.
+   -The user is able to view **hearted** reviews if they navigate to navbar and click on **favorites** button. Please note, if the user didn't **heart** any reviews, they will not have content on display on their **favorites** page.Please refer to the video above.
+
+7. As a **user** I want to be able to **remove** other user's book reviews from my **favorites**.
+   - The user has an option to remove **hearted** reviews from their **favorites** page by clicking on **bin** button.
+  
+   ![remove favorite](/wireframes/testing-video/remove-from-favorites.gif)
+
 8. As a **user** I want to be able to **access my book reviews** I have created before.
+   - When the user navigates to navbar and clicks on **my reviews** button, they are re-directed to the **my reviews** page. Please note, if the user hasn't submitted any reviews they will not have content on display except for **add review** button.
+  
+    ![my reviews](/wireframes/testing-video/my-reviews.gif)
+
 9. As a **user** I want to be able to **create new** book reviews.
+    - The user can add new reviews by clicking on **add review** button at the top of the **my reviews** page.
+
+    ![add review](/wireframes/testing-video/add-review.gif)
+
 10. As a **user** I want to be able to **edit existing** book reviews.
+    - The user is able to edit one of their reviews by clicking on **edit** button at the top of each review. They are then redirected to **edit review template**. The template will display the current review details that are pulled from the database and they can therefore change only the parts they wish to change. At this stage, the user has an option to **update** the review or **cancel** the action. Regardless of the option the user choose, they are re-directed back to **my reviews** page.
+  
+    ![edit review](/wireframes/testing-video/update-review.gif)
+
 11. As a **user** I want to be able to **delete** my book reviews.
+    - The user is able to **delete** one of their own reviews by clicking on the **bin** button at the top of each review.
+
+    ![remove review](/wireframes/testing-video/delete-review.gif)
 
 ---
 
 ## Manual Testing ##
 
+- **Responsive design**
+
+The app has a different layout options, focused on *mobile-first* design in mind as more users are expected to use mobile rather than larger devices, such as a tablet or a laptop/desktop.
+![mobile and desktop display]()
+
 ### Testing undertaken on Mobile ###
 
+- **Sliding banner** on a home/about page
+
+![sliding banner images]()
+  
+- **Register** account form
+
+![register](/wireframes/testing-video/register.gif)
+
+- **Sign in/out** functionality
+
+![login](/wireframes/testing-video/login.gif)
+![logout](/wireframes/testing-video/logout.gif)
+
+- **Favorites** functionality
+
+![favorites](/wireframes/testing-video/add-to-favorites.gif)
+
+- **Easy navigation** to external sites
+  
+   The user is redirected to a website when clicks on *purchase* a book button.
+
+   ![purchase the book]()
+
+- **Search function**
+
+    The user is able to search books by *title*, *author*, and *genre*.
+
+    ![search functionality]()
+
 ### Testing undertaken on tablet and desktop ###
+
+- Just as above testing on mobile, all of the existing features were tested on both laptop and iPad2.
 
 ### Bugs discovered ###
 
@@ -130,4 +250,20 @@ if session["user"]:
             return redirect(url_for("discover"))
 ```
 
+5. On registration, the user is not shown a flash message greeting them.
+
+![registration without flash message](/wireframes/testing-video/register-with-bug.gif)
+
+Bugfix: Add flash message code
+
+```python
+flash("Welcome, {}".format(
+                        request.form.get("username")))
+        return redirect(url_for("discover", username=session["user"]))
+```
+
 ### Unsolved bugs ###
+
+1. If the user didn't added any reviews to their **favorites**, they don't have a message on their **favorites** page suggesting they should add some reviews to have anything displayed on the page.
+2. If the user didn't add any of their own reviews to the app, **my reviews** page doesn't have a message to encourage the user to doing so.
+3. If a user deletes one of their reviews, which is favorited by one other users, their favorites template may show error as that review in the collection no longer exists.
