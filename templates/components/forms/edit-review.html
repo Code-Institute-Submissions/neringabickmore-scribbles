@@ -13,18 +13,18 @@
             <!-- Book title -->
             <div class="form-group mb-0">
                 <label for="title">Title</label>
-                <input class="form-control" id="title" name="title" type="text" required value="{{ review.title }}"></input>
+                <input class="form-control" id="title" name="title" type="text" required value="{{ review.title }}">
             </div>
 
             <!-- Author -->
             <div class="form-group mb-0">
                 <label for="author">Author</label>
-                <input class="form-control" id="author" name="author" required value="{{ review.author }}"></input>
+                <input class="form-control" id="author" name="author" required value="{{ review.author }}">
             </div>
 
             <!-- Select Genre -->
             <div class="form-group mb-0">
-                <label for="genre_category">Genre</label>
+                <label for="genre_category">genre</label>
                 <select name="genre_category" class="form-control" id="genre_category">
                     {% for genre in genre %}
                     <option value="{{ genre.genre_category }}">{{ genre.genre_category }}</option>
@@ -35,28 +35,28 @@
             <!-- Length of reading -->
             <div class="form-group mb-0">
                 <label for="length">Length</label>
-                <input class="form-control" id="length" name="length" required value="{{ review.length }}"></input>
+                <input class="form-control" id="length" name="length" required value="{{ review.length }}">
             </div>
 
             <!-- Ease of reading -->
             <div class="form-group mb-0">
                 <label for="ease_of_reading">Ease of Reading</label>
                 <input class="form-control" id="ease_of_reading" name="ease_of_reading" value="{{ review.ease_of_reading }}"
-                    required></input>
+                    required>
             </div>
 
             <!-- Plot summary -->
             <div class="form-group mb-0">
                 <label for="plot_summary">Plot Summary</label>
                 <input class="form-control" id="plot_summary" name="plot_summary"
-                    required value="{{ review.plot_summary }}"></input>
+                    required value="{{ review.plot_summary }}" maxlength="300" minlength="25">
             </div>
 
             <!-- favorite quote -->
             <div class="form-group mb-0">
                 <label for="favorite_quote">Favorite Quote</label>
-                <input class="form-control" id="plot_summary" name="favorite_quote"
-                    required value="{{ review.favorite_quote }}"></input>
+                <input class="form-control" id="favorite_quote" name="favorite_quote"
+                    required value="{{ review.favorite_quote }}" maxlength="300" minlength="25">
             </div>
             <!-- rating -->
             <div class="form-group">
@@ -65,30 +65,30 @@
                 </label>
                 <select name="rating" class="form-control" id="rating">
                     <option value="{{ review.rating }}" selected>{{ review.rating }}</option>
-                    <option value="&#11088">&#11088</i></option>
-                    <option value="&#11088 &#11088">&#11088 &#11088</option>
-                    <option value="&#11088 &#11088 &#11088">&#11088 &#11088 &#11088</option>
-                    <option value="&#11088 &#11088 &#11088 &#11088">&#11088 &#11088 &#11088 &#11088</option>
-                    <option value="&#11088 &#11088 &#11088 &#11088 &#11088">&#11088 &#11088 &#11088 &#11088 &#11088</option>
+                    <option value="&#11088;">&#11088;</option>
+                    <option value="&#11088; &#11088;">&#11088; &#11088;</option>
+                    <option value="&#11088; &#11088; &#11088;">&#11088; &#11088; &#11088;</option>
+                    <option value="&#11088; &#11088; &#11088; &#11088;">&#11088; &#11088; &#11088; &#11088;</option>
+                    <option value="&#11088; &#11088; &#11088; &#11088; &#11088;">&#11088; &#11088; &#11088; &#11088; &#11088;</option>
                 </select>
             </div>
 
             <!-- Image link -->
             <div class="form-group mb-0">
                 <label for="link_to_image">Insert Image URL</label>
-                <input class="form-control" id="link_to_image" name="link_to_image" value="{{ review.link_to_image }}" required></input>
+                <input class="form-control" id="link_to_image" name="link_to_image" value="{{ review.link_to_image }}" required type="url">
             </div>
 
             <!-- Link to buy a book -->
             <div class="form-group">
                 <label for="link_to_buy ">Insert Book Vendor URL </label>
-                <input class="form-control" id="link_to_buy " name="link_to_buy"  required value="{{ review.link_to_buy }}"></input>
+                <input class="form-control" id="link_to_buy " name="link_to_buy"  required value="{{ review.link_to_buy }}" type="url">
             </div>
             <!-- Action buttons-->
             <!-- cancel-->
-            <a class="btn" href="/my/reviews"><i class="fas fa-times-circle icon-btn"></i></a>
+            <a class="btn" href="/my/reviews" title="cancel"><i class="fas fa-times-circle icon-btn" aria-hidden="true"></i></a>
             <!-- submit -->
-            <button type="submit" class="btn"><i class="fas fa-check icon-btn "></i></button>
+            <button type="submit" class="btn" title="submit"><i class="fas fa-check icon-btn" aria-hidden="true"></i></button>
             
         </form>
     </div>
