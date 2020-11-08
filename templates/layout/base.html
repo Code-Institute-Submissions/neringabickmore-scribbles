@@ -1,46 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+    <head>
 
-    {% include 'layout/head.html' %}
+        {% include 'layout/head.html' %}
 
-</head>
+    </head>
 
-<body>
+    <body>
 
-    <header class="container-fluid">
-        {% include 'components/header/header.html' %}
-    </header>
+        <header class="container-fluid">
+            {% include 'components/header/header.html' %}
+        </header>
 
-    <main class="container-fluid mt-3">
-        <!-- flash messages-->
-        <section class="row m-2 justify-content-center">
-            {% with messages = get_flashed_messages() %}
+        <main class="container-fluid mt-3">
+            <!-- flash messages-->
+            <section class="row m-2 justify-content-center">
+                {% with messages = get_flashed_messages() %}
                 {% if messages %}
-                    {% for message in messages %}
-                        <div class="col-12 col-sm-9 m-2" id="flash-message">
-                            <h1 class="text-center">{{ message }}</h1>
-                        </div>
-                    {% endfor %}
+                {% for message in messages %}
+                <div class="col-12 col-sm-9 m-2" id="flash-message">
+                    <h1 class="text-center">{{ message }}</h1>
+                </div>
+                {% endfor %}
                 {% endif %}
-            {% endwith %}
-        </section>
-        <!-- Main app content -->
-        <section id="main-content" class="row align-items-center">
-            <button id="goUpBtn" title="Go to top"><i class="fas fa-sort-up"></i></button>
-            {% block content %}
-            {% endblock %}
-        </section>
-        
-    </main>
+                {% endwith %}
+            </section>
+            <!-- Main app content -->
+            <section id="main-content" class="row align-items-center">
+                <button id="goUpBtn" title="Go to top"><i class="fas fa-sort-up"></i></button>
+                {% block content %}
+                {% endblock %}
+            </section>
 
-    <footer class="container-fluid">
-        {% include 'components/footer/footer.html' %}  
-    </footer>
+        </main>
 
-    <!-- Scripts-->
-    {% include 'layout/scripts.html' %}
-</body>
+        <footer class="container-fluid">
+            {% include 'components/footer/footer.html' %}
+        </footer>
+
+        <!-- Scripts-->
+        {% include 'layout/scripts.html' %}
+    </body>
 
 </html>
