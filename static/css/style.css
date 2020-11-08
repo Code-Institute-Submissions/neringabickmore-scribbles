@@ -34,7 +34,6 @@ main{
 h1, h2{
     font: var(--heading-title-font);
     text-shadow: var(--default-text-shadow);
-    text-transform: capitalize;
     color: var(--charcoal);
 }
 h1{
@@ -186,7 +185,7 @@ dl{
     text-align: right;
 }
 
-.review-box label, .profile label, .profile dl{
+.review-box label:first-letter, .profile label, .profile dl{
     text-transform: capitalize;
 }
 
@@ -197,9 +196,9 @@ dl{
     -webkit-box-shadow: var(--default-box-shadow);
             box-shadow: var(--default-box-shadow);
 }
-.form-control{
-    font-size: 1.8rem;
-    line-height: 1.8;
+.form-control, label, option, select{
+    font-size: 1.2rem;
+    line-height: 1.2;
 }
 
 /* Main Buttons */
@@ -208,7 +207,7 @@ dl{
     display: none;
     position: fixed;
     bottom: 2rem; 
-    right: 3rem; 
+    left: 3rem; 
     z-index: 99;
     border: none;
     outline: none;
@@ -312,6 +311,10 @@ wider than mobile **/
     .btn, .search-form input {
         height: 4rem;
         margin: 0.5rem;
+    }
+    .form-control, label, option, select{
+        font-size: 1.8rem;
+        line-height: 1.8;
     }
 }
 
