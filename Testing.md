@@ -48,7 +48,7 @@ The following section goes through each of the user stories from the UX section 
 6. As a **user** I want to be able to **access** *hearted* books on a **favorites** page.
 7. As a **user** I want to be able to **remove other user's book reviews from my *favorites***.
 8. As a **user** I want to be able to **access my book reviews** I have created before.
-9.  As a **user** I want to be able to **create new** book reviews.
+9. As a **user** I want to be able to **create new** book reviews.
 10. As a **user** I want to be able to **edit existing** book reviews.
 11. As a **user** I want to be able to **delete** my book reviews.
 
