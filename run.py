@@ -97,7 +97,7 @@ def edit_review(review_id):
 # Delete function 
 @app.route("/delete/review/<review_id>")
 def delete_review(review_id):
-    reviews.remove({"_id": ObjectId(review_id)})
+    reviews.delete_one({"_id": ObjectId(review_id)})
     # Flash message
     flash("Review Deleted")
     return redirect(url_for("user_reviews"))
