@@ -10,6 +10,12 @@
 
 ### Validation Services ###
 
+- CSS file passed [W3C CSS Validation Services](https://jigsaw.w3.org/css-validator/validator) without faults.
+- Vendor prefixes added using [Autoprefixer](https://autoprefixer.github.io/)
+- Json files in data schemas folder were validated with [JsonLint](https://jsonlint.com/) and all passed.
+- Script.js file was missing a few semicolons but otherwise passed [jshint.com](https://jshint.com/) validation without issues.
+- All HTML files were tested using [W3 validator](https://validator.w3.org) to identify any error or warnings. The validator did throw quite a few errors. The ones that could be fixed (related directly to html elements), however in the instances where python was used I was unable to correct such errors for obvious reasons - I need data to be pushed from he database to the app.
+
 ### Client Stories Testing ###
 
 The following section goes through each of the user stories from the UX section of [README.md](\scribbles\README.md)
