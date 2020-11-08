@@ -37,6 +37,10 @@ The following section goes through each of the user stories from the UX section 
 #### **Registered Site User** ####
 
 1. As a **user** I want to be able to **Login** to my account.
+   - When a user has an existing account, they can follow **login** navigation on the navbar, enter their credentials and click login to view their account. As you see in the below demonstration, the user also sees a greeting once logged in and is directed to **discover** page of the app.
+  
+   ![login test video](/wireframes/testing-video/login.mp4)
+
 2. As a **user** I want to be able to  **Logout** of my account.
 3. As a **user** I want to be able to **edit my account** information.
 4. As a **user** I want to be able to **view** other users' book reviews.
@@ -44,7 +48,7 @@ The following section goes through each of the user stories from the UX section 
 6. As a **user** I want to be able to **access** *hearted* books on a **favorites** page.
 7. As a **user** I want to be able to **remove other user's book reviews from my *favorites***.
 8. As a **user** I want to be able to **access my book reviews** I have created before.
-9. As a **user** I want to be able to **create new** book reviews.
+9.  As a **user** I want to be able to **create new** book reviews.
 10. As a **user** I want to be able to **edit existing** book reviews.
 11. As a **user** I want to be able to **delete** my book reviews.
 
