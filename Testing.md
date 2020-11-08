@@ -33,9 +33,9 @@ The following section goes through each of the user stories from the UX section 
    - All users are able to find **social media** icons in the footer of the page.
 
 ![header image](/wireframes/testing-images/header.jpg)
-![footer image](/wireframes/testing-images/footer.jpg)
 ![discover image](/wireframes/testing-images/discover.jpg)
 ![login image](/wireframes/testing-images/login.jpg)
+![footer image](/wireframes/testing-images/footer.jpg)
 
 #### **Registered Site User** ####
 
