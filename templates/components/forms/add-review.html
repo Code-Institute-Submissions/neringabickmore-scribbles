@@ -1,7 +1,7 @@
 <!-- Title -->
 <div class="row justify-content-center mb-4">
     <div class="col-5">
-        <h1>Add New Review</h1>
+        <h1>add new review</h1>
     </div>
 </div>
 
@@ -13,22 +13,22 @@
             <!-- Book title -->
             <div class="form-group mb-0">
                 <label for="title">title</label>
-                <input class="form-control" id="title" name="title" type="text" required></input>
+                <input class="form-control" id="title" name="title" type="text" required>
             </div>
 
             <!-- Author -->
             <div class="form-group mb-0">
                 <label for="author">author</label>
-                <input class="form-control" id="author" name="author" required ></input>
+                <input class="form-control" id="author" name="author" required>
             </div>
 
             <!-- Select Genre -->
             <div class="form-group mb-0">
                 <label for="genre_category">genre</label>
-                <select name="genre_category" class="form-control" id="genre_category">
-                    <option value="Choose genre">Choose genre </option>
+                <select name="genre_category" class="form-control" id="genre_category" required>
+                    <option value="">Select</option>
                     {% for genre in genre %}
-                    <option value="{{ genre.genre_category }}">{{ genre.genre_category }}</option>
+                    <option value="{{ genre.genre_category }}" label="{{ genre.genre_category }}"></option>
                     {% endfor %}
                 </select>
             </div>
@@ -36,59 +36,57 @@
             <!-- Length of reading -->
             <div class="form-group mb-0">
                 <label for="length">length</label>
-                <input class="form-control" id="length" name="length" required ></input>
+                <input class="form-control" id="length" name="length" required >
             </div>
 
             <!-- Ease of reading -->
             <div class="form-group mb-0">
                 <label for="ease_of_reading">ease of reading</label>
-                <input class="form-control" id="ease_of_reading" name="ease_of_reading" required></input>
+                <input class="form-control" id="ease_of_reading" name="ease_of_reading" required>
             </div>
 
             <!-- Plot summary -->
             <div class="form-group mb-0">
                 <label for="plot_summary">plot summary</label>
                 <input class="form-control" id="plot_summary"  name="plot_summary"
-                    required maxlength="300" ></input>
+                    required maxlength="300" minlength="25">
             </div>
 
             <!-- favorite quote -->
             <div class="form-group mb-0">
                 <label for="favorite_quote">favorite quote</label>
-                <input class="form-control" id="plot_summary" name="favorite_quote"
-                    required></input>
+                <input class="form-control" id="favorite_quote" name="favorite_quote"
+                    required maxlength="300" minlength="5">
             </div>
             <!-- rating -->
             <div class="form-group">
-                <label for="rating">
-                    rate the book
-                </label>
-                <select name="rating" class="form-control" id="rating">
-                    <option value="choose rating">Your rating</option>
-                    <option value="&#11088">&#11088</option>
-                    <option value="&#11088 &#11088">&#11088 &#11088</option>
-                    <option value="&#11088 &#11088 &#11088">&#11088 &#11088 &#11088</option>
-                    <option value="&#11088 &#11088 &#11088 &#11088">&#11088 &#11088 &#11088 &#11088</option>
-                    <option value="&#11088 &#11088 &#11088 &#11088 &#11088">&#11088 &#11088 &#11088 &#11088 &#11088</option>
+                <label for="rating">rate the book</label>
+                <select name="rating" class="form-control" id="rating" required>
+                    <option value="" selected>Rating</option>
+                    <option value="&#11088;">&#11088;</option>
+                    <option value="&#11088; &#11088;">&#11088; &#11088;</option>
+                    <option value="&#11088; &#11088; &#11088;">&#11088; &#11088; &#11088;</option>
+                    <option value="&#11088; &#11088; &#11088; &#11088;">&#11088; &#11088; &#11088; &#11088;</option>
+                    <option value="&#11088; &#11088; &#11088; &#11088; &#11088;">&#11088; &#11088; &#11088; &#11088; &#11088;</option>
                 </select>
             </div>
 
             <!-- Image link -->
             <div class="form-group mb-0">
                 <label for="link_to_image">insert image URL</label>
-                <input class="form-control" id="link_to_image" name="link_to_image" required></input>
+                <input class="form-control" id="link_to_image" name="link_to_image" required type="url">
             </div>
 
             <!-- Link to buy a book -->
             <div class="form-group">
-                <label for="link_to_buy ">insert book vendor URL </label>
-                <input class="form-control" id="link_to_buy " name="link_to_buy"  required></input>
+                <label for="link_to_buy">insert book vendor URL </label>
+                <input class="form-control" id="link_to_buy" name="link_to_buy" required type="url">
             </div>
             <!-- Action buttons-->
             <!-- cancel-->
-            <a class="btn" href="/my/reviews"><i class="fas fa-times-circle icon-btn"></i></a>
+            <a class="btn" href="/my/reviews" title="cancel"><i class="fas fa-times-circle icon-btn" aria-hidden="true"></i></a>
             <!-- submit -->
-            <button type="submit" class="btn"><i class="fas fa-check icon-btn "></i></button>
+            <button type="submit" class="btn" title="submit"><i class="fas fa-check icon-btn" aria-hidden="true"></i></button>
             
         </form>
     </div>
