@@ -2,7 +2,7 @@ import os
 from flask import (
     Flask, flash, render_template, 
     redirect, request, session, url_for)
-from flask_pyMONGO import PyMONGO
+from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
 if os.path.exists("env.py"):
@@ -18,7 +18,7 @@ APP.secret_key = os.environ.get("SECRET_KEY")
 
 
 # Global Variables:
-MONGO = PyMONGO(APP)
+MONGO = PyMongo(APP)
 reviews = MONGO.db.reviews
 genres = MONGO.db.genre
 users =  MONGO.db.users
