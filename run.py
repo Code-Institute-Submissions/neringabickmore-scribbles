@@ -2,7 +2,7 @@ import os
 from flask import (
     Flask, flash, render_template, 
     redirect, request, session, url_for)
-from flask_pymongo import PyMongo
+from flask_pyMONGO import PyMONGO
 from bson.objectid import ObjectId
 from werkzeug.security import generate_password_hash, check_password_hash
 if os.path.exists("env.py"):
@@ -18,10 +18,10 @@ app.secret_key = os.environ.get("SECRET_KEY")
 
 
 # Global Variables:
-mongo = PyMongo(app)
-reviews = mongo.db.reviews
-genres = mongo.db.genre
-users =  mongo.db.users
+MONGO = PyMONGO(app)
+reviews = MONGO.db.reviews
+genres = MONGO.db.genre
+users =  MONGO.db.users
 
 
 # About page route
@@ -34,7 +34,7 @@ def about():
 @app.route("/search", methods=["GET", "POST"])
 def search_discover():
     query = request.form.get("query")
-    reviews = list(mongo.db.reviews.find({"$text": {"$search": query}}))
+    reviews = list(MONGO.db.reviews.find({"$text": {"$search": query}}))
     return render_template("pages/discover.html", reviews=reviews)
 
 
@@ -107,7 +107,7 @@ def delete_review(review_id):
 def user_reviews():
     if session["user"]:
         user_profile = users.find_one({"username": session["user"]})
-        reviews = list(mongo.db.reviews.find({"reviewed_by": session["user"]}))
+        reviews = list(MONGO.db.reviews.find({"reviewed_by": session["user"]}))
         return render_template("pages/my-reviews.html", user=user_profile, reviews=reviews)
     return redirect(url_for("user_reviews"))
 
@@ -116,7 +116,7 @@ def user_reviews():
 @app.route("/discover/reviews", methods=["GET"])
 def discover():
     if request.method == "GET":
-        reviews = mongo.db.reviews.find().sort("genre")
+        reviews = MONGO.db.reviews.find().sort("genre")
         return render_template("pages/discover.html", reviews=reviews)
     return redirect(url_for("discover"))
 
