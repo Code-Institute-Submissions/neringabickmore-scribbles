@@ -3,7 +3,7 @@
 <nav class="navbar navbar-expand-sm container-fluid sticky-top navbar-light ">
     {% if not session.user %}
     <!-- Re-directs to about page if non-registered user -->
-    <a href="/about" title="App info"><img src="/static/images/logo.jpg" class="m-2" id="logo"
+    <a href="/" title="App info"><img src="/static/images/logo.jpg" class="m-2" id="logo"
             alt="scribbles logo" /></a>
     {% else %}
     <!-- Re-directs to discover page if registered user -->
@@ -20,7 +20,7 @@
             <!-- Shows about button if non-registered user -->
             {% if not session.user %}
             <li class="nav-item mr-2">
-                <a href="/about" class="nav-link" title="App info">about</a>
+                <a href="/" class="nav-link" title="App info">about</a>
             </li>
             {% endif %}
             <!-- Shows discover button to all of the users -->
