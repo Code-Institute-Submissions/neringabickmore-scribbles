@@ -9,29 +9,29 @@ if os.path.exists("env.py"):
     import env
 
 
-app = Flask (__name__)
+APP = Flask (__name__)
 
 
-app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
-app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
-app.secret_key = os.environ.get("SECRET_KEY")
+APP.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
+APP.config["MONGO_URI"] = os.environ.get("MONGO_URI")
+APP.secret_key = os.environ.get("SECRET_KEY")
 
 
 # Global Variables:
-MONGO = PyMONGO(app)
+MONGO = PyMONGO(APP)
 reviews = MONGO.db.reviews
 genres = MONGO.db.genre
 users =  MONGO.db.users
 
 
 # About page route
-@app.route("/")
+@APP.route("/")
 def about():
     return render_template("pages/about.html")
 
 
 # Search functionality in discovery page
-@app.route("/search", methods=["GET", "POST"])
+@APP.route("/search", methods=["GET", "POST"])
 def search_discover():
     query = request.form.get("query")
     reviews = list(MONGO.db.reviews.find({"$text": {"$search": query}}))
@@ -39,7 +39,7 @@ def search_discover():
 
 
 # Add review function
-@app.route("/add/review", methods={"GET", "POST"})
+@APP.route("/add/review", methods={"GET", "POST"})
 def add_review():
     if request.method == "POST":
         review = {
@@ -66,7 +66,7 @@ def add_review():
 
 
 # Edit review function 
-@app.route("/edit/review/<review_id>", methods=["GET", "POST"])
+@APP.route("/edit/review/<review_id>", methods=["GET", "POST"])
 def edit_review(review_id):
     if request.method == "POST":
         submit = {"$set": {
@@ -94,7 +94,7 @@ def edit_review(review_id):
     
 
 # Delete function 
-@app.route("/delete/review/<review_id>")
+@APP.route("/delete/review/<review_id>")
 def delete_review(review_id):
     reviews.delete_one({"_id": ObjectId(review_id)})
     # Flash message
@@ -103,7 +103,7 @@ def delete_review(review_id):
 
 
 # My reviews function displaying each user their own reviews
-@app.route("/my/reviews", methods=["GET", "POST"])
+@APP.route("/my/reviews", methods=["GET", "POST"])
 def user_reviews():
     if session["user"]:
         user_profile = users.find_one({"username": session["user"]})
@@ -113,7 +113,7 @@ def user_reviews():
 
 
 # Discover reviews function displaying all the reviews that exist in DB
-@app.route("/discover/reviews", methods=["GET"])
+@APP.route("/discover/reviews", methods=["GET"])
 def discover():
     if request.method == "GET":
         reviews = MONGO.db.reviews.find().sort("genre")
@@ -122,7 +122,7 @@ def discover():
 
 
 # Function allowing users to add items to their favorites template
-@app.route("/add/favorites/<review_id>")
+@APP.route("/add/favorites/<review_id>")
 def add_favorites(review_id):
     if session["user"]:
         # check if favorite already exists
@@ -142,7 +142,7 @@ def add_favorites(review_id):
 
 
 # Delete items from favorites template
-@app.route('/delete/favorites/<review_id>')
+@APP.route('/delete/favorites/<review_id>')
 def delete_favorites(review_id):
     user_profile = users.find_one({'username': session['user'].lower()})
     users.update(user_profile, {"$pull": {"favorites": ObjectId(review_id)}})
@@ -154,9 +154,9 @@ def delete_favorites(review_id):
 # Function to render favorites template for every user
 """ 
 This function idea was borrowed from:
-https://github.com/Geomint/beer-time/blob/master/app.py 
+https://github.com/Geomint/beer-time/blob/master/APP.py 
 """
-@app.route("/user/favorites", methods=["GET", "POST"])
+@APP.route("/user/favorites", methods=["GET", "POST"])
 def user_favorites():
     user_profile = users.find_one({'username': session['user'].lower()})
     user_profile_fav = user_profile['favorites']
@@ -167,11 +167,11 @@ def user_favorites():
         for fav in user_profile_fav:
             review = reviews.find_one({'_id': fav})
             review_id = review['_id']
-            fav_review_id.append(review_id)
+            fav_review_id.APPend(review_id)
 
     for fav in user_profile_fav:
         review = reviews.find_one({'_id': fav})
-        fav_review.append(review)
+        fav_review.APPend(review)
 
     return render_template("pages/favorites.html", fav_review_id=fav_review_id,
                            fav_review=fav_review, user_profile=users.find_one(
@@ -179,7 +179,7 @@ def user_favorites():
 
 
 # User registration
-@app.route("/register", methods=["GET", "POST"])
+@APP.route("/register", methods=["GET", "POST"])
 def register():
     if request.method == "POST":
         # check if username already exists in database
@@ -209,7 +209,7 @@ def register():
 
 
 # User login
-@app.route("/login", methods=["GET", "POST"])
+@APP.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
         # check if username exists in database
@@ -238,7 +238,7 @@ def login():
 
 
 # User logout
-@app.route("/logout")
+@APP.route("/logout")
 def logout():
     # remove user from session cookies
     session.pop("user")
@@ -246,7 +246,7 @@ def logout():
 
 
 # Function to render profile template
-@app.route("/profile", methods=["GET", "POST"])
+@APP.route("/profile", methods=["GET", "POST"])
 def profile():
     if session["user"]:
         # grab the session user's credentials from database
@@ -256,7 +256,7 @@ def profile():
 
 
 # Function to edit profile
-@app.route("/edit/profile/<user_profile_id>", methods=["GET", "POST"])
+@APP.route("/edit/profile/<user_profile_id>", methods=["GET", "POST"])
 def edit_profile(user_profile_id):
     if request.method == "POST":
         submit = {"$set": {
@@ -278,13 +278,13 @@ def edit_profile(user_profile_id):
 
 
 # error 404 page
-@app.errorhandler(404)
+@APP.errorhandler(404)
 def page_not_found(error):
     error = str(error)
     return render_template('pages/404.html', error=error), 404
 
 
 if __name__ == "__main__":
-    app.run(host=os.environ.get("IP"), 
+    APP.run(host=os.environ.get("IP"), 
             port=int(os.environ.get("PORT")), 
             debug=os.environ.get("DEBUG"))
