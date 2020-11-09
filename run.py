@@ -26,7 +26,6 @@ users =  mongo.db.users
 
 # About page route
 @app.route("/")
-@app.route("/about")
 def about():
     return render_template("pages/about.html")
 
