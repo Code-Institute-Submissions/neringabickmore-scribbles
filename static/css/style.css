@@ -220,7 +220,7 @@ dl{
     display: none;
     position: fixed;
     bottom: 2rem; 
-    left: 3rem; 
+    right: 3rem; 
     z-index: 99;
     border: none;
     outline: none;
