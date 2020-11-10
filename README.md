@@ -252,8 +252,6 @@ The types of data that are store in the MongoDB database:
 
 The app has a different layout options, focused on *mobile-first* design in mind as more users are expected to use mobile rather than larger devices, such as a tablet or a laptop/desktop.
 
-![site views on different displays]()
-
 - **Sliding banner** on a home/about page
   
 - **Register** account form
@@ -268,7 +266,7 @@ The user is redirected to a website when clicks on *purchase* a book button.
 
 - **Search function**
 
-The user is able to search books by *title*, *author*, and *genre*.
+The user is able to search books by entering any text that may appear on the book review (i.e. author, title, length, genre etc).
 
 ### Future Features ###
 
