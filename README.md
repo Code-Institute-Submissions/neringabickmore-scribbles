@@ -117,7 +117,6 @@ The **goals** of this project are:
 - User information is protected by the site
 - User is able to manipulate elements of the particular page
 - Quick app load time
-- Users are able to find and contact admin when required (i.e. account deletion)
 
 [Back to content](#contents)
 
