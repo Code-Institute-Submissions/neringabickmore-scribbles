@@ -359,13 +359,13 @@ git clone https://github.com/neringabickmore/scribbles
 python -m pip -r requirements.txt
 ```
 
-3: **Initilaize** virtual environment by typing the following command into the terminal:
+3: **Initialize** virtual environment by typing the following command into the terminal:
 
 ```bash
 py -m venv virtual
 ```
 
-4: If the command doesn't run, you may also need to set user policy to *un-restricted* by typing the following command in your terminal:
+4: If you're using bash and the command doesn't run, you may also need to set user policy to *un-restricted* by typing the following command in your terminal:
 
 ```bash
 Set-ExecutionPolicy -Scope CurrentUser
@@ -396,7 +396,7 @@ import os
 os.environ.setdefault("IP", "0.0.0.0")
 os.environ.setdefault("PORT", "5000")
 os.environ.setdefault("SECRET_KEY", "YOUR_SECRET_KEY")
-os.environ.setdefault("MONGO_URI", "mongodb+srv://Rosie:<password>@myfirstcluster.tmruz.mongodb.net/<database_name>?retryWrites=true&w=majority")
+os.environ.setdefault("MONGO_URI", "YOUR_MONGODB_URI")
 os.environ.setdefault("MONGO_DBNAME", "YOUR_DATABASE_NAME")
 ```
 
@@ -423,7 +423,7 @@ pip3 freeze --local > requirements.txt
 2: **Create** a Procfile with the following command:
 
 ```bash
-echo web: python app.py > Procfile
+echo web: python run.py > Procfile
 ```
 
 3: **Push** these newly created files to your repository master.
@@ -445,10 +445,10 @@ git push heroku master
 :-----:|:-----:
 HOSTNAME|0.0.0.0
 PORT|5000
-MONGO_URI|mongodb+srv://<username>:<password>@<cluster\_name>-qtxun.mongodb.net/<database\_name>?retryWrites=true&w=majority
-SECRET_KEY|"your\_secret\_key"
+MONGO_URI|YOUR_MONGODB_URI
+SECRET_KEY|YOUR_SECRET_KEY
 
-*Please make sure you enter your own *SECRET_KEY*, and *MONGO_URL*.
+* Please make sure you enter your own *SECRET_KEY*, and *MONGO_URL*.
 
 7: Click the deploy button on the Heroku dashboard.
 8: The site has been deployed the Heroku.
