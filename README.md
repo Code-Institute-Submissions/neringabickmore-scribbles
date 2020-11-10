@@ -466,6 +466,7 @@ SECRET_KEY|YOUR_SECRET_KEY
 - I have used the snippet tool for capturing screengrabs which I saved as images.
 - MS Paint 3D to edit images as required.
 - A handy [Birme](https://www.birme.net/?target_width=300&target_height=300&quality=100&border_width=1&border_color=%23bd3d3a) site allowed me to resize the images all at once.
+- I have also used [giphy.com](https://giphy.com/) to convert MP4 video files to gif files used in Testing.md.
 
 ### Code ideas ###
 
