@@ -18,10 +18,10 @@ View [website](https://scribbles-app.herokuapp.com/) deployed to Heroku.
       - [**Site Visitor**](#site-visitor)
       - [**Registered Site User**](#registered-site-user)
   - [Manual Testing](#manual-testing)
-    - [Testing undertaken on Mobile](#testing-undertaken-on-mobile)
-    - [Testing undertaken on tablet and desktop](#testing-undertaken-on-tablet-and-desktop)
-    - [Bugs discovered](#bugs-discovered)
-      - [Solved bugs](#solved-bugs)
+    - [Testing](#testing)
+    - [Additional User Requirements and Expectations testing](#additional-user-requirements-and-expectations-testing)
+  - [Bugs discovered](#bugs-discovered)
+    - [Solved bugs](#solved-bugs)
     - [Unsolved bugs](#unsolved-bugs)
 
 ---
@@ -130,44 +130,76 @@ The following section goes through each of the user stories from the UX section 
 The app has a different layout options, focused on *mobile-first* design in mind as more users are expected to use mobile rather than larger devices, such as a tablet or a laptop/desktop.
 ![mobile and desktop display]()
 
-### Testing undertaken on Mobile ###
+### Testing ###
 
 - **Sliding banner** on a home/about page
 
 ![sliding banner images]()
   
 - **Register** account form
+  
+  The user is able to create a brand new account. The app will test if the user already exists based on the username and if it doesn't it allow the registration.
 
 ![register](/wireframes/testing-video/register.gif)
 
 - **Sign in/out** functionality
+
+    The user is able to login and logout from their account. If the user enters incorrect credentials when logging in they are notified to check the details.
 
 ![login](/wireframes/testing-video/login.gif)
 ![logout](/wireframes/testing-video/logout.gif)
 
 - **Favorites** functionality
 
+    The user is able to add reviews from discover page (including their own) to the favorites page.
+
 ![favorites](/wireframes/testing-video/add-to-favorites.gif)
 
 - **Easy navigation** to external sites
-  
+
    The user is redirected to a website when clicks on *purchase* a book button.
 
    ![purchase the book]()
 
 - **Search function**
 
-    The user is able to search books by *title*, *author*, and *genre*.
+    The user is able to search books by *title*, *author*, *genre* or any other word that is on the review.
 
     ![search functionality]()
 
-### Testing undertaken on tablet and desktop ###
+### Additional User Requirements and Expectations testing ###
 
-- Just as above testing on mobile, all of the existing features were tested on both laptop and iPad2.
+- **Visually pleasant app design**
+  
+  The feedback I was given from my colleagues, friends and family as well as fellow students is that the app has a pleasant design.
 
-### Bugs discovered ###
+- **Easy site navigation**
 
-#### Solved bugs ####
+The users are offered a self-explanatory site navigation by using text where required or else easy to understand icons.
+
+- **Information of the content layed out in a simple and clear way on both mobile and larger screens**
+
+The information is indeed layered in the most simplistic way possible. The feedback I received from colleagues, fellow students and family is that they find it super easy to navigate through the website.
+
+- **Self-explanatory icons where text is absent**
+
+I have asked my 5 year old son to explain to me what the icons mean. It was very clear to him what the icons were and was able to easily explain them. Based on this, I am comfortable to say that the icon are self-explanatory.
+
+- **User information is protected by the site**
+  
+User information obtained through the site is not shared with third parties. Also, the user password is hashed when stored in the database.
+
+- **User is able to manipulate elements of the particular page**
+
+The user can click buttons on the page, enter information where the forms are provided or select elements supplied on the forms.
+
+- **Quick app load time**
+
+Images used on the app were optimized to allow quick loading time.
+
+## Bugs discovered ##
+
+### Solved bugs ###
 
 1. @app route wasn't pushing new username to the template; The bug was fixed by inserting new bit of code to update the username details before rendering the template.
 Also, the same @app.route wasn't generating new password and also needed to looked into:
@@ -192,7 +224,7 @@ def edit_profile(user_profile_id):
     return render_template("components/forms/edit_profile.html", user=user_profile)
 ```
 
-   2. All users in their my-reviews.html are able to see other users entries. This shouldn't happen and they should only see their own entries in this template. The code was:
+2. All users in their my-reviews.html are able to see other users entries. This shouldn't happen and they should only see their own entries in this template. The code was:
 
 ```python
 @app.route("/my_reviews")
