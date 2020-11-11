@@ -158,9 +158,9 @@ def add_favorites(review_id):
     then it add to the collection.
     """
     if session["user"]:
-        favorite_review_exists = users.find_one(
-            session['user'], {"favorites": ObjectId(review_id)})
-        if favorite_review_exists: 
+        current_user = {'username': session['user'].lower()}
+        favorite_reviews = users.find_one(current_user)["favorites"]
+        if ObjectId(review_id) in favorite_reviews:
             flash("this review is already in your favorites")
             return redirect(url_for("discover"))
         user_profile = users.find_one(

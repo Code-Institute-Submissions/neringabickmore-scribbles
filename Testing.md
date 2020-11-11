@@ -261,10 +261,9 @@ reviews = list(mongo.db.reviews.find({"reviewed_by": session["user"]}))
 @app.route("/add/favorites/<review_id>")
 def add_favorites(review_id):
     if session["user"]:
-        user_profile = users.find_one({'username': session['user'].lower()})
-        users.update(user_profile, {"$push": {"favorites": ObjectId(review_id)}})
-        flash("Review added to favorites")
-        return redirect(url_for('discover'))
+        current_user = {'username': session['user'].lower()}
+        favorite_reviews = users.find_one(current_user)["favorites"]
+        if ObjectId(review_id) in favorite_reviews:
     return redirect(url_for('discover'))
 ```
 
@@ -299,3 +298,4 @@ flash("Welcome, {}".format(
 1. If the user didn't added any reviews to their **favorites**, they don't have a message on their **favorites** page suggesting they should add some reviews to have anything displayed on the page.
 2. If the user didn't add any of their own reviews to the app, **my reviews** page doesn't have a message to encourage the user to doing so.
 3. If a user deletes one of their reviews, which is favorited by one other users, their favorites template may show error as that review in the collection no longer exists.
+4. The user is still able to add multiple of the same reviews to their favorites.
