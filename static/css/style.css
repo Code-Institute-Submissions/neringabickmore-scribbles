@@ -40,14 +40,14 @@ h1:first-letter, h2:first-letter{
     text-transform: capitalize;
 }
 h1{
-    font-size: 2rem;
+    font-size: 24px;
 }
 h2{
-    font-size: 1.2rem;
+    font-size: 20px;
 }
 p{
     font: var(--main-font);
-    font-size: 1rem;
+    font-size: 16px;
 }
 
 /* Header Styling - main */
@@ -55,7 +55,7 @@ header {
     background-color: var(--baby-blue);
     width: 100%;
     padding: 0;
-    font-size: 1.2rem;
+    font-size: 16px;
     letter-spacing: 2px;
     text-transform: capitalize;
     -webkit-box-shadow: var(--default-box-shadow);
@@ -69,8 +69,8 @@ footer {
 }
 
 footer small {
-    font-size: 1rem;
-    color: var(--black);
+    font-size: 10px;
+    color: var(--slate-grey);
 }
 
 footer li {
@@ -83,7 +83,7 @@ footer ul i {
     width: 3.2rem;
     height: 3.2rem;
     padding: 1.2rem 0;
-    font-size: 2.5rem;
+    font-size: 25px;
 }
 
 footer ul i:hover{
@@ -151,7 +151,7 @@ drop down menu styling*/
 }
 
 .blockquote{
-    font-size: 1.5rem;
+    font-size: 15px;
     font-style: italic;
     text-shadow: none;
 }
@@ -210,7 +210,7 @@ dl{
             box-shadow: var(--default-box-shadow);
 }
 .form-control, label, option, select{
-    font-size: 1.2rem;
+    font-size: 12px;
     line-height: 1.2;
 }
 
@@ -227,17 +227,17 @@ dl{
     background-color: var(--baby-blue);
     color: var(--charcoal);
     cursor: pointer;
-    padding: 0.8rem;
+    padding: 0.4rem;
     border-radius: 50%;
-    margin: 0.8rem;
-    width: 6rem;
-    height: 6rem;
+    margin: 0.4rem;
+    width: 5.2rem;
+    height: 5.2rem;
     font-weight: 400;
     vertical-align: middle;
 }
 
 .fa-sort-up{
-    font-size: 5rem;
+    font-size: 50px;
     padding-top: 0.6rem;
 }
 
@@ -253,7 +253,7 @@ dl{
     height: 6rem;
     border-radius: 50%;
     padding: 1.5rem;
-    font-size: 2rem;
+    font-size: 20px;
     font-family: var(--heading-title-font);
     font-weight: bold;
 }
@@ -264,7 +264,7 @@ dl{
 
 /** Other buttons **/
 .icon-btn{
-    font-size: 1.8rem;
+    font-size: 16px;
     -webkit-transition: var(--default-transition);
     -o-transition: var(--default-transition);
     transition: var(--default-transition);
@@ -327,13 +327,20 @@ wider than mobile **/
         margin-top: 9rem;
     }
     h1{
-        font-size: 4rem;
+        font-size: 30px
     }
-    h2, .icon-btn{
-        font-size: 3rem;
+    h2 {
+        font-size: 18px
     }
-    p{
-        font-size: 2.8rem;
+    #goUpBtn{
+        padding: 0.8rem;
+        margin: 0.8rem;
+        width: 6rem;
+        height: 6rem;
+    }
+    .icon-btn{
+        margin-top: 0.25rem;
+        font-size: 24px;
     }
     .btn{
         width: 5rem;
@@ -343,7 +350,7 @@ wider than mobile **/
         margin: 0.5rem;
     }
     .form-control, label, option, select{
-        font-size: 1.8rem;
+        font-size: 18px;
         line-height: 1.8;
     }
 }
