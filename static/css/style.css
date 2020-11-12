@@ -179,7 +179,7 @@ drop down menu styling*/
             box-shadow: var(--dark-box-shadow);
 }
 .book-cover{
-    min-width: 80%;
+    width: 70%;
     height: auto;
     -ms-flex-item-align: center;
         -ms-grid-row-align: center;
