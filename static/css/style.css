@@ -25,6 +25,7 @@ body{
     background-color: var(--white);
     color: var(--charcoal);
     text-align: center;
+    font-size: 12px;
 }
 main{
     min-height: 84vh;
@@ -180,7 +181,7 @@ drop down menu styling*/
 }
 .book-cover{
     width: 70%;
-    height: auto;
+    max-height: 550px;
     -ms-flex-item-align: center;
         -ms-grid-row-align: center;
         align-self: center;
@@ -194,8 +195,12 @@ dd, .my-reviews input{
     text-transform: none;
 }
 
-dl{
+dt{
     text-align: right;
+    padding-right: 10px!important;
+}
+dd{
+    padding-left: 0px!important;
 }
 
 .review-box label:first-letter, .profile label, .profile dl{
@@ -203,14 +208,19 @@ dl{
 }
 
 /* forms specific styling */
-
+.review-box{
+    height: 600px;
+    overflow-y: auto;
+    overflow-wrap: initial;
+    overflow-x: hidden;
+}
 .access-box, .review-box{
     background-color: var(--cold-white);
     -webkit-box-shadow: var(--default-box-shadow);
             box-shadow: var(--default-box-shadow);
 }
 .form-control, label, option, select{
-    font-size: 12px;
+    font-size: 12px!important;
     line-height: 1.2;
 }
 
@@ -264,12 +274,13 @@ dl{
 
 /** Other buttons **/
 .icon-btn{
-    font-size: 16px;
+    font-size: 14px;
     -webkit-transition: var(--default-transition);
     -o-transition: var(--default-transition);
     transition: var(--default-transition);
     color:var(--slate-grey);
     text-shadow: none;
+    align-self: center;
 }
 
 .icon-btn:hover{
@@ -283,12 +294,9 @@ dl{
     -webkit-transition: var(--default-transition);
     -o-transition: var(--default-transition);
     transition: var(--default-transition);
-    height: 2.6rem;
-    width: 3.4rem;
-    margin: 0.25rem;
+    margin: 0.5rem;
     float: right;
     background-color: var(--charcoal);
-    cursor: pointer;
 }
 
 .btn:hover{
@@ -318,7 +326,7 @@ wider than mobile **/
 
 @media(min-width: 768px){
     body, header, footer small{
-        font-size: 1.8rem;
+        font-size: 14px;
     }
     .carousel-item img{
         width: 80%;
@@ -340,18 +348,13 @@ wider than mobile **/
     }
     .icon-btn{
         margin-top: 0.25rem;
-        font-size: 24px;
+        font-size: 20px;
     }
     .btn{
         width: 5rem;
     }
     .btn, .search-form input {
         height: 4rem;
-        margin: 0.5rem;
-    }
-    .form-control, label, option, select{
-        font-size: 18px;
-        line-height: 1.8;
     }
 }
 
