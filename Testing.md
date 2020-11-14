@@ -293,9 +293,19 @@ flash("Welcome, {}".format(
         return redirect(url_for("discover", username=session["user"]))
 ```
 
+6. If a user deletes one of their reviews, which is *favorited* by one other users, their favorites template may show error as that review in the collection no longer exists.
+
+Bugfix: Add below code to ```delete_review``` function, which deletes ObjectId's from all users' favorites arrays if the review owner deletes the review from reviews collection.
+
+```python
+users.update_many(
+        {},
+        {"$pull": {"favorites": ObjectId(review_id)}}
+    )
+```
+
 ### Unsolved bugs ###
 
 1. If the user didn't added any reviews to their **favorites**, they don't have a message on their **favorites** page suggesting they should add some reviews to have anything displayed on the page.
 2. If the user didn't add any of their own reviews to the app, **my reviews** page doesn't have a message to encourage the user to doing so.
-3. If a user deletes one of their reviews, which is favorited by one other users, their favorites template may show error as that review in the collection no longer exists.
-4. The user is still able to add multiple of the same reviews to their favorites.
+3. The user is still able to add multiple of the same reviews to their favorites.

@@ -116,6 +116,10 @@ def delete_review(review_id):
     to remove their own reviews
     one at a time.
     """ 
+    users.update_many(
+        {},
+        {"$pull": {"favorites": ObjectId(review_id)}}
+    )
     reviews.delete_one({"_id": ObjectId(review_id)})
     flash("Review Deleted")
     return redirect(url_for("user_reviews"))
@@ -165,7 +169,7 @@ def add_favorites(review_id):
             return redirect(url_for("discover"))
         user_profile = users.find_one(
             {'username': session['user'].lower()})
-        users.update(user_profile,
+        users.update_one(user_profile,
         {"$push": {"favorites": ObjectId(review_id)}})
         flash("Review added to favorites")
         return redirect(url_for('discover'))
