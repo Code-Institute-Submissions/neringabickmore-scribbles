@@ -308,4 +308,3 @@ users.update_many(
 
 1. If the user didn't added any reviews to their **favorites**, they don't have a message on their **favorites** page suggesting they should add some reviews to have anything displayed on the page.
 2. If the user didn't add any of their own reviews to the app, **my reviews** page doesn't have a message to encourage the user to doing so.
-3. The user is still able to add multiple of the same reviews to their favorites.
