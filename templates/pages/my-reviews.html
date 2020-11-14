@@ -26,7 +26,7 @@
             
             <!-- Genre category -->
             <h2 class="text-left my-4"> {{ review.genre}} </h2>
-            <div class="review-box m-3 p-2">
+            <div class="review-box my-2">
 
                 <!-- Action button"-->
                 <a class="btn" href="{{ url_for('delete_review', review_id=review._id)}}"><i
@@ -35,7 +35,7 @@
                         class="fas fa-pen icon-btn"></i></a>
 
                 <!-- Book cover img -->
-                <img class="book-cover  m-2" src="{{ review.link_to_image }}" alt="book cover"><br>
+                <img class="book-cover mx-5 my-2" src="{{ review.link_to_image }}" alt="book cover"><br>
 
                 <!-- Book review -->
                 {% include 'components/content/review.html' %}
