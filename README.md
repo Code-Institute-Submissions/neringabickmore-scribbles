@@ -411,32 +411,33 @@ python run.py
 
 1: **Login** to Heroku and create a new app.
 
-1: **Create** a requirements.txt file using the following command:
+2: **Create** a requirements.txt file using the following command:
 
 ```bash
 pip3 freeze --local > requirements.txt
 ```
 
-2: **Create** a Procfile with the following command:
+3: **Create** a Procfile with the following command:
 
 ```bash
 echo web: python run.py > Procfile
 ```
 
-3: **Push** these newly created files to your repository master.
-4: **Add heroku remote** to your git repository by getting the heroku git URL from the heroku account settings. Then type the following: 
+4: **Push** these newly created files to your repository master.
+
+5: **Add heroku remote** to your git repository by getting the heroku git URL from the heroku account settings. Then type the following: 
 
 ```bash
 git remote add heroku https://git.heroku.com/your-heroku-repo
 ```
 
-5: Push *scribbles* to your heroku:
+6: Push *scribbles* to your heroku:
 
 ```bash
 git push heroku master
 ```
 
-6: In your heroku app, **set** the following variables:
+7: In your heroku app, **set** the following variables:
 
 **Key**|**Value**
 :-----:|:-----:
@@ -445,10 +446,10 @@ PORT|5000
 MONGO_URI|YOUR_MONGODB_URI
 SECRET_KEY|YOUR_SECRET_KEY
 
-* Please make sure you enter your own *SECRET_KEY*, and *MONGO_URL*.
+  ** Please make sure you enter your own *SECRET_KEY*, and *MONGO_URL*.
 
-7: Click the deploy button on the Heroku dashboard.
-8: The site has been deployed the Heroku.
+8: Click the deploy button on the Heroku dashboard.
+9: The site has been deployed the Heroku.
 
 [Back to content](#contents)
 
