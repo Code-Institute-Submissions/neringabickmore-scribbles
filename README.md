@@ -6,7 +6,7 @@
 
 About three years ago I have made a conscious decision to read more books. I have read quite a lot of them since but could never keep the track of them. I am also always interested in recommendations from other like-minded readers. When it come to creating my third milestone project at [Code Institute](https://codeinstitute.net/), it had to be a book review app where I can share my reviews with site visitors and other users.
 
-![Site display on different screens](/wireframes/)
+![Site display on different screens](/wireframes/testing-images/responsive-design.jpg)
 
 ---
 
