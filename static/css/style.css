@@ -326,12 +326,24 @@ input:-internal-autofill-selected {
 }
 
 /* Search field styling */
-.search-form input {
-    height:  2.6rem;
+.search-form input{
+    background-color: var(--cold-white);
+    height: 3rem;
     margin: 0.25rem;
+    padding: 12px 20px 12px 40px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
 }
 .search-form input:focus {
     outline: none;
+    width: 85%;
+}
+.search-form .btn{
+    margin: 2.5px;
+    height: 3rem;
+}
+.search-form .btn:hover{
+    transform: unset;
 }
 
 /* Responsive breakpoints styling */
@@ -369,8 +381,11 @@ wider than mobile **/
     .btn{
         width: 5rem;
     }
-    .btn, .search-form input {
+    .btn, .search-form input, .search-form .btn {
         height: 4rem;
+    }
+    .search-form input:focus {
+        width: 50%;
     }
 }
 
@@ -381,6 +396,9 @@ wider than tablet **/
 @media(min-width: 1024px){
     .carousel-inner{
         margin-top: 2rem;
+    }
+    .search-form input:focus {
+        width: 30%;
     }
 }
 
