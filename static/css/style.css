@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato&family=Rubik&display=swap');
+@import url(https://fonts.googleapis.com/css2?family=Lato&family=Rubik&display=swap);
 
 :root{
     --charcoal: #39454E;
@@ -12,7 +12,7 @@
     --default-box-shadow: 2px 2px 9px #728395;
     --dark-box-shadow: 2px 2px 9px #151717;
     --default-text-shadow: 1px 1px 9px #728395;
-    --default-transition: all 0.3s;
+    --default-transition: all .3s;
     --default-transform: scale(1.2);
 }
 
@@ -259,7 +259,7 @@ dd{
     cursor: pointer;
     padding: 0.4rem;
     border-radius: 50%;
-    margin: 0.4rem;
+    margin: .4rem;
     width: 5.2rem;
     height: 5.2rem;
     font-weight: 400;
@@ -268,7 +268,7 @@ dd{
 
 .fa-sort-up{
     font-size: 50px;
-    padding-top: 0.6rem;
+    padding-top: .6rem;
 }
 
 #goUpBtn:hover {
@@ -333,7 +333,7 @@ input:-internal-autofill-selected {
 .search-form input{
     background-color: var(--cold-white);
     height: 3rem;
-    margin: 0.25rem;
+    margin: .25rem;
     padding: 12px 20px 12px 40px;
     -webkit-transition: width 0.4s ease-in-out;
     transition: width 0.4s ease-in-out;
@@ -350,7 +350,7 @@ input:-internal-autofill-selected {
     transform: unset;
 }
 .badge-pill{
-    padding: 0.8em;
+    padding: .8em;
 }
 
 /* Responsive breakpoints styling */
@@ -359,7 +359,7 @@ input:-internal-autofill-selected {
 for devices with the screens
 wider than mobile **/
 
-@media(min-width: 768px){
+@media(min-width:768px){
     body, header, footer small{
         font-size: 14px;
     }
@@ -379,13 +379,13 @@ wider than mobile **/
         font-size: 18px
     }
     #goUpBtn{
-        padding: 0.8rem;
-        margin: 0.8rem;
+        padding: .8rem;
+        margin: .8rem;
         width: 6rem;
         height: 6rem;
     }
     .icon-btn{
-        margin-top: 0.25rem;
+        margin-top: .25rem;
         font-size: 20px;
     }
     .btn{
@@ -403,7 +403,7 @@ wider than mobile **/
 with the screens
 wider than tablet **/
 
-@media(min-width: 1024px){
+@media(min-width:1024px){
     .carousel-inner{
         margin-top: 2rem;
     }
@@ -414,7 +414,7 @@ wider than tablet **/
 
 /** Styling for devices
 with medium sized screens*/
-@media(min-height: 1024px){
+@media(min-height:1024px){
     #carouselBox{
         min-height: 40vh;
     }
