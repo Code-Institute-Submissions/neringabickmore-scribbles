@@ -186,7 +186,7 @@ def delete_favorites(review_id):
     """
     user_profile = users.find_one(
         {'username': session['user'].lower()})
-    users.update(user_profile, 
+    users.update_one(user_profile, 
     {"$pull": {"favorites": ObjectId(review_id)}})
     flash("Review removed from favorites")
     return redirect(url_for('user_favorites'))
