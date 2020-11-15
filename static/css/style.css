@@ -206,7 +206,7 @@ drop down menu styling*/
         -ms-grid-row-align: center;
         align-self: center;
 }
-.reviews-container h2{
+.reviews-container h2, .reviews-container dt{
     text-transform: uppercase;
 }
 
