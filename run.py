@@ -248,7 +248,7 @@ def register():
         users.insert_one(register)
         session["user"] = request.form.get("username").lower()
         flash("Welcome, {}".format(
-                        request.form.get("username")))
+                        request.form.get("username").capitalize()))
         return redirect(url_for("discover", username=session["user"]))
     return render_template("pages/access.html", main_content="register")
 
