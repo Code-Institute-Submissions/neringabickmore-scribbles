@@ -35,6 +35,10 @@ html{
 ::-webkit-scrollbar-thumb:hover {
     background: var(--charcoal);
 }
+::before{
+    height: 12px;
+    width: 12px;
+}
 
 /* Body Styling  - main */
 body{
@@ -336,7 +340,7 @@ input:-internal-autofill-selected {
 }
 .search-form input:focus {
     outline: none;
-    width: 85%;
+    width: 65%;
 }
 .search-form .btn{
     margin: 2.5px;
@@ -344,6 +348,9 @@ input:-internal-autofill-selected {
 }
 .search-form .btn:hover{
     transform: unset;
+}
+.badge-pill{
+    padding: 0.8em;
 }
 
 /* Responsive breakpoints styling */
