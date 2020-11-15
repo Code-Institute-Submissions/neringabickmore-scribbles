@@ -22,7 +22,6 @@ View [website](https://scribbles-app.herokuapp.com/) deployed to Heroku.
     - [Additional User Requirements and Expectations testing](#additional-user-requirements-and-expectations-testing)
   - [Bugs discovered](#bugs-discovered)
     - [Solved bugs](#solved-bugs)
-    - [Unsolved bugs](#unsolved-bugs)
 
 ---
 
@@ -31,14 +30,14 @@ View [website](https://scribbles-app.herokuapp.com/) deployed to Heroku.
 ### Validation Services ###
 
 - CSS file passed [W3C CSS Validation Services](https://jigsaw.w3.org/css-validator/validator) without faults.
-- Vendor prefixes added using [Autoprefixer](https://autoprefixer.github.io/)
+- Vendor prefixes added using [Autoprefixer](https://autoprefixer.github.io/).
 - Json files in data schemas folder were validated with [JsonLint](https://jsonlint.com/) and all passed.
 - Script.js file was missing a few semicolons but otherwise passed [jshint.com](https://jshint.com/) validation without issues.
 - All HTML files were tested using [W3 validator](https://validator.w3.org) to identify any error or warnings. The validator did throw quite a few errors. The ones that could be fixed (related directly to html elements), however in the instances where python was used I was unable to correct such errors for obvious reasons - I need data to be pushed from he database to the app.
 
 ### Client Stories Testing ###
 
-The following section goes through each of the user stories from the UX section of [README.md](\scribbles\README.md)
+The following section goes through each of the user stories from the UX section of [README.md](\scribbles\README.md).
 
 #### **Site Visitor** ####
 
@@ -128,13 +127,13 @@ The following section goes through each of the user stories from the UX section 
 - **Responsive design**
 
 The app has a different layout options, focused on *mobile-first* design in mind as more users are expected to use mobile rather than larger devices, such as a tablet or a laptop/desktop.
-![mobile and desktop display]()
+![mobile and desktop display](/wireframes/testing-images/responsive-design.jpg)
 
 ### Testing ###
 
 - **Sliding banner** on a home/about page
 
-![sliding banner images]()
+![sliding banner images](/wireframes/testing-video/sliding-banner.gif)
   
 - **Register** account form
   
@@ -159,13 +158,13 @@ The app has a different layout options, focused on *mobile-first* design in mind
 
    The user is redirected to a website when clicks on *purchase* a book button.
 
-   ![purchase the book]()
+![purchase the book](/wireframes/testing-video/redirecto-to-vendor.gif)
 
 - **Search function**
 
     The user is able to search books by *title*, *author*, *genre* or any other word that is on the review.
 
-    ![search functionality]()
+![search functionality](/wireframes/testing-video/search.gif)
 
 ### Additional User Requirements and Expectations testing ###
 
@@ -201,11 +200,12 @@ Images used on the app were optimized to allow quick loading time.
 
 ### Solved bugs ###
 
-1. @app route wasn't pushing new username to the template; The bug was fixed by inserting new bit of code to update the username details before rendering the template.
+1: @app route wasn't pushing new username to the template.
+
+**Bug-fix:** insert new bit of code to update the username details before rendering the template.
 Also, the same @app.route wasn't generating new password and also needed to looked into:
 
 ```python
-
 @app.route("/edit_profile/<user_profile_id>", methods=["GET", "POST"])
 def edit_profile(user_profile_id):
     if request.method == "POST":
@@ -224,7 +224,7 @@ def edit_profile(user_profile_id):
     return render_template("components/forms/edit_profile.html", user=user_profile)
 ```
 
-2. All users in their my-reviews.html are able to see other users entries. This shouldn't happen and they should only see their own entries in this template. The code was:
+2: All users in their my-reviews.html are able to see other users entries. This shouldn't happen and they should only see their own entries in this template. The code was:
 
 ```python
 @app.route("/my_reviews")
@@ -237,15 +237,16 @@ def my_reviews():
 
 ```
 
-Bug-fix: changed the reviews  
+**Bug-fix:** changed the reviews  
 
 ```python
 reviews = list(mongo.db.reviews.find({"reviewed_by": session["user"]}))
 
 ```
 
-3. Discover.html shows "favorite" button to both registered and non-registered users.
-   Bug-fix by adding below to the button:
+3: Discover.html shows "favorite" button to both registered and non-registered users.
+
+**Bug-fix:** add below to the button:
 
 ```python
 {% if session.user %}
@@ -254,8 +255,9 @@ reviews = list(mongo.db.reviews.find({"reviewed_by": session["user"]}))
 
 ```
 
-4. Favorites button in discover.html adds the same review to favorites multiple times.
-   Original code:
+4: Favorites button in discover.html adds the same review to favorites multiple times.
+
+The original code:
 
 ```python
 @app.route("/add/favorites/<review_id>")
@@ -267,7 +269,7 @@ def add_favorites(review_id):
     return redirect(url_for('discover'))
 ```
 
-Bug-fix: check if the favorite item already exists first before proceeding:
+**Bug-fix:** check if the favorite item already exists first before proceeding:
 
 ```python
 if session["user"]:
@@ -281,11 +283,11 @@ if session["user"]:
             return redirect(url_for("discover"))
 ```
 
-5. On registration, the user is not shown a flash message greeting them.
+5: On registration, the user is not shown a flash message greeting them.
 
 ![registration without flash message](/wireframes/testing-video/register-with-bug.gif)
 
-Bugfix: Add flash message code
+**Bug-fix:** Add flash message code
 
 ```python
 flash("Welcome, {}".format(
@@ -293,9 +295,9 @@ flash("Welcome, {}".format(
         return redirect(url_for("discover", username=session["user"]))
 ```
 
-6. If a user deletes one of their reviews, which is *favorited* by one other users, their favorites template may show error as that review in the collection no longer exists.
+6: If a user deletes one of their reviews, which is *favorited* by one other users, their favorites template may show error as that review in the collection no longer exists.
 
-Bugfix: Add below code to ```delete_review``` function, which deletes ObjectId's from all users' favorites arrays if the review owner deletes the review from reviews collection.
+**Bug-fix:** Add below code to ```delete_review``` function, which deletes ObjectId's from all users' favorites arrays if the review owner deletes the review from reviews collection.
 
 ```python
 users.update_many(
@@ -304,7 +306,36 @@ users.update_many(
     )
 ```
 
-### Unsolved bugs ###
+7: If the user didn't added any reviews to their **favorites**, they don't have a message on their **favorites** page suggesting they should add some reviews to have anything displayed on the page.
 
-1. If the user didn't added any reviews to their **favorites**, they don't have a message on their **favorites** page suggesting they should add some reviews to have anything displayed on the page.
-2. If the user didn't add any of their own reviews to the app, **my reviews** page doesn't have a message to encourage the user to doing so.
+**Bug-fix:** Add below code to the *favorites.html* template before the ```{% endfor %}```:
+
+```html
+ {% else %}
+        <div class="col-12">
+            <p class="text-center my-4"> you currently have no reviews in your favorites. </p>
+            <p class="text-center my-4"> why don't you try to add some? </p>
+        </div>
+```
+
+8: If the user didn't add any of their own reviews to the app, **my reviews** page doesn't have a message to encourage the user to doing so.
+
+**Bug-fix:** Add below code to the *my-reviews.html* template before the ```{% endfor %}```:
+
+```html
+ {% else %}
+        <div class="col-12">
+            <p class="text-center my-4"> you currently have no reviews. </p>
+            <p class="text-center my-4"> why don't you try to add some? </p>
+        </div>
+```
+9: If the review owner deletes the review, which is favorited by other users, then those users' favorites template shows error. 
+
+**Bug-fix:** Add additional code to delete review_id from favorites if the owner of the review chooses to delete their entry.
+
+```python
+ users.update_many(
+        {},
+        {"$pull": {"favorites": ObjectId(review_id)}}
+    )
+```

@@ -3,7 +3,7 @@
 
 <!-- Title and image display -->
 <div class="col-12 mb-2" id="discover">
-    <h1 class="m-2"> Your favorite reviews </h1>
+    <h1 class="m-2"> your favorite reviews </h1>
     <br>
 </div>
 
@@ -30,6 +30,14 @@
                 <!-- Book review -->
                 {% include 'components/content/review.html' %} 
             </div>
+        </div>
+        {% else %}
+        <div class="col-12">
+            <p class="text-center my-4"> you currently have no reviews in your favorites. </p>
+            <p class="text-center my-4"> why don't you try to choose some? </p>
+            <br/>
+            <a aria-label="discover" id="safety-btn" href="/discover/reviews"><i
+                class="far fa-heart"></i></a>
         </div>
         {% endfor %}
     </div>

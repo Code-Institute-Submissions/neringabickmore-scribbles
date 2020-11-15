@@ -6,7 +6,7 @@
 
 About three years ago I have made a conscious decision to read more books. I have read quite a lot of them since but could never keep the track of them. I am also always interested in recommendations from other like-minded readers. When it come to creating my third milestone project at [Code Institute](https://codeinstitute.net/), it had to be a book review app where I can share my reviews with site visitors and other users.
 
-![Site display on different screens](/wireframes/)
+![Site display on different screens](/wireframes/testing-images/responsive-design.jpg)
 
 ---
 
@@ -46,6 +46,7 @@ About three years ago I have made a conscious decision to read more books. I hav
     - [Register / Login templates](#register--login-templates)
     - [Forms and page templates design](#forms-and-page-templates-design)
     - [Color palette](#color-palette)
+    - [Sort review by genre as a heading](#sort-review-by-genre-as-a-heading)
   - [Testing](#testing)
   - [Deployment](#deployment)
     - [Cloning *Scribbles* from GitHub](#cloning-scribbles-from-github)
@@ -316,6 +317,10 @@ The user gets a notification before *delete* action is activated in app commands
 ### Color palette ###
 
 - The color palette you see in the final version of the wireframe differ to the original one very slightly. During the development stage of the project the feedback I was given is that some colors blend too much and to enhance visual user experience I needed to reconsider bringing in some base colours of black and white as well as losing one of the shades.
+
+### Sort review by genre as a heading ###
+
+- My initial idea was to render html templates (discover, my reviews, and favorites) with the genre header element. I have decided against it during development stage of the project as in my opinion it's nice to have a genre header per each review instead.
   
 ---
 
@@ -411,32 +416,33 @@ python run.py
 
 1: **Login** to Heroku and create a new app.
 
-1: **Create** a requirements.txt file using the following command:
+2: **Create** a requirements.txt file using the following command:
 
 ```bash
 pip3 freeze --local > requirements.txt
 ```
 
-2: **Create** a Procfile with the following command:
+3: **Create** a Procfile with the following command:
 
 ```bash
 echo web: python run.py > Procfile
 ```
 
-3: **Push** these newly created files to your repository master.
-4: **Add heroku remote** to your git repository by getting the heroku git URL from the heroku account settings. Then type the following: 
+4: **Push** these newly created files to your repository master.
+
+5: **Add heroku remote** to your git repository by getting the heroku git URL from the heroku account settings. Then type the following: 
 
 ```bash
 git remote add heroku https://git.heroku.com/your-heroku-repo
 ```
 
-5: Push *scribbles* to your heroku:
+6: Push *scribbles* to your heroku:
 
 ```bash
 git push heroku master
 ```
 
-6: In your heroku app, **set** the following variables:
+7: In your heroku app, **set** the following variables:
 
 **Key**|**Value**
 :-----:|:-----:
@@ -445,10 +451,10 @@ PORT|5000
 MONGO_URI|YOUR_MONGODB_URI
 SECRET_KEY|YOUR_SECRET_KEY
 
-* Please make sure you enter your own *SECRET_KEY*, and *MONGO_URL*.
+  ** Please make sure you enter your own *SECRET_KEY*, and *MONGO_URL*.
 
-7: Click the deploy button on the Heroku dashboard.
-8: The site has been deployed the Heroku.
+8: Click the deploy button on the Heroku dashboard.
+9: The site has been deployed the Heroku.
 
 [Back to content](#contents)
 
@@ -477,6 +483,15 @@ SECRET_KEY|YOUR_SECRET_KEY
 
 ## Acknowledgements ##
 
-[Back to content](#contents)
+I would like to recognize the people who have helped me through this project:
 
----
+- My mentor [Simen Daehlin](https://github.com/Eventyret) for his time, patience, and support in helping me to adopt the best coding practices and believing in me! Thank you!
+- Code Institute tutors [Tim](https://github.com/TravelTimN) for amazing Python tutorials, [Igor](https://github.com/bravoalpha79), and [Miklos](https://github.com/Sarosim) who have helped me with technical struggles and made me think outside the box to solve my python problems.
+
+- My fellow Code Institute slack community, especially [Simon Castagna](https://github.com/jumboduck) for listening to my struggles and pushing me forward.
+
+- My husband, family, and friends for continuously testing my project and not giving up on me 😊
+
+**Thank you all for pushing me forward!**
+
+[Back to content](#contents)

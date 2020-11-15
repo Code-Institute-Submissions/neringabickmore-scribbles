@@ -63,8 +63,8 @@ def add_review():
             "plot_summary": request.form.get("plot_summary"),
             "favorite_quote": request.form.get("favorite_quote"),
             "rating": request.form.get("rating"),
-            "link_to_image": request.form.get("link_to_image"),
-            "link_to_buy": request.form.get("link_to_buy"),
+            "link_to_image": request.form.get("img-url"),
+            "link_to_buy": request.form.get("vendor-url"),
             "reviewed_by": session["user"]
         }
         reviews.insert_one(review)
@@ -95,8 +95,8 @@ def edit_review(review_id):
             "plot_summary": request.form.get("plot_summary"),
             "favorite_quote": request.form.get("favorite_quote"),
             "rating": request.form.get("rating"),
-            "link_to_image": request.form.get("link_to_image"),
-            "link_to_buy": request.form.get("link_to_buy")
+            "link_to_image": request.form.get("img-url"),
+            "link_to_buy": request.form.get("vendor-url")
             }
         }
         reviews.update_one({"_id": ObjectId(review_id)}, submit)
@@ -248,7 +248,7 @@ def register():
         users.insert_one(register)
         session["user"] = request.form.get("username").lower()
         flash("Welcome, {}".format(
-                        request.form.get("username")))
+                        request.form.get("username").capitalize()))
         return redirect(url_for("discover", username=session["user"]))
     return render_template("pages/access.html", main_content="register")
 
