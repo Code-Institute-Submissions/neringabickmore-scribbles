@@ -31,6 +31,11 @@
                 {% include 'components/content/review.html' %} 
             </div>
         </div>
+        {% else %}
+        <div class="col-12">
+            <p class="text-center my-4"> you currently have no reviews in your favorites. </p>
+            <p class="text-center my-4"> why don't you try to add some? </p>
+        </div>
         {% endfor %}
     </div>
 </div>

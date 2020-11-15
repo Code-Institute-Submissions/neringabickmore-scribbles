@@ -12,7 +12,7 @@
 <!-- Title -->
 <div class="col-12 mb-2">
     <div class="d-flex justify-content-center">
-        <h1 class="m-2"> My reviews </h1>
+        <h1 class="m-2"> my reviews </h1>
         <!-- Add review button"-->
         <a class="btn align-self-center" href="/add/review"><i class="fas fa-plus icon-btn"></i></a>
     </div>
@@ -23,7 +23,6 @@
     <div class="row my-2">
         {% for review in reviews %}
         <div class="col-lg-4 col-md-6 col-12">
-            
             <!-- Genre category -->
             <h2 class="text-left my-4"> {{ review.genre}} </h2>
             <div class="review-box my-2">
@@ -41,6 +40,11 @@
                 {% include 'components/content/review.html' %}
             </div>
             
+        </div>
+        {% else %}
+        <div class="col-12">
+            <p class="text-center my-4"> you currently have no reviews. </p>
+            <p class="text-center my-4"> why don't you try to add some? </p>
         </div>
         {% endfor %}
     </div>
