@@ -17,7 +17,27 @@
 }
 
 html{
-    font-size: 62.5%
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+/* Scrollbar styling*/
+::-webkit-scrollbar {
+    width: 10px;
+  }
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px var(--slate-grey); 
+    border-radius: 12px;
+}
+::-webkit-scrollbar-thumb {
+    background: var(--col-white);
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--charcoal);
+}
+::before{
+    height: 12px;
+    width: 12px;
 }
 
 /* Body Styling  - main */
@@ -25,6 +45,7 @@ body{
     background-color: var(--white);
     color: var(--charcoal);
     text-align: center;
+    font-size: 12px;
 }
 main{
     min-height: 84vh;
@@ -40,14 +61,14 @@ h1:first-letter, h2:first-letter{
     text-transform: capitalize;
 }
 h1{
-    font-size: 2rem;
+    font-size: 24px;
 }
 h2{
-    font-size: 1.2rem;
+    font-size: 20px;
 }
 p{
     font: var(--main-font);
-    font-size: 1rem;
+    font-size: 16px;
 }
 
 /* Header Styling - main */
@@ -55,7 +76,7 @@ header {
     background-color: var(--baby-blue);
     width: 100%;
     padding: 0;
-    font-size: 1.2rem;
+    font-size: 16px;
     letter-spacing: 2px;
     text-transform: capitalize;
     -webkit-box-shadow: var(--default-box-shadow);
@@ -69,8 +90,8 @@ footer {
 }
 
 footer small {
-    font-size: 1rem;
-    color: var(--black);
+    font-size: 10px;
+    color: var(--slate-grey);
 }
 
 footer li {
@@ -83,7 +104,7 @@ footer ul i {
     width: 3.2rem;
     height: 3.2rem;
     padding: 1.2rem 0;
-    font-size: 2.5rem;
+    font-size: 25px;
 }
 
 footer ul i:hover{
@@ -151,7 +172,7 @@ drop down menu styling*/
 }
 
 .blockquote{
-    font-size: 1.5rem;
+    font-size: 15px;
     font-style: italic;
     text-shadow: none;
 }
@@ -179,8 +200,8 @@ drop down menu styling*/
             box-shadow: var(--dark-box-shadow);
 }
 .book-cover{
-    min-width: 80%;
-    height: auto;
+    width: 70%;
+    max-height: 550px;
     -ms-flex-item-align: center;
         -ms-grid-row-align: center;
         align-self: center;
@@ -194,8 +215,12 @@ dd, .my-reviews input{
     text-transform: none;
 }
 
-dl{
+dt{
     text-align: right;
+    padding-right: 10px!important;
+}
+dd{
+    padding-left: 0px!important;
 }
 
 .review-box label:first-letter, .profile label, .profile dl{
@@ -203,14 +228,19 @@ dl{
 }
 
 /* forms specific styling */
-
+.review-box{
+    height: 600px;
+    overflow-y: auto;
+    overflow-wrap: initial;
+    overflow-x: hidden;
+}
 .access-box, .review-box{
     background-color: var(--cold-white);
     -webkit-box-shadow: var(--default-box-shadow);
             box-shadow: var(--default-box-shadow);
 }
 .form-control, label, option, select{
-    font-size: 1.2rem;
+    font-size: 12px!important;
     line-height: 1.2;
 }
 
@@ -220,24 +250,24 @@ dl{
     display: none;
     position: fixed;
     bottom: 2rem; 
-    left: 3rem; 
+    right: 3rem; 
     z-index: 99;
     border: none;
     outline: none;
     background-color: var(--baby-blue);
     color: var(--charcoal);
     cursor: pointer;
-    padding: 0.8rem;
+    padding: 0.4rem;
     border-radius: 50%;
-    margin: 0.8rem;
-    width: 6rem;
-    height: 6rem;
+    margin: 0.4rem;
+    width: 5.2rem;
+    height: 5.2rem;
     font-weight: 400;
     vertical-align: middle;
 }
 
 .fa-sort-up{
-    font-size: 5rem;
+    font-size: 50px;
     padding-top: 0.6rem;
 }
 
@@ -253,7 +283,7 @@ dl{
     height: 6rem;
     border-radius: 50%;
     padding: 1.5rem;
-    font-size: 2rem;
+    font-size: 20px;
     font-family: var(--heading-title-font);
     font-weight: bold;
 }
@@ -264,12 +294,13 @@ dl{
 
 /** Other buttons **/
 .icon-btn{
-    font-size: 1.8rem;
+    font-size: 14px;
     -webkit-transition: var(--default-transition);
     -o-transition: var(--default-transition);
     transition: var(--default-transition);
     color:var(--slate-grey);
     text-shadow: none;
+    align-self: center;
 }
 
 .icon-btn:hover{
@@ -283,12 +314,9 @@ dl{
     -webkit-transition: var(--default-transition);
     -o-transition: var(--default-transition);
     transition: var(--default-transition);
-    height: 2.6rem;
-    width: 3.4rem;
-    margin: 0.25rem;
+    margin: 0.5rem;
     float: right;
     background-color: var(--charcoal);
-    cursor: pointer;
 }
 
 .btn:hover{
@@ -302,12 +330,27 @@ input:-internal-autofill-selected {
 }
 
 /* Search field styling */
-.search-form input {
-    height:  2.6rem;
+.search-form input{
+    background-color: var(--cold-white);
+    height: 3rem;
     margin: 0.25rem;
+    padding: 12px 20px 12px 40px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
 }
 .search-form input:focus {
     outline: none;
+    width: 65%;
+}
+.search-form .btn{
+    margin: 2.5px;
+    height: 3rem;
+}
+.search-form .btn:hover{
+    transform: unset;
+}
+.badge-pill{
+    padding: 0.8em;
 }
 
 /* Responsive breakpoints styling */
@@ -318,7 +361,7 @@ wider than mobile **/
 
 @media(min-width: 768px){
     body, header, footer small{
-        font-size: 1.8rem;
+        font-size: 14px;
     }
     .carousel-item img{
         width: 80%;
@@ -327,24 +370,29 @@ wider than mobile **/
         margin-top: 9rem;
     }
     h1{
-        font-size: 4rem;
+        font-size: 30px
     }
-    h2, .icon-btn{
-        font-size: 3rem;
+    h2 {
+        font-size: 18px
     }
-    p{
-        font-size: 2.8rem;
+    #goUpBtn{
+        padding: 0.8rem;
+        margin: 0.8rem;
+        width: 6rem;
+        height: 6rem;
+    }
+    .icon-btn{
+        margin-top: 0.25rem;
+        font-size: 20px;
     }
     .btn{
         width: 5rem;
     }
-    .btn, .search-form input {
+    .btn, .search-form input, .search-form .btn {
         height: 4rem;
-        margin: 0.5rem;
     }
-    .form-control, label, option, select{
-        font-size: 1.8rem;
-        line-height: 1.8;
+    .search-form input:focus {
+        width: 50%;
     }
 }
 
@@ -355,6 +403,9 @@ wider than tablet **/
 @media(min-width: 1024px){
     .carousel-inner{
         margin-top: 2rem;
+    }
+    .search-form input:focus {
+        width: 30%;
     }
 }
 

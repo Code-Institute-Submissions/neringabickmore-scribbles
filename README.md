@@ -117,7 +117,6 @@ The **goals** of this project are:
 - User information is protected by the site
 - User is able to manipulate elements of the particular page
 - Quick app load time
-- Users are able to find and contact admin when required (i.e. account deletion)
 
 [Back to content](#contents)
 
@@ -252,8 +251,6 @@ The types of data that are store in the MongoDB database:
 
 The app has a different layout options, focused on *mobile-first* design in mind as more users are expected to use mobile rather than larger devices, such as a tablet or a laptop/desktop.
 
-![site views on different displays]()
-
 - **Sliding banner** on a home/about page
   
 - **Register** account form
@@ -268,7 +265,7 @@ The user is redirected to a website when clicks on *purchase* a book button.
 
 - **Search function**
 
-The user is able to search books by *title*, *author*, and *genre*.
+The user is able to search books by entering any text that may appear on the book review (i.e. author, title, length, genre etc).
 
 ### Future Features ###
 
@@ -359,13 +356,13 @@ git clone https://github.com/neringabickmore/scribbles
 python -m pip -r requirements.txt
 ```
 
-3: **Initilaize** virtual environment by typing the following command into the terminal:
+3: **Initialize** virtual environment by typing the following command into the terminal:
 
 ```bash
 py -m venv virtual
 ```
 
-4: If the command doesn't run, you may also need to set user policy to *un-restricted* by typing the following command in your terminal:
+4: If you're using bash and the command doesn't run, you may also need to set user policy to *un-restricted* by typing the following command in your terminal:
 
 ```bash
 Set-ExecutionPolicy -Scope CurrentUser
@@ -396,7 +393,7 @@ import os
 os.environ.setdefault("IP", "0.0.0.0")
 os.environ.setdefault("PORT", "5000")
 os.environ.setdefault("SECRET_KEY", "YOUR_SECRET_KEY")
-os.environ.setdefault("MONGO_URI", "mongodb+srv://Rosie:<password>@myfirstcluster.tmruz.mongodb.net/<database_name>?retryWrites=true&w=majority")
+os.environ.setdefault("MONGO_URI", "YOUR_MONGODB_URI")
 os.environ.setdefault("MONGO_DBNAME", "YOUR_DATABASE_NAME")
 ```
 
@@ -423,7 +420,7 @@ pip3 freeze --local > requirements.txt
 2: **Create** a Procfile with the following command:
 
 ```bash
-echo web: python app.py > Procfile
+echo web: python run.py > Procfile
 ```
 
 3: **Push** these newly created files to your repository master.
@@ -445,10 +442,10 @@ git push heroku master
 :-----:|:-----:
 HOSTNAME|0.0.0.0
 PORT|5000
-MONGO_URI|mongodb+srv://<username>:<password>@<cluster\_name>-qtxun.mongodb.net/<database\_name>?retryWrites=true&w=majority
-SECRET_KEY|"your\_secret\_key"
+MONGO_URI|YOUR_MONGODB_URI
+SECRET_KEY|YOUR_SECRET_KEY
 
-*Please make sure you enter your own *SECRET_KEY*, and *MONGO_URL*.
+* Please make sure you enter your own *SECRET_KEY*, and *MONGO_URL*.
 
 7: Click the deploy button on the Heroku dashboard.
 8: The site has been deployed the Heroku.
@@ -466,6 +463,7 @@ SECRET_KEY|"your\_secret\_key"
 - I have used the snippet tool for capturing screengrabs which I saved as images.
 - MS Paint 3D to edit images as required.
 - A handy [Birme](https://www.birme.net/?target_width=300&target_height=300&quality=100&border_width=1&border_color=%23bd3d3a) site allowed me to resize the images all at once.
+- I have also used [giphy.com](https://giphy.com/) to convert MP4 video files to gif files used in Testing.md.
 
 ### Code ideas ###
 

@@ -40,3 +40,23 @@ $("#goUpBtn").click(function () {
   topFunction();
 });
 
+
+/**
+ * Search Btn and cancel Search Btn are hidden 
+ * by default until the user enters anything in
+ * the search field.
+ */
+$(document).ready(function () {
+  $('#searchBtn').hide(true);
+  $('#cancelSearch').hide(true);
+
+  $('#searchKey').keyup(function () {
+    if ($(this).val().length != 0) {
+      $('#searchBtn').show(true);
+      $('#cancelSearch').show(true);
+    } else {
+      $('#searchBtn').hide(true);
+      $('#cancelSearch').hide(true);
+    }
+  })
+});

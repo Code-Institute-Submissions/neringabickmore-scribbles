@@ -17,16 +17,13 @@
             <form action="{{ url_for('search_discover') }}" method="POST" role="search" class="align-items-center oval">
                 <div class="form-group search-form mb-0">
                     <!-- Input -->
-                    <input type="text" name="query" id="query" minlength="3" class="validate badge-pill" required
-                        placeholder="search...">
-                    <label for="query"></label>
-
+                    <input type="text" name="query" minlength="3" class="validate badge-pill" id="searchKey" value="" required
+                        placeholder="Search.."/>
                     <!-- Action buttons -->
                     <!-- Cancel -->
-                    <a class="btn" href="/discover/reviews" title="clear search"><i
-                            class="fas fa-times icon-btn"></i></a>
-                    <!-- Search -->
-                    <button type="submit" class="btn" title="search"><i class="fas fa-search icon-btn"></i></button>
+                    <a class="btn badge-pill align-self-middle" href="/discover/reviews" title="clear search" id="cancelSearch"><i class="fas fa-times icon-btn"></i></a>
+                    <!-- Search Button -->
+                    <button type="submit" class="btn badge-pill align-self-middle" id="searchBtn" title="search"><i class="fas fa-search icon-btn"></i></button>
                 </div>
             </form>
         </div>
@@ -35,7 +32,7 @@
 
             <!-- Genre category -->
             <h2 class="text-left my-4"> {{ review.genre}} </h2>
-            <div class="review-box m-3 p-2">
+            <div class="review-box my-2">
                 <!-- Logged in users will see "favorite button"-->
                 {% if session.user %}
                 <a class="btn" href="{{ url_for('add_favorites', review_id=review._id) }}" title="add to favorites"><i
@@ -46,7 +43,7 @@
                         title="buy the book" rel="noopener"></i></a>
 
                 <!-- Book cover img -->
-                <img class="col-sm-12 book-cover m-2" src="{{ review.link_to_image }}" alt="book cover"><br>
+                <img class="book-cover mx-5 my-2" src="{{ review.link_to_image }}" alt="book cover"><br>
 
                 <!-- Book review -->
                 {% include 'components/content/review.html' %}

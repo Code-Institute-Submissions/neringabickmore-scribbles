@@ -14,7 +14,7 @@
         <div class="col-lg-4 col-md-6 col-12">
             <!-- Genre category -->
             <h2 class="text-left my-4"> {{ review.genre}} </h2>
-            <div class="review-box m-3 p-2">
+            <div class="review-box my-2">
 
                 <!-- Remove from favorites button"-->
                 <a class="btn" href="{{ url_for('delete_favorites', review_id=review._id)}}" title="remove from favorites"><i
@@ -25,7 +25,7 @@
                         title="buy the book" rel="noopener"></i></a>
 
                 <!-- Book cover img -->
-                <img class="col-sm-12 book-cover m-2" src="{{ review.link_to_image }}" alt="book cover"><br>
+                <img class="book-cover mx-5 my-2" src="{{ review.link_to_image }}" alt="book cover"><br>
 
                 <!-- Book review -->
                 {% include 'components/content/review.html' %} 
