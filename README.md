@@ -478,6 +478,15 @@ SECRET_KEY|YOUR_SECRET_KEY
 
 ## Acknowledgements ##
 
-[Back to content](#contents)
+I would like to recognize the people who have helped me through this project:
 
----
+- My mentor [Simen Daehlin](https://github.com/Eventyret) for his time, patience, and support in helping me to adopt the best coding practices and believing in me! Thank you!
+- Code Institute tutors [Tim](https://github.com/TravelTimN) for amazing Python tutorials, [Igor](https://github.com/bravoalpha79), and [Miklos](https://github.com/Sarosim) who have helped me with technical struggles and made me think outside the box to solve my python problems.
+
+- My fellow Code Institute slack community, especially [Simon Castagna](https://github.com/jumboduck) for listening to my struggles and pushing me forward.
+
+- My husband, family, and friends for continuously testing my project and not giving up on me 😊
+
+**Thank you all for pushing me forward!**
+
+[Back to content](#contents)
