@@ -304,7 +304,28 @@ users.update_many(
     )
 ```
 
-### Unsolved bugs ###
+7.  If the user didn't added any reviews to their **favorites**, they don't have a message on their **favorites** page suggesting they should add some reviews to have anything displayed on the page.
 
-1. If the user didn't added any reviews to their **favorites**, they don't have a message on their **favorites** page suggesting they should add some reviews to have anything displayed on the page.
-2. If the user didn't add any of their own reviews to the app, **my reviews** page doesn't have a message to encourage the user to doing so.
+Bugfix: Add below code to the *favorites.html* template before the ```{% endfor %}```:
+
+```html
+ {% else %}
+        <div class="col-12">
+            <p class="text-center my-4"> you currently have no reviews in your favorites. </p>
+            <p class="text-center my-4"> why don't you try to add some? </p>
+        </div>
+```
+
+8. If the user didn't add any of their own reviews to the app, **my reviews** page doesn't have a message to encourage the user to doing so.
+
+Bugfix: Add below code to the *my-reviews.html* template before the ```{% endfor %}```:
+
+```html
+ {% else %}
+        <div class="col-12">
+            <p class="text-center my-4"> you currently have no reviews. </p>
+            <p class="text-center my-4"> why don't you try to add some? </p>
+        </div>
+```
+
+### Unsolved bugs ###
