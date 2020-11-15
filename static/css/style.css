@@ -57,7 +57,7 @@ h1, h2{
     text-shadow: var(--default-text-shadow);
     color: var(--charcoal);
 }
-h1:first-letter, h2:first-letter{
+h1:first-letter, h2:first-letter, p:first-letter{
     text-transform: capitalize;
 }
 h1{
@@ -206,7 +206,7 @@ drop down menu styling*/
         -ms-grid-row-align: center;
         align-self: center;
 }
-.reviews-container{
+.reviews-container h2{
     text-transform: uppercase;
 }
 
