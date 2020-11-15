@@ -46,6 +46,7 @@ About three years ago I have made a conscious decision to read more books. I hav
     - [Register / Login templates](#register--login-templates)
     - [Forms and page templates design](#forms-and-page-templates-design)
     - [Color palette](#color-palette)
+    - [Sort review by genre as a heading](#sort-review-by-genre-as-a-heading)
   - [Testing](#testing)
   - [Deployment](#deployment)
     - [Cloning *Scribbles* from GitHub](#cloning-scribbles-from-github)
@@ -316,6 +317,10 @@ The user gets a notification before *delete* action is activated in app commands
 ### Color palette ###
 
 - The color palette you see in the final version of the wireframe differ to the original one very slightly. During the development stage of the project the feedback I was given is that some colors blend too much and to enhance visual user experience I needed to reconsider bringing in some base colours of black and white as well as losing one of the shades.
+
+### Sort review by genre as a heading ###
+
+- My initial idea was to render html templates (discover, my reviews, and favorites) with the genre header element. I have decided against it during development stage of the project as in my opinion it's nice to have a genre header per each review instead.
   
 ---
 
