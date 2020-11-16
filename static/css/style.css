@@ -157,8 +157,10 @@ drop down menu styling*/
 
 /* Flash Message Styling */
 #flash-message{
+    background-color: var(--cold-white);
     -webkit-box-shadow: var(--dark-box-shadow);
             box-shadow: var(--dark-box-shadow);
+    text-transform: uppercase!important;
 }
 
 /* Templates' Styling */
