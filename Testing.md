@@ -339,3 +339,37 @@ users.update_many(
         {"$pull": {"favorites": ObjectId(review_id)}}
     )
 ```
+
+10: When the user edits their review, previously selected genre category wasn't displaying and by default ```Action & Adventure``` were being pushed by default. 
+
+**Original code**
+
+```html
+<!-- Select Genre -->
+            <div class="form-group mb-0">
+                <label for="genre_category">genre</label>
+                <select name="genre_category" class="form-control" id="genre_category">
+                    {% for genre in genre %}
+                    <option value="{{ genre.genre_category }}">{{ genre.genre_category }}</option>
+
+                    {% endfor %}
+                </select>
+            </div>
+
+```
+
+**Bug-fix:** inserted extra line of code to fix it.
+
+```html
+<!-- Select Genre -->
+            <div class="form-group mb-0">
+                <label for="genre_category">genre</label>
+                <select name="genre_category" class="form-control" id="genre_category">
+                    <option value="{{ review.genre }}" selected>{{ review.genre }}</option>
+                    {% for genre in genre %}
+                    <option value="{{ genre.genre_category }}">{{ genre.genre_category }}</option>
+
+                    {% endfor %}
+                </select>
+            </div>
+```
