@@ -29,7 +29,7 @@ html{
     border-radius: 12px;
 }
 ::-webkit-scrollbar-thumb {
-    background: var(--col-white);
+    background: var(--slate-grey);
     border-radius: 10px;
 }
 ::-webkit-scrollbar-thumb:hover {
