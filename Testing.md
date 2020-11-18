@@ -329,6 +329,7 @@ users.update_many(
             <p class="text-center my-4"> why don't you try to add some? </p>
         </div>
 ```
+
 9: If the review owner deletes the review, which is favorited by other users, then those users' favorites template shows error. 
 
 **Bug-fix:** Add additional code to delete review_id from favorites if the owner of the review chooses to delete their entry.
@@ -340,9 +341,9 @@ users.update_many(
     )
 ```
 
-10: When the user edits their review, previously selected genre category wasn't displaying and by default ```Action & Adventure``` were being pushed by default. 
+10: When the user edits their review, previously selected genre category wasn't displaying and by default ```Action & Adventure``` were being pushed by default.
 
-**Original code**
+Original code:
 
 ```html
 <!-- Select Genre -->
@@ -372,4 +373,21 @@ users.update_many(
                     {% endfor %}
                 </select>
             </div>
+```
+
+11: Modal on *delete button* in my-reviews.html was looping through all of the items in the collection and therefore deleting the first item in the collection instead of the one user selected.
+
+**Bug-fix:** inserted {{ loop.index }} to modal ID:
+
+```html
+<!-- Remove from favorites button
+                    which triggers modal
+                -->
+                <a class="btn align-self-center" data-toggle="modal" data-target="#deleteFavoriteModal{{ loop.index }}"><i
+                        class="far fa-trash-alt icon-btn"></i></a>
+
+                <!-- Modal -->
+                <div class="modal fade" id="deleteFavoriteModal{{ loop.index }}" tabindex="-1"
+                    aria-labelledby="deleteFavoriteModalLabel" aria-hidden="true">
+                </div>
 ```
