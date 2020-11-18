@@ -10,18 +10,16 @@ View [website](https://scribbles-app.herokuapp.com/) deployed to Heroku.
 
 ## Contents ##
 
-- [Scribbles - Testing Details](#scribbles---testing-details)
-  - [Contents](#contents)
-  - [Automated Testing](#automated-testing)
-    - [Validation Services](#validation-services)
-    - [Client Stories Testing](#client-stories-testing)
-      - [**Site Visitor**](#site-visitor)
-      - [**Registered Site User**](#registered-site-user)
-  - [Manual Testing](#manual-testing)
-    - [Testing](#testing)
-    - [Additional User Requirements and Expectations testing](#additional-user-requirements-and-expectations-testing)
-  - [Bugs discovered](#bugs-discovered)
-    - [Solved bugs](#solved-bugs)
+- [Automated Testing](#automated-testing)
+  - [Validation Services](#validation-services)
+  - [Client Stories Testing](#client-stories-testing)
+    - [**Site Visitor**](#site-visitor)
+    - [**Registered Site User**](#registered-site-user)
+- [Manual Testing](#manual-testing)
+  - [Testing](#testing)
+  - [Additional User Requirements and Expectations testing](#additional-user-requirements-and-expectations-testing)
+- [Bugs discovered](#bugs-discovered)
+  - [Solved bugs](#solved-bugs)
 
 ---
 
