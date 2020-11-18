@@ -26,6 +26,7 @@
             <div class="form-group mb-0">
                 <label for="genre_category">genre</label>
                 <select name="genre_category" class="form-control" id="genre_category">
+                    <option value="{{ review.genre }}" selected>{{ review.genre }}</option>
                     {% for genre in genre %}
                     <option value="{{ genre.genre_category }}">{{ genre.genre_category }}</option>
                     {% endfor %}

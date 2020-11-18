@@ -166,6 +166,11 @@ The app has a different layout options, focused on *mobile-first* design in mind
 
 ![search functionality](/wireframes/testing-video/search.gif)
 
+- **Defence Mechanism**
+    The user receives a notification to make sure, they are ready to delete a review from their favorites or my-reviews collections.
+
+![warning before delete](/wireframes/testing-video/delete-warning.gif)
+
 ### Additional User Requirements and Expectations testing ###
 
 - **Visually pleasant app design**
@@ -329,6 +334,7 @@ users.update_many(
             <p class="text-center my-4"> why don't you try to add some? </p>
         </div>
 ```
+
 9: If the review owner deletes the review, which is favorited by other users, then those users' favorites template shows error. 
 
 **Bug-fix:** Add additional code to delete review_id from favorites if the owner of the review chooses to delete their entry.
@@ -338,4 +344,55 @@ users.update_many(
         {},
         {"$pull": {"favorites": ObjectId(review_id)}}
     )
+```
+
+10: When the user edits their review, previously selected genre category wasn't displaying and by default ```Action & Adventure``` were being pushed by default.
+
+Original code:
+
+```html
+<!-- Select Genre -->
+            <div class="form-group mb-0">
+                <label for="genre_category">genre</label>
+                <select name="genre_category" class="form-control" id="genre_category">
+                    {% for genre in genre %}
+                    <option value="{{ genre.genre_category }}">{{ genre.genre_category }}</option>
+
+                    {% endfor %}
+                </select>
+            </div>
+
+```
+
+**Bug-fix:** inserted extra line of code to fix it.
+
+```html
+<!-- Select Genre -->
+            <div class="form-group mb-0">
+                <label for="genre_category">genre</label>
+                <select name="genre_category" class="form-control" id="genre_category">
+                    <option value="{{ review.genre }}" selected>{{ review.genre }}</option>
+                    {% for genre in genre %}
+                    <option value="{{ genre.genre_category }}">{{ genre.genre_category }}</option>
+
+                    {% endfor %}
+                </select>
+            </div>
+```
+
+11: Modal on *delete button* in my-reviews.html was looping through all of the items in the collection and therefore deleting the first item in the collection instead of the one user selected.
+
+**Bug-fix:** inserted {{ loop.index }} to modal ID:
+
+```html
+<!-- Remove from favorites button
+                    which triggers modal
+                -->
+                <a class="btn align-self-center" data-toggle="modal" data-target="#deleteFavoriteModal{{ loop.index }}"><i
+                        class="far fa-trash-alt icon-btn"></i></a>
+
+                <!-- Modal -->
+                <div class="modal fade" id="deleteFavoriteModal{{ loop.index }}" tabindex="-1"
+                    aria-labelledby="deleteFavoriteModalLabel" aria-hidden="true">
+                </div>
 ```
