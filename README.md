@@ -372,36 +372,17 @@ python -m pip -r requirements.txt
 
 3: **Initialize** virtual environment by typing the following command into the terminal:
 
-```bash
+```
 py -m venv virtual
 ```
 
-4: If you're using bash and the command doesn't run, you may also need to set user policy to *un-restricted* by typing the following command in your terminal:
+4: In MongoDB, create a new database called *scribbles* with three collections: *users*, *reviews*, and *genre*.
 
-```bash
-Set-ExecutionPolicy -Scope CurrentUser
-```
-
-then:
-
-```bash
-unrestricted
-```
-
-5: In MongoDB, create a new database called *scribbles* with four collections: *users*, *reviews*, *genre*, and *emoji*.
-
-6: Back in your VS Code, create a file to hold your environment variables and call it *env.py*. Make sure you add file to your *.gitignore* file before committing.
-
-If you do end up committing by mistake, you can correct this by typing the following command:
-
-```bash
-git rm -r --cached env.py
-echo env.py >> .gitignore
-```
+5: Back in your VS Code, create a file to hold your environment variables and call it *env.py*.
 
 5: Your env.py file should contain the following:
 
-```bash
+```
 import os
 
 os.environ.setdefault("IP", "0.0.0.0")
@@ -409,17 +390,18 @@ os.environ.setdefault("PORT", "5000")
 os.environ.setdefault("SECRET_KEY", "YOUR_SECRET_KEY")
 os.environ.setdefault("MONGO_URI", "YOUR_MONGODB_URI")
 os.environ.setdefault("MONGO_DBNAME", "YOUR_DATABASE_NAME")
+os.environ.setdefault("DEBUG", "1")
 ```
 
-*Please make sure you update your **SECRET_KEY**, **password**, **database_name**, and **DATABASE_NAME***
+- Please make sure you update your **SECRET_KEY**, **password**, **database_name**, and **DATABASE_NAME**.
 
-7: You can now run your application locally by typing the following command in your terminal:
+- Before pushing the project to a public repository, your env.py file should be added to .gitignore.
 
-```bash
+6: You can now run your application locally by typing the following command in your terminal:
+
+```
 python run.py
 ```
-
-*You may need to change local host in browser to 127.0.0.1:5000*
 
 ### Deploying Scribbles to Heroku ###
 
@@ -427,13 +409,13 @@ python run.py
 
 2: **Create** a requirements.txt file using the following command:
 
-```bash
+```
 pip3 freeze --local > requirements.txt
 ```
 
 3: **Create** a Procfile with the following command:
 
-```bash
+```
 echo web: python run.py > Procfile
 ```
 
@@ -441,13 +423,13 @@ echo web: python run.py > Procfile
 
 5: **Add heroku remote** to your git repository by getting the heroku git URL from the heroku account settings. Then type the following: 
 
-```bash
+```
 git remote add heroku https://git.heroku.com/your-heroku-repo
 ```
 
 6: Push *scribbles* to your heroku:
 
-```bash
+```
 git push heroku master
 ```
 
