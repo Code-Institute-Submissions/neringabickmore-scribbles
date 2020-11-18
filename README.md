@@ -282,11 +282,16 @@ The user is able to choose English or Lithuanian language to view the site.
 
 Site admin feature allows deletion of inappropriate reviews, change of book review form items, as well as deletion of the registered user accounts.
   
-- **Defence mechanism**
-  
-The user gets a notification before *delete* action is activated in app commands.
-
 - **Password re-set**
+
+- **Genre selector in Navbar**
+
+Site user is able to select genre located in the navbar to display reviews only in that genre.
+
+- **Heart button on/off**
+
+Heart button in discover.html would change colour when clicked on (click = add to favorites) and back to *blank* when un-clicked (un-click = remove from favorites). This way the user is then able to see clearly which reviews they already have in their favorites and which not.
+
 
 [Back to content](#contents)
 
