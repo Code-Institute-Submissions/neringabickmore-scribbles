@@ -166,6 +166,11 @@ The app has a different layout options, focused on *mobile-first* design in mind
 
 ![search functionality](/wireframes/testing-video/search.gif)
 
+- **Defence Mechanism**
+    The user receives a notification to make sure, they are ready to delete a review from their favorites or my-reviews collections.
+
+![warning before delete](/wireframes/testing-video/delete-warning.gif)
+
 ### Additional User Requirements and Expectations testing ###
 
 - **Visually pleasant app design**
