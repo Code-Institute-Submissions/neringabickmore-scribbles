@@ -268,6 +268,10 @@ The user is redirected to a website when clicks on *purchase* a book button.
 
 The user is able to search books by entering any text that may appear on the book review (i.e. author, title, length, genre etc).
 
+- **Defence mechanism**
+  
+The user gets a notification before *delete* action is activated in app commands.
+
 ### Future Features ###
 
 - **Language Selector**
