@@ -16,10 +16,6 @@
     --default-transform: scale(1.1);
 }
 
-html{
-    font-size: 62.5%;
-    scroll-behavior: smooth;
-}
 /* Scrollbar styling*/
 ::-webkit-scrollbar {
     width: 10px;
@@ -38,6 +34,11 @@ html{
 ::before{
     height: 12px;
     width: 12px;
+}
+/* html styling */
+html{
+    font-size: 62.5%;
+    scroll-behavior: smooth;
 }
 
 /* Body Styling  - main */
@@ -178,7 +179,6 @@ drop down menu styling*/
     text-shadow: none;
 }
 
-/* about.html */
 #intro h1{
     text-transform: none;
 }
@@ -193,7 +193,7 @@ drop down menu styling*/
     margin: 2rem;
 }
 
-/* other templates + forms + content  */ 
+/* other templates + content  */ 
 #library-img img{
     width: 100%;
     height: auto;
@@ -245,7 +245,42 @@ dd{
     line-height: 1.2;
 }
 
-/* Main Buttons */
+/* Key Buttons Styling */
+
+.icon-btn{
+    font-size: 14px;
+    -webkit-transition: var(--default-transition);
+    -o-transition: var(--default-transition);
+    transition: var(--default-transition);
+    color:var(--slate-grey);
+    text-shadow: none;
+    align-self: center;
+}
+
+.icon-btn:hover{
+    color: var(--white);
+}
+
+.btn{
+    -webkit-box-shadow: var(--default-box-shadow);
+            box-shadow: var(--default-box-shadow);
+    -webkit-transition: var(--default-transition);
+    -o-transition: var(--default-transition);
+    transition: var(--default-transition);
+    margin: 5px;
+    float: right;
+    background-color: var(--charcoal);
+}
+
+.btn:hover{
+    -webkit-transform: var(--default-transform);
+        -ms-transform: var(--default-transform);
+            transform: var(--default-transform);
+}
+
+input:-internal-autofill-selected {
+    background-color: var(--white)!important;
+}
 /** Go Up button styling **/
 #goUpBtn {
     display: none;
@@ -293,42 +328,6 @@ dd{
     text-decoration: none;
 }
 
-/** Other buttons **/
-.icon-btn{
-    font-size: 14px;
-    -webkit-transition: var(--default-transition);
-    -o-transition: var(--default-transition);
-    transition: var(--default-transition);
-    color:var(--slate-grey);
-    text-shadow: none;
-    align-self: center;
-}
-
-.icon-btn:hover{
-    color: var(--white);
-}
-
-.btn{
-    -webkit-box-shadow: var(--default-box-shadow);
-            box-shadow: var(--default-box-shadow);
-    -webkit-transition: var(--default-transition);
-    -o-transition: var(--default-transition);
-    transition: var(--default-transition);
-    margin: 5px;
-    float: right;
-    background-color: var(--charcoal);
-}
-
-.btn:hover{
-    -webkit-transform: var(--default-transform);
-        -ms-transform: var(--default-transform);
-            transform: var(--default-transform);
-}
-
-input:-internal-autofill-selected {
-    background-color: var(--white)!important;
-}
-
 /* Search field styling */
 .search-form input{
     background-color: var(--cold-white);
@@ -363,6 +362,12 @@ wider than mobile **/
     body, header{
         font-size: 1.4rem;
     }
+    h1{
+        font-size: 3rem;
+    }
+    h2 {
+        font-size: 1.8rem;
+    }
     .navbar-nav{
         height: 12rem;
     }
@@ -371,19 +376,7 @@ wider than mobile **/
     }
     .carousel-inner{
         margin-top: 9rem;
-    }
-    h1{
-        font-size: 3rem;
-    }
-    h2 {
-        font-size: 1.8rem;
-    }
-    #goUpBtn{
-        padding: 1.8px;
-        margin: 1.8px;
-        width: 60px;
-        height: 60px;
-    }
+    } 
     .icon-btn{
         margin-top: 1.25px;
         font-size: 2rem;
@@ -393,6 +386,12 @@ wider than mobile **/
     }
     .btn, .search-form input, .search-form .btn {
         height: 40px;
+    }
+    #goUpBtn{
+        padding: 1.8px;
+        margin: 1.8px;
+        width: 60px;
+        height: 60px;
     }
     .search-form input:focus {
         width: 50%;
