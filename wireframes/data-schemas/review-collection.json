@@ -3,13 +3,14 @@
         "_id": "ObjectId()",
         "title": "string",
         "author": "string",
-        "genre": "ObjectID()",
+        "genre": "string",
         "length": "string",
-        "ease-of-reading": "string",
-        "plot-summary": "string",
-        "favorite-quote": "string",
+        "ease_of_reading": "string",
+        "plot_summary": "string",
+        "favorite_quote": "string",
         "rating": "string",
-        "link-to-image": "string",
-        "link-to-buy": "string"
+        "link_to_image": "string",
+        "link_to_buy": "string",
+        "reviewed_by": "string"
     }
 ]

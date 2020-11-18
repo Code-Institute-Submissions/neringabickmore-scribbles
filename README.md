@@ -169,33 +169,35 @@ Utilising the NoSQL features that MongoDB provides, I was able to map out the fo
   
 **Title**|**Key in Collection**|**Data Type**
 :-----:|:-----:|:-----:
-Book Id|_id|ObjectId()
+Book Id|_id|ObjectId()
 Title|title|string
 Author|author|string
-Genre|genre|ObjectId()
+Genre|genre|string
 Length|length|string
-Ease of Reading|ease-of-reading|string
-Plot Summary|plot-summary|string
-Favorite Quote|favorite-quote|string
-Book rating|rating|string
-Image|link-to-image|string
-Buy a Book|link-to-buy|string
+Ease of Reading|ease-of-reading|string
+Plot Summary|plot_summary|string
+Favorite Quote|favorite_quote|string
+Book rating|rating|string
+Book cover|link_to_image|string
+Link to book vendor|link_to_buy|string
+Review owner|reviewed_by|string
 
 [Genre Collection](wireframes/data-schemas/genre.json)
 
 **Title**|**Key in Collection**|**Data Type**
 :-----:|:-----:|:-----:
 Genre ID|_id|ObjectId()
-Title|title|string
+Genre|genre_category|string
 
 [User Collection](/wireframes/data-schemas/user-collections.json)
 
 **Title**|**Key in Collection**|**Data Type**
 :-----:|:-----:|:-----:
-User ID|_id|ObjectID()
+User ID|_id|ObjectID()
 Username|username|string
-Email Address|email|string
-Favorite Books|favorites|[ObjectId()]
+Email Address|email|string
+Password|password|string
+Favorite Books|favorites|[ObjectId()]
 
 #### **Data Storage Types** ####
 
