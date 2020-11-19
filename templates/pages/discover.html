@@ -21,9 +21,9 @@
                         placeholder="Search.."/>
                     <!-- Action buttons -->
                     <!-- Cancel -->
-                    <a class="btn badge-pill align-self-middle" href="/discover/reviews" title="clear search" id="cancelSearch"><i class="fas fa-times icon-btn"></i></a>
+                    <a class="btn badge-pill align-self-middle" href="/discover/reviews" title="clear search" aria-label="clear search" id="cancelSearch"><i class="fas fa-times icon-btn"></i></a>
                     <!-- Search Button -->
-                    <button type="submit" class="btn badge-pill align-self-middle" id="searchBtn" title="search"><i class="fas fa-search icon-btn"></i></button>
+                    <button type="submit" value="submit" class="btn badge-pill align-self-middle" id="searchBtn" title="search" aria-label="search"><i class="fas fa-search icon-btn"></i></button>
                 </div>
             </form>
         </div>
@@ -35,13 +35,11 @@
             <div class="review-box my-2">
                 <!-- Logged in users will see "favorite button"-->
                 {% if session.user %}
-                <a class="btn" href="{{ url_for('add_favorites', review_id=review._id) }}" title="add to favorites"><i
+                <a class="btn" href="{{ url_for('add_favorites', review_id=review._id) }}" title="add to favorites" aria-label="add to favorites"><i
                         class="fas fa-heart icon-btn"></i></a>
                 {% endif %}
                 <!-- Link to re-direct to vendor page for purchase -->
-                <a class="btn" target="_blank" rel="noopener" href="{{ review.link_to_buy }}"><i class="fas fa-shopping-cart icon-btn"
-                        title="buy the book"></i></a>
-
+                <a class="btn" target="_blank" rel="noopener" href="{{ review.link_to_buy }}" title="buy the book" aria-label="buy the book"><i class="fas fa-shopping-cart icon-btn"></i></a>
                 <!-- Book cover img -->
                 <img class="book-cover mx-5 my-2" src="{{ review.link_to_image }}" alt="book cover"><br>
 
