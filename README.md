@@ -139,6 +139,10 @@ I chose easy to read and light fonts for this app. I am keeping it simple and wi
 
 I chose the colours that I felt are quite delicate and not overpowering the main content of the app.
 
+**Correction**: Please note the color palette was changed. This is due to the multiple feedback received from the app testers. The majority expressed that the original palette was too bland and they preferred to see more color contrast and richer tones on the app. 
+
+After listening to feedback I have chosen richer blues and a hint of orange to make my app more appealing to the users.
+
 ![Colour palette](/wireframes/color-palette/color-palette.jpg)
 
 [Back to content](#contents)
