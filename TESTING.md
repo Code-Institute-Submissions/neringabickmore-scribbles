@@ -40,6 +40,8 @@ The following section goes through each of the user stories from the UX section 
 
 #### **Site Visitor** ####
 
+**Please note:** all the testing was complete prior to changing the color palette of the app. 
+
 1. As a **user** I want to be able to find out the information **about** the app.
     - The User is able to view information about the app clicking on **about** navigation on the navbar, which takes them there. Also, About page is the first to render then the app is loaded.
 2. As a **user** I want ot be able to **discover** some book review samples.
