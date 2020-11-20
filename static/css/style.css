@@ -357,6 +357,7 @@ input:-internal-autofill-selected {
 .search-form .btn{
     margin: 2.5px;
     height: 30px;
+    width: 30px;
 }
 .search-form .btn:hover{
     transform: unset;
