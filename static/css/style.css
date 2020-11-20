@@ -9,9 +9,7 @@
 
     --heading-title-font: 'Rubik', sans-serif;
     --main-font: 'Lato', sans-serif;
-    --default-box-shadow: 2px 2px 9px #728395;
-    --dark-box-shadow: 2px 2px 9px #151717;
-    --default-text-shadow: 1px 1px 9px #728395;
+    --box-shadow: 2px 2px 9px #252422;
     --default-transition: all .3s;
     --default-transform: scale(1.1);
 }
@@ -76,9 +74,8 @@ header {
     font-size: 1.6rem;
     letter-spacing: 2px;
     text-transform: capitalize;
-    -webkit-box-shadow: var(--default-box-shadow);
-            box-shadow: var(--default-box-shadow);
-    text-shadow: var(--default-text-shadow);
+    -webkit-box-shadow: var(--box-shadow);
+            box-shadow: var(--box-shadow);
 }
 
 /* Footer Styling - main */
@@ -109,8 +106,8 @@ footer ul i:hover{
 
 /* Header: logo */
 #logo{
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
 }
 
 /* Header: navbar */
@@ -123,6 +120,7 @@ footer ul i:hover{
     -o-transition: var(--default-transition);
     transition: var(--default-transition);
     color: var(--white)!important;
+    font-size: 2rem;
 }
 
 .nav-item{
@@ -151,17 +149,17 @@ drop down menu styling*/
 }
 
 .dropdown-item:focus, .dropdown-item:hover{
-    color: var(--cold-white);
-    background-color: var(--baby-blue);
-    -webkit-box-shadow: var(--default-box-shadow);
-            box-shadow: var(--default-box-shadow);
+    color: var(--flame);
+    background-color: var(--indigo-dye);
+    -webkit-box-shadow: var(--box-shadow);
+            box-shadow: var(--box-shadow);
 }
 
 /* Flash Message Styling */
 #flash-message{
-    background-color: var(--cold-white);
-    -webkit-box-shadow: var(--dark-box-shadow);
-            box-shadow: var(--dark-box-shadow);
+    background-color: var(--flame);
+    -webkit-box-shadow: var(--box-shadow);
+            box-shadow: var(--box-shadow);
     text-transform: uppercase!important;
 }
 
@@ -169,8 +167,8 @@ drop down menu styling*/
 
 /* about.html */
 .carousel-item img{
-    -webkit-box-shadow: var(--dark-box-shadow);
-            box-shadow: var(--dark-box-shadow);
+    -webkit-box-shadow: var(--box-shadow);
+            box-shadow: var(--box-shadow);
     width: 375px;
     position: relative;
 }
@@ -178,7 +176,6 @@ drop down menu styling*/
 .blockquote{
     font-size: 1.5rem;
     font-style: italic;
-    text-shadow: none;
 }
 
 #intro h1{
@@ -199,15 +196,15 @@ drop down menu styling*/
 #library-img img{
     width: 100%;
     height: auto;
-    -webkit-box-shadow: var(--dark-box-shadow);
-            box-shadow: var(--dark-box-shadow);
+    -webkit-box-shadow: var(--box-shadow);
+            box-shadow: var(--box-shadow);
 }
 .book-cover{
     width: 70%;
     max-height: 550px;
     -ms-flex-item-align: center;
-        -ms-grid-row-align: center;
-        align-self: center;
+    -ms-grid-row-align: center;
+            align-self: center;
 }
 .reviews-container h2, .reviews-container dt{
     text-transform: uppercase;
@@ -243,8 +240,8 @@ dd{
 
 .access-box, .review-box, .review-box-form {
     background-color: var(--queen-blue);
-    -webkit-box-shadow: var(--default-box-shadow);
-            box-shadow: var(--default-box-shadow);
+    -webkit-box-shadow: var(--box-shadow);
+            box-shadow: var(--box-shadow);
 }
 .access-box h2{
     color: var(--white);
@@ -277,19 +274,14 @@ label{
 }
 
 .btn{
-    -webkit-box-shadow: var(--default-box-shadow);
-            box-shadow: var(--default-box-shadow);
+    -webkit-box-shadow: var(--box-shadow);
+            box-shadow: var(--box-shadow);
     -webkit-transition: var(--default-transition);
     -o-transition: var(--default-transition);
     transition: var(--default-transition);
     margin: 5px;
     float: right;
     background-color: var(--eerie-black);
-}
-.btn:hover{
-    -webkit-transform: var(--default-transform);
-        -ms-transform: var(--default-transform);
-            transform: var(--default-transform);
 }
 
 input:-internal-autofill-selected {
