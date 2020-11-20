@@ -21,9 +21,9 @@
                         placeholder="Search.."/>
                     <!-- Action buttons -->
                     <!-- Cancel -->
-                    <a class="btn badge-pill align-self-middle" href="/discover/reviews" title="clear search" aria-label="clear search" id="cancelSearch"><i class="fas fa-times icon-btn mt-2"></i></a>
+                    <a class="btn rounded-circle align-self-middle" href="/discover/reviews" title="clear search" aria-label="clear search" id="cancelSearch"><i class="fas fa-times icon-btn mt-2"></i></a>
                     <!-- Search Button -->
-                    <button type="submit" value="submit" class="btn badge-pill align-self-middle" id="searchBtn" title="search" aria-label="search"><i class="fas fa-search icon-btn mt-1"></i></button>
+                    <button type="submit" value="submit" class="btn rounded-circle align-self-middle" id="searchBtn" title="search" aria-label="search"><i class="fas fa-search icon-btn mt-1"></i></button>
                 </div>
             </form>
         </div>
@@ -41,7 +41,7 @@
                 <!-- Link to re-direct to vendor page for purchase -->
                 <a class="btn" target="_blank" rel="noopener" href="{{ review.link_to_buy }}" title="buy the book" aria-label="buy the book"><i class="fas fa-shopping-cart icon-btn"></i></a>
                 <!-- Book cover img -->
-                <img class="book-cover mx-5 my-2" src="{{ review.link_to_image }}" alt="book cover"><br>
+                <img class="book-cover m-5" src="{{ review.link_to_image }}" alt="book cover"><br>
 
                 <!-- Book review -->
                 {% include 'components/content/review.html' %}
