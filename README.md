@@ -1,6 +1,6 @@
 # Scribbles #
 
-![Scribbles](/static/images/logo.png)
+![Scribbles](/static/images/logo.jpg)
 
 [Scribbles](https://scribbles-app.herokuapp.com/) is an interactive book review app where site users create, read, update and delete their own content.
 
