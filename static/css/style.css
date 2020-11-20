@@ -346,13 +346,14 @@ input:-internal-autofill-selected {
     background-color: var(--cold-white);
     height: 30px;
     margin: 2.5px;
+    width: 40%;
     padding: 12px 2.5rem 12px 4rem;
     -webkit-transition: width 0.4s ease-in-out;
     transition: width 0.4s ease-in-out;
 }
 .search-form input:focus {
     outline: none;
-    width: 65%;
+    width: 50%;
 }
 .search-form .btn{
     margin: 2.5px;
@@ -400,6 +401,10 @@ wider than mobile **/
     }
     .btn, .search-form input, .search-form .btn {
         height: 40px;
+        margin: 2.5px;
+    }
+    .search-form .btn{
+        width: 40px;
     }
     #goUpBtn{
         padding: 1.8px;
@@ -407,8 +412,11 @@ wider than mobile **/
         width: 60px;
         height: 60px;
     }
+    .search-form input{
+        width: 25%;
+    }
     .search-form input:focus {
-        width: 50%;
+        width: 35%;
     }
 }
 
@@ -420,8 +428,11 @@ wider than tablet **/
     .carousel-inner{
         margin-top: 2rem;
     }
+    .search-form input{
+        width: 15%;
+    }
     .search-form input:focus {
-        width: 30%;
+        width: 25%;
     }
 }
 
